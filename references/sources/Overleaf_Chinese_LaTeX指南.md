@@ -10,7 +10,7 @@ The recommended approach is to use the XeLaTeX or LuaLaTeX compilers because the
 
 ### 1. CTeX Classes (Recommended)
 
-The guide recommends using CTeX document classes like `ctexart`, `ctexrep`, `ctexbook`, and `ctexbeamer` for Simplified Chinese typesetting. These classes provide Chinese localization similar to Babel, automatically translating elements like "Abstract" to 摘要 and "Table of Contents" to 目录.
+The guide recommends using CTeX document classes like `ctexart`, `ctexrep`, `ctexbook`, and `ctexbeamer` for Simplified Chinese typesetting. These classes provide Chinese localization similar to Babel, automatically translating elements like "Abstract" to摘要and "Table of Contents" to目录.
 
 Basic usage:
 

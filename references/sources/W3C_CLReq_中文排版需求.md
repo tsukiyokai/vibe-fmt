@@ -1,4 +1,4 @@
-# Requirements for Chinese Text Layout 中文排版需求
+# Requirements for Chinese Text Layout中文排版需求
 
 This document summarizes text composition requirements in the Chinese writing system. One of the goals of the task force is to describe issues for Chinese layout, another is to describe correspondences with existing standards (such as Unicode), as well as to encourage vendors to implement relevant features correctly.
 
@@ -33,9 +33,9 @@ All
 
 本文檔遵循[W3C流程文檔](https://www.w3.org/policies/process/)（2025年8月18日版）。
 
-## Introduction 绪论 緒論
+## Introduction绪论 緒論
 
-## Contributors 贡献者 貢獻者
+## Contributors贡献者 貢獻者
 
 Information, clarifications, and translations were provided by
 Angel LI,
@@ -60,28 +60,28 @@ Special thanks to the following people who contributed to this document (contrib
 感謝以下參與者對本文檔的建議與補充（依字母順序排列）：
 
 Addison Phillips,
-张爱杰 Aijie Zhang (中国移动通信集团公司),
-李喆明 Austin Lee,
+张爱杰Aijie Zhang（中国移动通信集团公司），
+李喆明Austin Lee,
 Buernia,
-陳穎青,
+陳穎青，
 Du Yuang,
 Hao Chen,
 Hawkeyes Wind,
 Jiang Jiang (Opera),
-贺师俊 John Hax (百姓网),
-吕康豪 Kang-hao Lu (BGI),
-林可锟 Kirk Lin,
-侯迈 MieMie (豆瓣),
+贺师俊John Hax（百姓网），
+吕康豪Kang-hao Lu (BGI),
+林可锟Kirk Lin,
+侯迈MieMie（豆瓣），
 NFSL2001,
 Percy Ma,
 phy25,
 SyaoranHinata,
 technommy,
 and Virgil Ming,
-吴小倩 Xiaoqian Wu (W3C),
-权循真 Xidorn Quan (Mozilla),
+吴小倩Xiaoqian Wu (W3C),
+权循真Xidorn Quan (Mozilla),
 YDX-2147483647,
-张传峰 Chuanfeng Zhang (金现代信息产业股份有限公司).
+张传峰Chuanfeng Zhang（金现代信息产业股份有限公司）.
 
 Please find the latest info of the contributors at the [GitHub contributors list](https://github.com/w3c/clreq/graphs/contributors).
 
@@ -89,7 +89,7 @@ Please find the latest info of the contributors at the [GitHub contributors list
 
 欲了解最新的參與者信息，請參看[GitHub貢獻者列表](https://github.com/w3c/clreq/graphs/contributors)。
 
-### Basic features of Chinese script 中文排版的主要特色 中文排版的主要特色
+### Basic features of Chinese script中文排版的主要特色 中文排版的主要特色
 
 Chinese composition exhibits several differences from other writing systems. The major features include:
 
@@ -115,11 +115,11 @@ Chinese composition exhibits several differences from other writing systems. The
 
 For most of the typographic rules described in this document, "regional differences" are more than "differences between Simplified and Traditional Chinese". For example, although most publications in Mainland China use Simplified Chinese characters in [horizontal writing mode](#term.horizontal-writing-mode), a few publications use Traditional Chinese characters in horizontal or vertical writing mode, or Simplified characters in vertical writing mode. The typographical rules in Mainland China, such as the punctuation position rules specified in General Rules for Punctuation (GB/T 15834—2011) also apply to vertical or Traditional Chinese publications published in Mainland China. For vertical and Traditional Chinese publications published in Taiwan, Taiwan's typographic rules are used. Therefore, it is recommended that the user agents distinguish typographical rules by "region" rather than "Traditional or Simplified".
 
-对于本文叙述重点的排版规则来说，“地区差异”大于“繁简差异”。比如，虽然中国大陆的大多数出版物均采用简体字、[横排](#term.horizontal-writing-mode)，但仍有少数采用繁体字横排、直排或者简体字直排；中国大陆的排版规则，如 GB/T 15834—2011《标点符号用法》中规定的标点符号位置同时也适用于中国大陆出版的直排、繁体字出版物。而台湾出版的直排、繁体字出版物则采用台湾的排版规则。因此建议各种用户代理处理排版规则时，应通过“区域”设置，而非“繁简”文本设置进行区分。
+对于本文叙述重点的排版规则来说，“地区差异”大于“繁简差异”。比如，虽然中国大陆的大多数出版物均采用简体字、[横排](#term.horizontal-writing-mode)，但仍有少数采用繁体字横排、直排或者简体字直排；中国大陆的排版规则，如GB/T 15834—2011《标点符号用法》中规定的标点符号位置同时也适用于中国大陆出版的直排、繁体字出版物。而台湾出版的直排、繁体字出版物则采用台湾的排版规则。因此建议各种用户代理处理排版规则时，应通过“区域”设置，而非“繁简”文本设置进行区分。
 
-對於本文敘述重點的排版規則來說，「地區差異」大於「繁簡差異」。比如，雖然中國大陸的大多數出版物均採用簡體字、[橫排](#term.horizontal-writing-mode)，但仍有少數採用繁體字橫排、直排或者簡體字直排；中國大陸的排版規則，如 GB/T 15834—2011《標點符號用法》中規定的標點符號位置同時也適用於中國大陸出版的直排、繁體字出版物。而臺灣出版的直排、繁體字出版物則採用臺灣的排版規則。因此建議各種用戶代理處理排版規則時，應通過「區域」設置，而非「繁簡」文本設置進行區分。
+對於本文敘述重點的排版規則來說，「地區差異」大於「繁簡差異」。比如，雖然中國大陸的大多數出版物均採用簡體字、[橫排](#term.horizontal-writing-mode)，但仍有少數採用繁體字橫排、直排或者簡體字直排；中國大陸的排版規則，如GB/T 15834—2011《標點符號用法》中規定的標點符號位置同時也適用於中國大陸出版的直排、繁體字出版物。而臺灣出版的直排、繁體字出版物則採用臺灣的排版規則。因此建議各種用戶代理處理排版規則時，應通過「區域」設置，而非「繁簡」文本設置進行區分。
 
-### Purpose of this document 目的 目的
+### Purpose of this document目的 目的
 
 The transfer of each and every writing system into the digital world is an important responsibility of information and communication technology. It plays an important role in the generation, safeguarding, maintenance and re-creation of cultural assets.
 
@@ -133,9 +133,9 @@ As one of the basic work items of this task force, this document summarizes text
 
 作為實現這個責任的基礎，本文整理了中文（漢字）書寫系統在排版上的需求。一方面說明需求事項以明確描述中文排版之需求與問題；另一方面也提供與既有標準（如Unicode）的對應，冀求透過本文有效地促進實作。
 
-### How this document was created 撰写方针 撰寫方針
+### How this document was created撰写方针 撰寫方針
 
-#### Languages used in this document 本文档所使用的中文语言 本文檔所使用的中文語言
+#### Languages used in this document本文档所使用的中文语言 本文檔所使用的中文語言
 
 This document was developed by people working in different areas, using both Simplified and Traditional Chinese. We very much appreciate the contributions of the editors and collaborators from different linguistic backgrounds, and their willingness to collaborate across linguistic boundaries. In this early version of the Group Draft Note, the version of the script used for the Chinese text depends on the person who contributed the text. We plan to create separate translations of the Chinese text in future versions of this document, but at this early stage, the original contributions are kept as is to enable rapid development of the text.
 
@@ -149,7 +149,7 @@ You can view the document in a single language using the buttons at the top righ
 
 您可通過本頁面右上方的按鈕選擇閱讀文檔的單一語言版本。
 
-#### Design approach 设计原则 設計原則
+#### Design approach设计原则 設計原則
 
 This document mainly adopts the following policies to explain the features of Chinese composition:
 
@@ -203,11 +203,11 @@ This document mainly adopts the following policies to explain the features of Ch
 
   本文以書籍作為主要描述對象，但也包括雜誌、報紙等不同排版方式。
 
-## Text direction 文本方向 文本方向
+## Text direction文本方向 文本方向
 
-### Writing mode 行文模式 行文模式
+### Writing mode行文模式 行文模式
 
-#### Writing modes in Chinese 中文的行文模式 中文的行文模式
+#### Writing modes in Chinese中文的行文模式 中文的行文模式
 
 
 Chinese composition has two text directions, [vertical writing mode](#term.vertical-writing-mode) and [horizontal writing mode](#term.horizontal-writing-mode). Publications from Taiwan and Hong Kong are composed in vertical writing mode or horizontal writing mode; while publications from Chinese Mainland are mostly composed in horizontal writing mode, only some are composed in vertical writing mode.
@@ -234,7 +234,7 @@ There is usually only one direction for all text throughout a publication, but t
 
 一份印刷品中，原則上會選用統一的文字書寫方向進行排版。但直排印刷品中，頁眉、圖說、表格、頁碼等多會混用橫排。同時，部分頁面，如參考書目、註釋等亦可能使用橫排呈現。
 
-#### Major differences between horizontal and vertical writing modes 横排与直排的主要差异点 橫排與直排的主要差異點
+#### Major differences between horizontal and vertical writing modes横排与直排的主要差异点 橫排與直排的主要差異點
 
 The following are the major differences between vertical writing mode and horizontal writing mode:
 
@@ -248,34 +248,34 @@ The following are the major differences between vertical writing mode and horizo
 
    文字、行、欄以及頁面配置、裝訂方向
 
-   1. Vertical composition.
+1. Vertical composition.
 
       直排时
 
       直排時
 
-      - Characters are arranged from top to bottom, and lines are arranged from right to left.
+- Characters are arranged from top to bottom, and lines are arranged from right to left.
 
         文字由上向下，行由右向左排列。
 
         文字由上而下，行由右而左排列。
-      - Columns are arranged horizontally from top to bottom.
+- Columns are arranged horizontally from top to bottom.
 
         栏水平切割，上下分栏。
 
         欄水平切割，上下分欄。
-      - A book starts with the left (recto) side and progresses from right to left.
+- A book starts with the left (recto) side and progresses from right to left.
 
         页面由左页（正面）开始，由右向左进行配置（由左向右翻页）。
 
         頁面由左頁（正面）開始，由右向左進行配置（由左向右翻頁）。
-   2. Horizontal composition.
+2. Horizontal composition.
 
       横排时
 
       橫排時
 
-      - Characters are arranged from left to right, and lines are arranged from top to bottom.
+- Characters are arranged from left to right, and lines are arranged from top to bottom.
 
         文字由左向右，行由上向下排列。
 
@@ -286,12 +286,12 @@ The following are the major differences between vertical writing mode and horizo
         中文传统上仅使用直排，当横排文字使用于直排文字时，如匾额、报纸、杂志的标题，文字应为由右向左排列。但目前多为由左而右的横排书写方向取代。
 
         中文傳統上僅使用直排，當橫排文字使用於直排文字時，如匾額、報紙、雜誌的標題，文字應為由右向左排列。但目前多為由左而右的橫排書寫方向取代。
-      - Columns are arranged vertically from left to right.
+- Columns are arranged vertically from left to right.
 
         栏垂直切割，左右分栏。
 
         欄垂直切割，左右分欄。
-      - A book starts with the right (recto) side and progresses from left to right.
+- A book starts with the right (recto) side and progresses from left to right.
 
         页面由右页（正面）开始，由左而右进行配置（由右向左翻页）。
 
@@ -314,20 +314,20 @@ The following are the major differences between vertical writing mode and horizo
 
    點號，包括：頓號、逗號、分號、冒號、句號、問號、驚嘆號等，佔一個漢字的大小，直、橫排方向一致。港台的排版位於字面正中；中國大陸的排版則位受注文字末端、字面始端偏頂端或底端一側（橫排時位字面左下角，直排時位字面右上角）。
 
-   An example punctuation position for vertical writing mode in Mainland China 中国大陆竖排标点位置示例。 中國大陸直排標點位置範例。
+   An example punctuation position for vertical writing mode in Mainland China中国大陆竖排标点位置示例。中國大陸直排標點位置範例。
 3. When the text contains Western alphas or [European numerals](#term.european-numerals), the typesetting method is as follows:
 
    文中包含西文字母、[阿拉伯数字](#term.european-numerals)时，配置如下：
 
    文中包含西文字母、[阿拉伯數字](#term.european-numerals)時，配置如下：
 
-   1. In vertical writing mode, there are 3 methods for arranging Western alphas or [European numerals](#term.european-numerals):
+1. In vertical writing mode, there are 3 methods for arranging Western alphas or [European numerals](#term.european-numerals):
 
       直排时，西文字母或[阿拉伯数字](#term.european-numerals)有以下三种配置方式：
 
       直排時，西文字母或[阿拉伯數字](#term.european-numerals)有以下三種配置方式：
 
-      - One by one, with the same upright orientation as Han characters. This usually applies to single-letter alphanumerics, and acronyms.
+- One by one, with the same upright orientation as Han characters. This usually applies to single-letter alphanumerics, and acronyms.
 
         与汉字采用相同的书写方向，依字母逐个排列，主要用于单一西文字母或阿拉伯数字，以及首字母缩略词等。
 
@@ -336,14 +336,14 @@ The following are the major differences between vertical writing mode and horizo
            
 
 
-        Arrangement of Western text in vertical writing mode—normal orientation. 直排中的西文排版示例1 直排中的西文排版示例1
+        Arrangement of Western text in vertical writing mode—normal orientation. 直排中的西文排版示例1直排中的西文排版示例1
 
         Western alphas or [European numerals](#term.european-numerals) used for this arrangement should have the same fixed size and width as the Han characters, rather than a proportional width.
 
         西文字母或[阿拉伯数字](#term.european-numerals)，采用此配置时，需使用与汉字相同尺寸、字幅固定的等宽字体，而非比例字体。
 
         西文字母或[阿拉伯數字](#term.european-numerals)，採用此配置時，需使用與漢字相同尺寸、字幅固定的等寬字體，而非比例字體。
-      - Rotated 90 degrees clockwise. This is usually applied to Western words or sentences.
+- Rotated 90 degrees clockwise. This is usually applied to Western words or sentences.
 
         文字以顺时针方向旋转90°，主要用于西文的单词、语句等（见[[[#latin-90-clockwise]]]）。
 
@@ -352,8 +352,8 @@ The following are the major differences between vertical writing mode and horizo
            
 
 
-        Arrangement of Western text in vertical writing mode—rotated 90 degrees clockwise. 直排中的西文排版示例2 直排中的西文排版示例2
-      - Set horizontally without changing orientation (like [tate-chu-yoko](https://www.w3.org/TR/jlreq/#handling_of_tatechuyoko) in Japanese).
+        Arrangement of Western text in vertical writing mode—rotated 90 degrees clockwise. 直排中的西文排版示例2直排中的西文排版示例2
+- Set horizontally without changing orientation (like [tate-chu-yoko](https://www.w3.org/TR/jlreq/#handling_of_tatechuyoko) in Japanese).
 
         保持正常方向，横排处理（如日文的[纵中横排](https://www.w3.org/TR/jlreq/#handling_of_tatechuyoko)）。
 
@@ -370,7 +370,7 @@ The following are the major differences between vertical writing mode and horizo
         但随数字排版技术进步，排列不限于数字，会有西文字母、符号与[阿拉伯数字](#term.european-numerals)混排的状况；排列时也可以大于一个字的大小，凸出到行间。常见的用法包括[3.0]、[A+]、[2B]等。
 
         但隨數位排版技術進步，排列不限於數字，會有西文字母、符號與[阿拉伯數字](#term.european-numerals)混排的狀況；排列時也可以大於一個字的大小，凸出到行間。常見的用法包括[3.0]、[A+]、[2B]等。
-   2. In horizontal writing mode there is only one way of arranging alphanumerics, i.e. the normal orientation.
+2. In horizontal writing mode there is only one way of arranging alphanumerics, i.e. the normal orientation.
 
       横排时，以正常方向配置。
 
@@ -381,12 +381,12 @@ The following are the major differences between vertical writing mode and horizo
 
    圖片、表格的標題或說明文字
 
-   1. In vertical writing mode, put the title or caption of tables or illustrations at the left or right side.
+1. In vertical writing mode, put the title or caption of tables or illustrations at the left or right side.
 
       直排时，图片、表格的标题或说明文字，放在图、表的左侧或右侧。
 
       直排時，圖片、表格的標題或說明文字，放在圖、表的左側或右側。
-   2. In horizontal writing mode, put the title or caption of tables or illustrations at the top or bottom.
+2. In horizontal writing mode, put the title or caption of tables or illustrations at the top or bottom.
 
       横排时，图片、表格的标题或说明文字，放在图、表的上方或下方。
 
@@ -403,43 +403,43 @@ The following are the major differences between vertical writing mode and horizo
 
    表格標題行、標題列的位置
 
-   1. In vertical writing mode, put the header row of the table on the right and the header column on the top.
+1. In vertical writing mode, put the header row of the table on the right and the header column on the top.
 
       直排时，表格的标题行（直行）位于右侧，标题列（横列）位于上方。
 
       直排時，表格的標題行（直行）位於右側，標題列（橫列）位於上方。
-   2. In horizontal writing mode, put the header row of the table on the top and the header column on the left.
+2. In horizontal writing mode, put the header row of the table on the top and the header column on the left.
 
       横排时，表格的标题行（横行）位于上方，标题列（直列）位于左侧。
 
       橫排時，表格的標題行（橫行）位於上方，標題列（直列）位於左側。
 
-      The *row* (Chinese: 行 *háng*) and *column* (Chinese: 列 *liè*) characters used for indicating direction in Chinese mean oppsitie directions in different regions. For example, 行 in Mainland China usually refers to a horizontal arrangement of cells, and 列 refers to a vertical arrangement of cells; while 行 in Taiwan and Hong Kong usually refers to a vertical arrangement of cells, and 列 (or 栏) refers to a horizontal arrangement of cells.
+      The *row* （Chinese: 行 *háng*）and *column* （Chinese: 列 *liè*）characters used for indicating direction in Chinese mean oppsitie directions in different regions. For example, 行in Mainland China usually refers to a horizontal arrangement of cells, and列refers to a vertical arrangement of cells; while行in Taiwan and Hong Kong usually refers to a vertical arrangement of cells, and列（or栏）refers to a horizontal arrangement of cells.
 
       在不同的地区，中文术语中的
       “行”
-      （
+      (
       háng
-      ）
+      )
       和
       “列”
-      （
+      (
       liè
 
-      ）
+      )
       所描述的单元格排列方向，可能是不同的。例如，中国大陆的“行”通常指一组水平排列的单元格，“列”指一组垂直排列的单元格；而台湾、香港地区的“行”通常指一组垂直排列的单元格，“列”（或“栏”）指一组水平排列的单元格。
 
       在不同的地區，中文術語中的
       「行」
-      （
+      (
       háng
-      ）
+      )
       和
       「列」
-      （
+      (
       liè
 
-      ）
+      )
       所描述的單元格排列方向，可能是不同的。例如，中國大陸的「行」通常指一組水平排列的單元格，「列」指一組垂直排列的單元格；而臺灣、香港地區的「行」通常指一組垂直排列的單元格，「列」（或「欄」）指一組水平排列的單元格。
 
       This document uses row/column in logical directions consistently, i.e., "row" is vertical in vertical writing mode and horizontal in horizontal writing mode, and "column" is horizontal in vertical writing mode and vertical in horizontal writing mode.
@@ -453,18 +453,18 @@ The following are the major differences between vertical writing mode and horizo
 
    換頁、換章時最末頁為多欄排列、行於頁面結束時，依以下方式處理：
 
-   1. In vertical writing mode, just finish the line where it ends. The number of lines in each column is not uniform.
+1. In vertical writing mode, just finish the line where it ends. The number of lines in each column is not uniform.
 
       直排时，顺其行文结束，各栏左右行数可不一致。
 
       直排時，順其行文結束，各欄左右行數可不一致。
-   2. In horizontal writing mode, columns can be re-arranged so that each column has the same number of lines. In case the number of lines is not divisible by the number of columns, add the smallest number to make it divisible and re-arrange columns using the quotient as the number of lines so that only the last column shall have the incomplete number of lines.
+2. In horizontal writing mode, columns can be re-arranged so that each column has the same number of lines. In case the number of lines is not divisible by the number of columns, add the smallest number to make it divisible and re-arrange columns using the quotient as the number of lines so that only the last column shall have the incomplete number of lines.
 
       横排时，各栏的行数可平均。但因字数不足，行数无法与栏数配合时，不足的行数在最后一栏末尾留空。
 
       橫排時，各欄的行數可平均。但因字數不足，行數無法與欄數配合時，不足的行數於最後一欄末尾留空。
 
-#### Mixed text composition in vertical writing mode 直排的中、西文混排配置 直排的中、西文混排配置
+#### Mixed text composition in vertical writing mode直排的中、西文混排配置 直排的中、西文混排配置
 
 For vertical writing mode, the following list describes methods of setting Western alphas and [European numerals](#term.european-numerals):
 
@@ -508,11 +508,11 @@ Quotation marks are usually not used in vertical writing mode (corner brackets a
 
 直排時通常不使用彎引號，但在直排中引用西文內容時，可採用與西文樣式更匹配的彎引號。該情況下，彎引號的書寫方向需跟隨被引用的西文內容轉向。
 
-## Glyph shaping & positioning 字形的变形与定位 字形的變形與定位
+## Glyph shaping & positioning字形的变形与定位 字形的變形與定位
 
-### Fonts & typeface styles 字型与字型样式 字型與字型樣式
+### Fonts & typeface styles字型与字型样式 字型與字型樣式
 
-#### Four frequently-used typeface styles for Chinese text 中文排版经常使用的四种字体 中文排版經常使用的四種字體
+#### Four frequently-used typeface styles for Chinese text中文排版经常使用的四种字体 中文排版經常使用的四種字體
 
 
 There are many types of typefaces used in Chinese composition, but the following four typeface styles are the most important ones:
@@ -521,10 +521,10 @@ There are many types of typefaces used in Chinese composition, but the following
 
 中文排版使用的字體種類繁多，但有四種字體最為重要：
 
-- Song 宋体 宋體
-- Kai 楷体 楷體
-- Hei 黑体 黑體
-- Fangsong 仿宋体 仿宋體
+- Song宋体 宋體
+- Kai楷体 楷體
+- Hei黑体 黑體
+- Fangsong仿宋体 仿宋體
 
 These four typeface styles can be used alone in the main text of books, or they can be mixed as well. The following sections introduce their usage scenarios respectively.
 
@@ -532,7 +532,7 @@ These four typeface styles can be used alone in the main text of books, or they 
 
 這四種字體均既可單獨用於圖書的長篇正文排版，也可以混合搭配使用。下列各節分別介紹其使用情境。
 
-#### Song 宋体 宋體
+#### Song宋体 宋體
 
 Song
 宋体
@@ -550,7 +550,7 @@ Song is commonly used in text, headings and annotations. When used in headings, 
 
 普遍使用於內文文字、標題與注釋。當應用於標題時，通常會特別加強字重，使其與內文有所差異。
 
-#### Kai 楷体 楷體
+#### Kai楷体 楷體
 
 Kai
 楷体
@@ -574,7 +574,7 @@ Kai can also be combined with other typeface styles to be used in text that need
 
 楷體也可與其他字體搭配，用於標題、引言、摘句、對話、內容出處等與內文有所不同的段落上。
 
-#### Hei 黑体 黑體
+#### Hei黑体 黑體
 
 Hei
 黑体
@@ -598,7 +598,7 @@ Hei can also be used with other typeface styles. It is commonly used in headline
 
 黑體也可與其他字體搭配，用於標題、圖說、對話之人名。內文中也會使用字重較粗的黑體作為特定文字的強調、著重。
 
-#### Fangsong 仿宋体 仿宋體
+#### Fangsong仿宋体 仿宋體
 
 Fangsong (Imitation Song)
 仿宋体
@@ -622,9 +622,9 @@ Fangsong can also be used with other typeface styles. It is commonly used in sec
 
 仿宋體也可與其他字體搭配，常用於副標題和引言、摘句等區別於內文的部分上。
 
-## Typographic units 排版单元 排版單元
+## Typographic units排版单元 排版單元
 
-### Characters & encoding 字符与编码 字元與編碼
+### Characters & encoding字符与编码 字元與編碼
 
 
 The majority of the text used in Chinese composition consists of Han characters (Hanzi).
@@ -651,7 +651,7 @@ In addition to Han characters (Hanzi), various punctuation marks, as well as Wes
 
 中文排版除了漢字外，也使用標點符號。也會與阿拉伯數字、拉丁文字、希臘文字等西文混排。
 
-One Simplified Chinese character may have more than one corresponding Traditional form. For example, the Simplified Chinese character 发 can be mapped to either the Traditional Chinese character 發 or 髮. By contrast, the circumstances where one Traditional Chinese character corresponds to more than one Simplified Chinese character are fairly rare but still worth noting. For example, the Traditional Chinese character 乾 may be mapped to either the Simplified Chinese character 干 or 乾. The mapping relationship between Traditional and Simplified Chinese is not one-to-one and particular character conversion depends on its context.
+One Simplified Chinese character may have more than one corresponding Traditional form. For example, the Simplified Chinese character发can be mapped to either the Traditional Chinese character發or髮. By contrast, the circumstances where one Traditional Chinese character corresponds to more than one Simplified Chinese character are fairly rare but still worth noting. For example, the Traditional Chinese character乾may be mapped to either the Simplified Chinese character干or乾. The mapping relationship between Traditional and Simplified Chinese is not one-to-one and particular character conversion depends on its context.
 
 一个简体字可能对应多个繁体字，如简体字“发”，其相应的繁体字可能为“發”或“髮”；一个繁体汉字对应多个简体汉字的情况与前者相比数量极少但仍需注意，如繁体字“乾”可能对应简体字“干”或“乾”。繁简汉字的对应关系具体应由上下文决定。
 
@@ -714,9 +714,9 @@ When Western texts are mixed with Han characters, Chinese style punctuation and 
 
 中西混排中，由於正文是中文，原則上應該使用中文標點，遵守中文標點的習慣用法。但是，涉及公式較多的科學技術中文圖書，句號可以統一使用西文句號U+002E FULL STOP [.]，刪節號可以使用西文刪節號U+2026 HORIZONTAL ELLIPSIS […]，字面分布按西文習慣；又或西文例句較多且多與中文混排的中文版西文語法教材，亦可使用前述的西文句號。
 
-## Punctuation & inline features 标点符号与其他行内特性 標點符號與其他行內特性
+## Punctuation & inline features标点符号与其他行内特性 標點符號與其他行內特性
 
-### Phrase & section boundaries 短语与章节边界 短語與章節邊界
+### Phrase & section boundaries短语与章节边界 短語與章節邊界
 
 
 The usage of Chinese punctuation marks differs across different regions. One major difference is how the character face is handled and positioned relative to the character frame. Punctuation marks are usually center-aligned in the character frame in Taiwan and Hong Kong, while punctuation marks are positioned in the corner of the character frame on the side closest to the preceding text in the Chinese Mainland. The differences and the correct way to layout punctuation marks in different areas will be introduced in detail later.
@@ -751,15 +751,15 @@ In contrast with pause or stop punctuation marks, indicator punctuation marks us
 
 The content of the following section is mainly based on the content of General Rules for Punctuation (GB/T 15834—2011) issued in Mainland China, as well as the Punctuation Guidance (2008 revised edition) issued by the Ministry of Education in Taiwan. The former is a recommended national standard while the latter is not mandatory for general publications but mainly used to regulate education materials like textbooks.
 
-本节主要基于中国大陆的《标点符号用法》（GB/T 15834—2011）及台湾教育部的《重订标点符号手册》（2008年修订版）。前者属推荐标准，后者主要用于规范教科书等教育书籍，对一般出版品不具强制性。
+本节主要基于中国大陆的《标点符号用法》(GB/T 15834—2011)及台湾教育部的《重订标点符号手册》（2008年修订版）。前者属推荐标准，后者主要用于规范教科书等教育书籍，对一般出版品不具强制性。
 
-本節主要基於中國大陸的《標點符號用法》（GB/T 15834—2011）及台灣教育部的《重訂標點符號手冊》（2008年修訂版）。前者屬推薦標準，後者主要用於規範教科書等教育書籍，對一般出版品不具強制性。
+本節主要基於中國大陸的《標點符號用法》(GB/T 15834—2011)及台灣教育部的《重訂標點符號手冊》（2008年修訂版）。前者屬推薦標準，後者主要用於規範教科書等教育書籍，對一般出版品不具強制性。
 
 According to the Hong Kong Guidebooks on Official Chinese Writing, Hong Kong's government documents also refer to General Rules for Punctuation (GB/T 15834—2011) issued in Mainland China.
 
-根据香港《政府公文写作手册》，香港的政府公文也参考中国大陆的《标点符号用法》（GB/T 15834—2011）。
+根据香港《政府公文写作手册》，香港的政府公文也参考中国大陆的《标点符号用法》(GB/T 15834—2011)。
 
-根據香港《政府公文寫作手冊》，香港的政府公文也參考中國大陸的《標點符號用法》（GB/T 15834—2011）。
+根據香港《政府公文寫作手冊》，香港的政府公文也參考中國大陸的《標點符號用法》(GB/T 15834—2011)。
 
 
 1. Periods, commas and secondary commas.
@@ -768,13 +768,13 @@ According to the Hong Kong Guidebooks on Official Chinese Writing, Hong Kong's g
 
    句號、逗號與頓號
 
-   Periods U+3002 IDEOGRAPHIC FULL STOP [。] are punctuation marks placed at the end of a sentence. Commas U+FF0C FULLWIDTH COMMA [，] are mainly used for separating parts of a sentence such as clauses. Secondary commas (also known as slight-pause commas or enumeration commas) U+3001 IDEOGRAPHIC COMMA [、] are usually used to separate items in lists, particularly when there are three or more items listed.
+   Periods U+3002 IDEOGRAPHIC FULL STOP [.] are punctuation marks placed at the end of a sentence. Commas U+FF0C FULLWIDTH COMMA [,] are mainly used for separating parts of a sentence such as clauses. Secondary commas (also known as slight-pause commas or enumeration commas) U+3001 IDEOGRAPHIC COMMA [、] are usually used to separate items in lists, particularly when there are three or more items listed.
 
    句号U+3002 IDEOGRAPHIC FULL STOP [。]表示语句结束，逗号U+FF0C FULLWIDTH COMMA [，]表示语气停顿，顿号U+3001 IDEOGRAPHIC COMMA [、]使用于并列连用、表示次序的字词之间。
 
    句號U+3002 IDEOGRAPHIC FULL STOP [。]表示語句結束，逗號U+FF0C FULLWIDTH COMMA [，]表示語氣停頓，頓號U+3001 IDEOGRAPHIC COMMA [、]使用於並列連用、表示次序的字詞之間。
 
-   In many college textbooks, science and technology literature, and grammar books of Western languages for example, most of which are in horizontal writing mode, where Western text are heavily used. In these cases, U+FF0E FULLWIDTH FULL STOP [．] can be used as periods, while U+002C COMMA [,] or U+FF0C FULLWIDTH COMMA [，] can be used as commas or secondary commas.
+   In many college textbooks, science and technology literature, and grammar books of Western languages for example, most of which are in horizontal writing mode, where Western text are heavily used. In these cases, U+FF0E FULLWIDTH FULL STOP [．] can be used as periods, while U+002C COMMA [,] or U+FF0C FULLWIDTH COMMA [,] can be used as commas or secondary commas.
 
    许多理工书籍、科技文献、西文教科书、语法书籍等内含大量西文词句，并采用横排，为求标点符号体例一致，也有采用U+FF0E FULLWIDTH FULL STOP [．]为句号、采用U+002C COMMA [,]或U+FF0C FULLWIDTH COMMA [，]为逗号与顿号的案例。详见[[[#atypical\_punctuation\_marks\_and\_their\_arrangements]]]节。
 
@@ -785,7 +785,7 @@ According to the Hong Kong Guidebooks on Official Chinese Writing, Hong Kong's g
 
    冒號與分號
 
-   U+FF1A FULLWIDTH COLON [：] consists of two equally sized dots centered on the same vertical line. It is used to start an explanation or a list. U+FF1B FULLWIDTH SEMICOLON [；] is a punctuation mark that separates major sentence elements. A semicolon can be used between two closely related independent clauses, provided they are not already joined by a coordinating conjunction.
+   U+FF1A FULLWIDTH COLON [:] consists of two equally sized dots centered on the same vertical line. It is used to start an explanation or a list. U+FF1B FULLWIDTH SEMICOLON [;] is a punctuation mark that separates major sentence elements. A semicolon can be used between two closely related independent clauses, provided they are not already joined by a coordinating conjunction.
 
    冒号U+FF1A FULLWIDTH COLON [：]、分号U+FF1B FULLWIDTH SEMICOLON [；]。冒号表示引述语句开始；分号用于语句间，表示意义转折。
 
@@ -796,7 +796,7 @@ According to the Hong Kong Guidebooks on Official Chinese Writing, Hong Kong's g
 
    驚嘆號與問號
 
-   U+FF01 FULLWIDTH EXCLAMATION MARK [！] is a punctuation mark usually used after an interjection or exclamation to indicate strong feelings or high volume (shouting), and often marks the end of a sentence. U+FF1F FULLWIDTH QUESTION MARK [？] casually known as the interrogation point, query, or eroteme, is a punctuation mark that indicates an interrogative clause, or phrase in many languages. The question mark is not used for indirect questions.
+   U+FF01 FULLWIDTH EXCLAMATION MARK [!] is a punctuation mark usually used after an interjection or exclamation to indicate strong feelings or high volume (shouting), and often marks the end of a sentence. U+FF1F FULLWIDTH QUESTION MARK [?] casually known as the interrogation point, query, or eroteme, is a punctuation mark that indicates an interrogative clause, or phrase in many languages. The question mark is not used for indirect questions.
 
    叹号U+FF01 FULLWIDTH EXCLAMATION MARK [！]与问号U+FF1F FULLWIDTH QUESTION MARK [？]。叹号及问号用于句末，前者表示惊讶，后者表示质疑。
 
@@ -824,7 +824,7 @@ According to the Hong Kong Guidebooks on Official Chinese Writing, Hong Kong's g
 
    括號用於行內注釋、說明。
 
-   According to Punctuation Guidance (2008 revised edition) issued by the Ministry of Education in Taiwan, there are two types of parenthetical punctuation. The first type is U+FF08 FULLWIDTH LEFT PARENTHESIS [（] and U+FF09 FULLWIDTH RIGHT PARENTHESIS [）], and the second type is U+2E3A TWO-EM DASH [⸺] or two U+2014 EM DASH [—].
+   According to Punctuation Guidance (2008 revised edition) issued by the Ministry of Education in Taiwan, there are two types of parenthetical punctuation. The first type is U+FF08 FULLWIDTH LEFT PARENTHESIS [(] and U+FF09 FULLWIDTH RIGHT PARENTHESIS [)], and the second type is U+2E3A TWO-EM DASH [⸺] or two U+2014 EM DASH [—].
 
    台湾教育部的《重订标点符号手册》（2008年修订版）称括号为夹注号，分甲式及乙式，甲式为U+FF08 FULLWIDTH LEFT PARENTHESIS [（]与U+FF09 FULLWIDTH RIGHT PARENTHESIS [）]，乙式则为一对各占二个汉字空间的U+2E3A TWO-EM DASH[⸺]或一组两个U+2014 EM DASH[—]。括号属于夹注符号。
 
@@ -832,11 +832,11 @@ According to the Hong Kong Guidebooks on Official Chinese Writing, Hong Kong's g
 
    The description of parentheses in General Rules for Punctuation (GB/T 15834—2011), the national standard issued by China Central Government, is basically the same as above, but it lists two-em dash as one type of dash, instead of parenthetical punctuation.
 
-   中国大陆《标点符号用法》（GB/T 15834—2011）的括号基本与上述一致，但将乙式括号视为破折号的一种形式。
+   中国大陆《标点符号用法》(GB/T 15834—2011)的括号基本与上述一致，但将乙式括号视为破折号的一种形式。
 
-   中國大陸《標點符號用法》（GB/T 15834—2011）的括號基本與上述一致，但將乙式括號視為破折號的一種形式。
+   中國大陸《標點符號用法》(GB/T 15834—2011)的括號基本與上述一致，但將乙式括號視為破折號的一種形式。
 
-   There are other brackets and quotation marks which include: U+3010 LEFT BLACK LENTICULAR BRACKET [【], U+3011 RIGHT BLACK LENTICULAR BRACKET [】], U+3016 LEFT WHITE LENTICULAR BRACKET [〖], U+3017 RIGHT WHITE LENTICULAR BRACKET [〗], left U+3014 LEFT TORTOISE SHELL BRACKET [〔], U+3015 RIGHT TORTOISE SHELL BRACKET [〕], U+FF3B FULLWIDTH LEFT SQUARE BRACKET [［], U+FF3D FULLWIDTH RIGHT SQUARE BRACKET [］], U+FF5B FULLWIDTH LEFT CURLY BRACKET [｛], U+FF5D FULLWIDTH RIGHT CURLY BRACKET [｝].
+   There are other brackets and quotation marks which include: U+3010 LEFT BLACK LENTICULAR BRACKET [[], U+3011 RIGHT BLACK LENTICULAR BRACKET []], U+3016 LEFT WHITE LENTICULAR BRACKET [〖], U+3017 RIGHT WHITE LENTICULAR BRACKET [〗], left U+3014 LEFT TORTOISE SHELL BRACKET [〔], U+3015 RIGHT TORTOISE SHELL BRACKET [〕], U+FF3B FULLWIDTH LEFT SQUARE BRACKET [［], U+FF3D FULLWIDTH RIGHT SQUARE BRACKET [］], U+FF5B FULLWIDTH LEFT CURLY BRACKET [｛], U+FF5D FULLWIDTH RIGHT CURLY BRACKET [｝].
 
    其余括号类则有：开始方头括号U+3010 LEFT BLACK LENTICULAR BRACKET [【]、结束方头括号U+3011 RIGHT BLACK LENTICULAR BRACKET [】]、开始空心方头括号U+3016 LEFT WHITE LENTICULAR BRACKET [〖]、结束空心方头括号U+3017 RIGHT WHITE LENTICULAR BRACKET [〗]、开始六角括号U+3014 LEFT TORTOISE SHELL BRACKET [〔]、结束六角括号U+3015 RIGHT TORTOISE SHELL BRACKET [〕]、开始方括号U+FF3B FULLWIDTH LEFT SQUARE BRACKET [［]、结束方括号U+FF3D FULLWIDTH RIGHT SQUARE BRACKET [］]、开始花括号U+FF5B FULLWIDTH LEFT CURLY BRACKET [｛]、结束花括号U+FF5D FULLWIDTH RIGHT CURLY BRACKET [｝]。
 
@@ -889,15 +889,15 @@ According to the Hong Kong Guidebooks on Official Chinese Writing, Hong Kong's g
 
    According to the General Rules for Punctuation (GB/T 15834—2011), there are three types of connector marks, namely, the short connector mark [–], the long connector mark [—], and tilde [~].
 
-   根据中国大陆的《标点符号用法》（GB/T 15834—2011），连接号的形式有短横线[–]、一字线[—]和浪纹线[～]三种。
+   根据中国大陆的《标点符号用法》(GB/T 15834—2011)，连接号的形式有短横线[–]、一字线[—]和浪纹线[～]三种。
 
-   根據中國大陸的《标点符号用法》（GB/T 15834—2011），連接號的形式有短橫線[–]、一字線[—]和浪紋線[～]三種。
+   根據中國大陸的《标点符号用法》(GB/T 15834—2011)，連接號的形式有短橫線[–]、一字線[—]和浪紋線[～]三種。
 
    The General Rules for Punctuation (GB/T 15834—2011) does not state the corresponding Unicode code point for the three types of connector marks. However, we can make the deduction that the long connector mark [—] is U+2014 EM DASH [—] and the tilde [~] is U+FF5E FULLWIDTH TILDE [～]. Since the short connector mark should take half the width of the long connector mark, it should be U+2013 EN DASH [–]. The actual length of these connector marks may depend on the writing system as well as the typeface.
 
-   《标点符号用法》（GB/T 15834—2011）中没有指定这三个符号的码位，但是基本上可以推断一字线是U+2014 EM DASH [—]，浪纹线是U+FF5E FULLWIDTH TILDE [～]。但是对于“短横线”，该标准5.1.6节规定“短横线比汉字『一』略短，占半个字位置”，因此可以是 U+2013 EN DASH [–]。这些连接号的实际长短根据所用处理系统和使用字体会有区别。
+   《标点符号用法》(GB/T 15834—2011)中没有指定这三个符号的码位，但是基本上可以推断一字线是U+2014 EM DASH [—]，浪纹线是U+FF5E FULLWIDTH TILDE [～]。但是对于“短横线”，该标准5.1.6节规定“短横线比汉字『一』略短，占半个字位置”，因此可以是U+2013 EN DASH [–]。这些连接号的实际长短根据所用处理系统和使用字体会有区别。
 
-   《標點符號用法》（GB/T 15834—2011）中沒有指定這三個符號的碼位，但是基本上可以推斷一字線是U+2014 EM DASH [—]，浪紋線是U+FF5E FULLWIDTH TILDE [～]。但是對於「短橫線」，該標準5.1.6節規定「橫短線比漢字『一』略短，佔半個字位置」，因此可以是U+2013 EN DASH [–]。這些連接號的實際長短根據所用處理系統和使用字體會有區別。
+   《標點符號用法》(GB/T 15834—2011)中沒有指定這三個符號的碼位，但是基本上可以推斷一字線是U+2014 EM DASH [—]，浪紋線是U+FF5E FULLWIDTH TILDE [～]。但是對於「短橫線」，該標準5.1.6節規定「橫短線比漢字『一』略短，佔半個字位置」，因此可以是U+2013 EN DASH [–]。這些連接號的實際長短根據所用處理系統和使用字體會有區別。
 9. Interpuncts.
 
    间隔号
@@ -910,7 +910,7 @@ According to the Hong Kong Guidebooks on Official Chinese Writing, Hong Kong's g
 
    間隔號為U+00B7 MIDDLE DOT [·]。用於標示某些相關聯成分之間的分界，如書名號乙式（雙書名號）中分隔篇、章、卷，分隔外國人名中文譯名、少數民族音譯名，分隔日期的月和日等。
 
-   Interpuncts apply to Chinese only. When a translated foreign name contains a Latin character, a Western period should be used rather than a interpunct. For example, 比爾·蓋茨 but Ｂ．盖茨.
+   Interpuncts apply to Chinese only. When a translated foreign name contains a Latin character, a Western period should be used rather than a interpunct. For example, 比爾·蓋茨but Ｂ．盖茨.
 
    间隔号为中文标点。当外语人名缩写成一个字母时，其后宜使用西文句点，而非中文间隔号，如“比尔·盖茨”、“Ｂ．盖茨”。
 
@@ -945,17 +945,17 @@ According to the Hong Kong Guidebooks on Official Chinese Writing, Hong Kong's g
 
     台灣教育部的《重訂標點符號手冊》（2008年修訂版）中未收錄此符號，但台灣的出版物中多有使用，其中包含教科書。
 
-#### Atypical punctuation marks and their composition 非典型的标点符号及其配置 非典型的標點符號及其配置
+#### Atypical punctuation marks and their composition非典型的标点符号及其配置 非典型的標點符號及其配置
 
-##### Science and technology literature 科技文献 科技文獻
+##### Science and technology literature科技文献 科技文獻
 
-Science and technology literature prefer U+FF0E FULLWIDTH FULL STOP [．] to U+3002 IDEOGRAPHIC FULL STOP [。] so as to make a clear distinction from the letter [o] or digit [0].
+Science and technology literature prefer U+FF0E FULLWIDTH FULL STOP [．] to U+3002 IDEOGRAPHIC FULL STOP [.] so as to make a clear distinction from the letter [o] or digit [0].
 
 科技文献中的“句号”多使用U+FF0E FULLWIDTH FULL STOP [．]替代U+3002 IDEOGRAPHIC FULL STOP [。]，以避免同拉丁字母“o”或数字“0”混淆。
 
 科技文獻中的「句號」多使用U+FF0E FULLWIDTH FULL STOP [．]替代U+3002 IDEOGRAPHIC FULL STOP [。]，以避免同拉丁字母「o」或數字「0」混淆。
 
-##### Special cases in publications from Taiwan and Hong Kong 港台中文出版品的特殊情况 港台中文出版品的特殊情況
+##### Special cases in publications from Taiwan and Hong Kong港台中文出版品的特殊情况 港台中文出版品的特殊情況
 
 In Traditional Chinese publications such as ancient books, science and technology literature, textbooks, or books that have quotations in Western text, some [pause or stop punctuation marks](#term.pause-or-stop-punctuation-marks), including the slight-pause comma, colon and period, are positioned following the marked characters. The same applies for Simplified Chinese as well as Japanese so as to unify punctuation styles for both Chinese and Western text.
 
@@ -963,13 +963,13 @@ In Traditional Chinese publications such as ancient books, science and technolog
 
 在港台的古籍、科技文獻、科學類教科書或常引西文的書籍中，亦可見使用位受注文字末端、字面始端的[點號](#term.pause-or-stop-punctuation-marks)（頓號、逗號、句號），類似簡體中文或日文標點符號，以保持中、西文標點體例一致。
 
-##### Exclamatory question mark, repeating question marks and repeating exclamation marks 叹问号与问、叹号叠加 嘆問號與問、嘆號疊加
+##### Exclamatory question mark, repeating question marks and repeating exclamation marks叹问号与问、叹号叠加 嘆問號與問、嘆號疊加
 
-Exclamatory question marks are defined in the General Rules for Punctuation (GB/T 15834—2011) as an extended usage of exclamation marks. For questions with a strong exclamatory tone of voice, it is appropriate to add an exclamation mark after the question mark (?!). However, it is common to see a question mark added after an exclamation mark (!?) in numerous publications as well. In addition, GB rules indicate that it is acceptable to chain up to 3 exclamation marks or question marks in succession (!!!, ???) for exclamatory statements or interrogative sentences which require greater emphasis.
+Exclamatory question marks are defined in the General Rules for Punctuation (GB/T 15834—2011) as an extended usage of exclamation marks. For questions with a strong exclamatory tone of voice, it is appropriate to add an exclamation mark after the question mark (?!). However, it is common to see a question mark added after an exclamation mark (!?) in numerous publications as well. In addition, GB rules indicate that it is acceptable to chain up to 3 exclamation marks or question marks in succession (!, ?) for exclamatory statements or interrogative sentences which require greater emphasis.
 
-叹问号于中国大陆《标点符号用法》（GB/T 15834—2011）中作为叹号的延伸用法，当语气同时具备强烈的疑问与感叹时，可于问号后加上叹号（?!）。然而在许多作品中，也常见在叹号后加上问号（!?）的用法。此外，在同标准的问号与叹号用法也指明在语气加重时可叠用问号或者叹号，最多可叠用到三个（!!!、???）。
+叹问号于中国大陆《标点符号用法》(GB/T 15834—2011)中作为叹号的延伸用法，当语气同时具备强烈的疑问与感叹时，可于问号后加上叹号(?!)。然而在许多作品中，也常见在叹号后加上问号(!?)的用法。此外，在同标准的问号与叹号用法也指明在语气加重时可叠用问号或者叹号，最多可叠用到三个(!、？)。
 
-嘆問號於中國大陸《標點符號用法》（GB/T 15834—2011）中作為嘆號的延伸用法，當語氣同時具備強烈的疑問與感嘆時，可於問號後加上嘆號（?!）。然而在許多作品中，也常見在嘆號後加上問號（!?）的用法。此外，在同標準的問號與嘆號用法也指明在語氣加重時可疊用問號或者嘆號，最多可疊用到三個（!!!、???）。
+嘆問號於中國大陸《標點符號用法》(GB/T 15834—2011)中作為嘆號的延伸用法，當語氣同時具備強烈的疑問與感嘆時，可於問號後加上嘆號(?!)。然而在許多作品中，也常見在嘆號後加上問號(!?)的用法。此外，在同標準的問號與嘆號用法也指明在語氣加重時可疊用問號或者嘆號，最多可疊用到三個(!、？)。
 
 General Rules for Punctuation stipulates that a question mark and an exclamation mark together occupy one character space; two question marks or exclamation marks together occupy one character space; and three question marks or exclamation marks together occupy two character spaces. Furthermore, for vertical text in Taiwan, when an exclamation mark and a question mark are used together, or when a question mark and an exclamation mark are used together, the mark is usually upright and occupies one character space.
 
@@ -983,7 +983,7 @@ The following punctuation marks already exist in Unicode: U+2047 DOUBLE QUESTION
 
 在Unicode中已編有U+2047 DOUBLE QUESTION MARK [⁇]、U+203C DOUBLE EXCLAMATION MARK [‼]、U+2048 QUESTION EXCLAMATION MARK [⁈]、U+2049 EXCLAMATION QUESTION MARK [⁉]等符號，在考量字體支援下可斟酌使用。
 
-##### Symbol of death 示亡号 示亡號
+##### Symbol of death示亡号 示亡號
 
 The symbol of death is not defined in the GB rules, but is a punctuation mark which is widely used by the commons. The symbol of death is a solid black border outside the character frame of a person's name to indicate the person is deceased. Its Western counterpart would be the dagger punctuation mark (U+2020 DAGGER [†] and U+2021 DOUBLE DAGGER [‡]).
 
@@ -1001,7 +1001,7 @@ The symbol of death is used to indicate a person who had been recently deceased,
 
 示亡號主要標示於近年過世的人名，常出現在名單、公報、族譜等人名列表上，用以告知此人已亡歿。而過世已久或眾所皆知的歷史人物不再加註。
 
-## Quotations & citations 引文 引文
+## Quotations & citations引文 引文
 
 1. Quotation Marks
 
@@ -1070,9 +1070,9 @@ The symbol of death is used to indicate a person who had been recently deceased,
 
    According to the General Rules for Punctuation (GB/T 15834—2011) in Mainland China, the names of books as well as chapters should be quoted using double angle brackets [《》]. When there is a need to indicate the name of another book within the double angle brackets [《》], the ordinary angle brackets [〈〉] should be used.
 
-   根据中国大陆的《标点符号用法》（GB/T 15834—2011），无论书名、篇章名都应该使用双书名号[《》]，只有在书名号中还需要书名号时，里面一层用单书名号，外面一层用双书名号。
+   根据中国大陆的《标点符号用法》(GB/T 15834—2011)，无论书名、篇章名都应该使用双书名号[《》]，只有在书名号中还需要书名号时，里面一层用单书名号，外面一层用双书名号。
 
-   根據中國大陸的《标点符号用法》（GB/T 15834—2011），無論書名、篇章名都應該使用雙書名號[《》]，只有在書名號中還需要書名號時，裏面一層用單書名號，外面一層用雙書名號。
+   根據中國大陸的《标点符号用法》(GB/T 15834—2011)，無論書名、篇章名都應該使用雙書名號[《》]，只有在書名號中還需要書名號時，裏面一層用單書名號，外面一層用雙書名號。
 
    Book title mark type B is a kind of brackets.
 
@@ -1097,9 +1097,9 @@ The symbol of death is used to indicate a person who had been recently deceased,
 
    在二個專有名詞相鄰時，專名號間須在視覺上分離予以辨別。
 
-## Emphasis & highlighting 强调与突出显示 強調與突出顯示
+## Emphasis & highlighting强调与突出显示 強調與突出顯示
 
-## Emphasis marks 着重号 着重號
+## Emphasis marks着重号 着重號
 
 Emphasis marks, also known as emphasis dots, are symbols placed on the [line head](#term.line-head) or [line foot](#term.line-foot) to emphasize the text, strengthen the tone, or avoid ambiguity. For horizontal writing mode, emphasis marks are placed under the characters, whereas in vertical writing mode, they are usually placed to the right side of the characters. Both U+25CF BLACK CIRCLE [●] or U+2022 BULLET [•] can work as emphasis marks.
 
@@ -1140,9 +1140,9 @@ This rule ensures that the overall style and visual effect are not damaged in mi
 
 這一規則確保了在多語言混排情境下，中文排版的整體風格和視覺效果不受破壞。
 
-### Abbreviation, ellipsis & repetition 缩写、省略与重复 縮寫、省略與重複
+### Abbreviation, ellipsis & repetition缩写、省略与重复 縮寫、省略與重複
 
-### Ellipsis 省略号／删节号 刪節號／省略號
+### Ellipsis省略号／删节号 刪節號／省略號
 
 Ellipses are used to indicate a truncation of text, an unfinished sentence or a break in speech. An ellipsis in Chinese consists of six dots, takes up the space of two Hanzi characters, and is horizontally and vertically centered within its character frame. This is normally achieved using two U+2026 HORIZONTAL ELLIPSIS characters, side-by-side.
 
@@ -1170,13 +1170,13 @@ This code point, with appropriate rotation and replacement mechanism, will be ce
 
 According to section 5.1.5 of the General Rules for Punctuation (GB/T 15834—2011), when two ellipses are used together, they should be four characters wide and occupy an independent line.
 
-《标点符号用法》（GB/T 15834—2011）5.1.5节还规定，两个省略号／删节号连用时，占四个汉字位置并须单独占一行。
+《标点符号用法》(GB/T 15834—2011)5.1.5节还规定，两个省略号／删节号连用时，占四个汉字位置并须单独占一行。
 
-《標點符號用法》（GB/T 15834—2011）5.1.5節還規定，兩個刪節號／省略號連用時，佔四個漢字位置並須單獨佔一行。
+《標點符號用法》(GB/T 15834—2011)5.1.5節還規定，兩個刪節號／省略號連用時，佔四個漢字位置並須單獨佔一行。
 
-## Inline notes & annotations 行内注与行间注 行內注與行間注
+## Inline notes & annotations行内注与行间注 行內注與行間注
 
-#### Usage of ruby 行间注的用途 行間注的用途
+#### Usage of ruby行间注的用途 行間注的用途
 
 [Ruby](#term.ruby) refers to small, supplementary text attached to certain characters or words in the main text. Ruby in Chinese is usually set in the interlinear space and aligned to the corresponding base text which it annotates. In Chinese typesetting, ruby is mainly used to indicate pronunciation or meaning.
 
@@ -1184,7 +1184,7 @@ According to section 5.1.5 of the General Rules for Punctuation (GB/T 15834—20
 
 [行間注](#term.ruby)是標注於字詞旁側的小字號補充文本。行間注的注文通常位於行間，與其所標注的基文對齊，因這一性質而又名為行間注。行間注在中文排版里的用途主要為標音與釋義。
 
-##### Indicating the pronunciation for Han characters 为汉字标注读音 為漢字標注讀音
+##### Indicating the pronunciation for Han characters为汉字标注读音 為漢字標注讀音
 
 In Chinese, ruby is most commonly used to indicate the pronunciation of Han characters. Presenting the pronunciation alongside the characters is a great help to beginners, especially to children who are native speakers, or to foreigners intending to study Chinese. Therefore, it is rare to annotate isolated Han characters. Instead, phonetic annotations tend to cover the full text. Also, it is not regular practice in Chinese layout to use ruby for pronunciation outside these educational contexts, even for the pronunciation of rarely used characters, although sometimes pronunciation is provided inline, possibly within brackets.
 
@@ -1204,7 +1204,7 @@ There are two major annotation systems for indicating Chinese pronunciation: Bop
 
    注音符號
 
-   Mandarin Phonetic Symbols (國語注音符號) or Taiwanese Dialect Phonetic Symbols (台灣方音符號), hereinafter referred to as ‘Bopomofo’, are systems for phonetic annotation mainly used in Taiwan, although other areas may also include Bopomofo in certain dictionaries or textbooks. In most cases, Bopomofo appears on the right side of its corresponding base text. Exceptions are very rare.
+   Mandarin Phonetic Symbols（國語注音符號）or Taiwanese Dialect Phonetic Symbols（台灣方音符號），hereinafter referred to as ‘Bopomofo’, are systems for phonetic annotation mainly used in Taiwan, although other areas may also include Bopomofo in certain dictionaries or textbooks. In most cases, Bopomofo appears on the right side of its corresponding base text. Exceptions are very rare.
 
    国语注音符号及台湾方音符号（以下统称注音或注音符号）标音系统多用于台湾，其他地区仅见于特定的辞典或教科书中。绝大多数的情况下，注音符号标注于相应汉字（基文）的右侧，例外情况非常少见。
 
@@ -1222,7 +1222,7 @@ There are two major annotation systems for indicating Chinese pronunciation: Bop
 
    羅馬拼音
 
-   Hanyu Pinyin (汉语拼音), now the official standard in Mainland China, uses the Latin alphabet to transcribe the Modern Standard Chinese (Mandarin) pronunciations of Han characters. The most common use case in Mainland China is to indicate the pronunciation for all characters of the full text with Hanyu Pinyin. In Taiwan and areas that use Chinese dialects in China, the arrangement of the Taiwanese Romanization System for Minnan (台灣閩南語羅馬字), or romanization systems of other Chinese dialects are similar to those of Hanyu Pinyin.
+   Hanyu Pinyin（汉语拼音），now the official standard in Mainland China, uses the Latin alphabet to transcribe the Modern Standard Chinese (Mandarin) pronunciations of Han characters. The most common use case in Mainland China is to indicate the pronunciation for all characters of the full text with Hanyu Pinyin. In Taiwan and areas that use Chinese dialects in China, the arrangement of the Taiwanese Romanization System for Minnan（台灣閩南語羅馬字），or romanization systems of other Chinese dialects are similar to those of Hanyu Pinyin.
 
    使用拉丁字母的汉语拼音是中国大陆推行的现代标准汉语（普通话）标音与拉丁转写方案，汉语拼音的全文标音也是中国大陆现代最常见的行间注用例。在中国大陆与台湾，台湾闽南语罗马字拼音等各种汉语方言的拉丁字母标音方案也有与汉语拼音情况类似的行间注用例。
 
@@ -1234,9 +1234,9 @@ There are two major annotation systems for indicating Chinese pronunciation: Bop
 
    因拉丁字母的特質，此類標音文本僅橫排。針對幼兒母語者的文本以單字作為基文進行標音。針對二語學習者的文本除偶有與前者一致的格式外，大多分詞連寫，以詞作為基文進行標音，基文之間如西文書寫般用空格隔開，並且注文有句首大寫、專名首字母大寫等格式以及與正文對應的標點符號，自成一體。漢語拼音早期印刷品的格式較為多變，一致性不強。大體上，單字標音與分詞連寫標音都常見，不作詳細描述。
 
-   An example of positioning for Romanization. 罗马拼音行间注的排版示例。 羅馬拼音行間注的排版示例。
+   An example of positioning for Romanization. 罗马拼音行间注的排版示例。羅馬拼音行間注的排版示例。
 
-##### Indicating meaning or other additional information 标注释义等非语音信息 標注釋義等非語音信息
+##### Indicating meaning or other additional information标注释义等非语音信息 標注釋義等非語音信息
 
 1. Bilingual Annotations.
 
@@ -1250,7 +1250,7 @@ There are two major annotation systems for indicating Chinese pronunciation: Bop
 
    為外來語、首字母縮略詞標注其中譯，或對翻譯名詞標注其原文，多見於專有名詞、作品名及譯後概念較難傳達的詞彙。常見於譯作。
 
-   An example of positioning for billingual annotations. 中外文对照行间注的排版示例。 中外文對照行間注的排版示例。
+   An example of positioning for billingual annotations. 中外文对照行间注的排版示例。中外文對照行間注的排版示例。
 2. Interlinear Comments.
 
    行间批语
@@ -1263,7 +1263,7 @@ There are two major annotation systems for indicating Chinese pronunciation: Bop
 
    行間批語是為一段文本片段或單個詞彙標注解釋的排版方式，因共存於正文文本，顯示於其行間而得名。行間批語較眉批、腳注等注釋方法更具緊湊、依附性，多見於如《紅樓夢》早期抄本的脂硯齋批語等古籍。
 
-### Overview of ruby positioning 行间注排版概述 行間注排版概述
+### Overview of ruby positioning行间注排版概述 行間注排版概述
 
 In vertical writing mode, Bopomofo, Romanization or bilingual annotations are usually placed on the right side of the base text (Han characters), while interlinear comments are often placed on the left side. In horizontal writing mode, Bopomofo can be placed above the base text, but in most cases they are still set to the right side of the base text. On the other hand, Romanization and bilingual annotations can appear both above or below the base text, and the interlinear comments are usually placed at the bottom of the base text.
 
@@ -1286,24 +1286,24 @@ Annotating with both Romanization and Bopomofo is a practical way to indicate th
  
 
 
-An example of positioning for both Romanization and Bopomofo 拼注音共同标注排版示例。 拼注音共同標注排版示例。
+An example of positioning for both Romanization and Bopomofo拼注音共同标注排版示例。拼注音共同標注排版示例。
 
-#### Positioning of Bopomofo ruby 注音符号标音的排版 注音符號標音的排版
+#### Positioning of Bopomofo ruby注音符号标音的排版 注音符號標音的排版
 
-##### Positioning of Bopomofo symbols 注音符号的位置 注音符號的位置
+##### Positioning of Bopomofo symbols注音符号的位置 注音符號的位置
 
-According to the Handbook of Mandarin Phonetic Symbols (國語注音符號手冊) released by the Ministry of Education in Taiwan, there are two standard ways of positioning Bopomofo (Zhuyin): above the corresponding Han character (horizontal Bopomofo), or on the right side of the corresponding Han character (vertical Bopomofo). The use cases for putting Bopomofo above the base characters are rarely found in today's textbooks or other publications, and it is rarely used by the public at large. Therefore, it's always better practice to place Bopomofo annotations on the right side of their corresponding Han character, whether in horizontal or vertical writing mode.
+According to the Handbook of Mandarin Phonetic Symbols（國語注音符號手冊）released by the Ministry of Education in Taiwan, there are two standard ways of positioning Bopomofo (Zhuyin): above the corresponding Han character (horizontal Bopomofo), or on the right side of the corresponding Han character (vertical Bopomofo). The use cases for putting Bopomofo above the base characters are rarely found in today's textbooks or other publications, and it is rarely used by the public at large. Therefore, it's always better practice to place Bopomofo annotations on the right side of their corresponding Han character, whether in horizontal or vertical writing mode.
 
 根据台湾教育部制订的《国语注音符号手册》，将注音符号标注在汉字上方（横式注音）及右方（直式注音）的二种排版格式皆属官方标准，但在现今的教科书或其他印刷品中，将注音标注在汉字上方的格式非常罕见，一般大众也不易接受，因此，无论在直排或横排中，将注音符号标注在汉字右方都是较佳的作法。
 
 根據台灣教育部制訂的《國語注音符號手冊》，將注音符號標注於漢字上方（橫式注音）及右方（直式注音）的二種排版格式皆屬官方標準，但在現今的教科書或其他印刷品中，將注音標注於漢字上方的格式非常罕見，一般大眾也不易接受，因此，無論在直排或橫排中，將注音符號標注在漢字右方都是較佳的作法。
 
-##### Choice of size and ratio for Bopomofo symbols 注音符号的比例与大小 注音符號的比例與大小
+##### Choice of size and ratio for Bopomofo symbols注音符号的比例与大小 注音符號的比例與大小
 
  
 
 
-The ratios of base characters and their Bopomofo annotations. 注音符号行间注下，基字与注文的比例。 注音符號行間注下，基字與注文的比例。
+The ratios of base characters and their Bopomofo annotations. 注音符号行间注下，基字与注文的比例。注音符號行間注下，基字與注文的比例。
 
 1. The size of Bopomofo annotation marks, including the phonetic symbols and their tones, should not exceed the size of the corresponding base characters. When Bopomofo annotation marks are placed above or to the right side of the base characters, the width of the Bopomofo annotation marks should not exceed the size of the corresponding base characters.
 
@@ -1335,9 +1335,9 @@ The ratios of base characters and their Bopomofo annotations. 注音符号行间
 
    The percentage rules above assume that all the tone marks (ˊˇˋ˪˫ㆴㆵㆶㆷ) and the [neutral tone](#term.neutral-tone) mark (˙) are set with the same font size as that of the base characters.
 
-   所用字体中，平上去入声（ˊˇˋ˪˫ㆴㆵㆶㆷ）及[轻声](#term.neutral-tone)（˙）等调号皆应与汉字尺寸一致，方适用以上比例。
+   所用字体中，平上去入声(ˊˇˋ˪˫ㆴㆵㆶㆷ)及[轻声](#term.neutral-tone)(˙)等调号皆应与汉字尺寸一致，方适用以上比例。
 
-   所用字體中，平上去入聲（ˊˇˋ˪˫ㆴㆵㆶㆷ）及[輕聲](#term.neutral-tone)（˙）等調號皆應與漢字尺寸一致，方適用以上比例。
+   所用字體中，平上去入聲(ˊˇˋ˪˫ㆴㆵㆶㆷ)及[輕聲](#term.neutral-tone)(˙)等調號皆應與漢字尺寸一致，方適用以上比例。
 
    In vertical Bopomofo, the width of the space taken by the neutral tone mark does not change but the height ratio to the base character should be 1:15. In horizontal Bopomofo, the height of the space taken by the neutral tone mark does not change but the width ratio to the base character should be 1:15.
 
@@ -1350,7 +1350,7 @@ The ratios of base characters and their Bopomofo annotations. 注音符号行间
 
    為字號較大的段落（如標題）標注注音時，可視情況調整注音符號的比例與大小。
 
-##### Positioning of the tones in Bopomofo symbols 注音符号的声调号位置 注音符號的聲調號位置
+##### Positioning of the tones in Bopomofo symbols注音符号的声调号位置 注音符號的聲調號位置
 
 1. Mandarin non-neutral tones and dialectal non-checked tones, are placed outside the upper right corner of the last phonetic symbol. In vertical Bopomofo, half the space taken by a tone mark will be above the top of the adjacent phonetic character; in horizontal Bopomofo, half the space taken by a tone mark will appear to the right of the phonetic character. As seen in [[[#zhuyin-regular-tone]]].
 
@@ -1361,7 +1361,7 @@ The ratios of base characters and their Bopomofo annotations. 注音符号行间
       
 
 
-   The positioning for Bopomofo in Mandarin non-neutral tones and dialectal non-checked tones. 各种注音符号组合及其调号（平上去声）的排版。 各種注音符號組合及其調號（平上去聲）的排版。
+   The positioning for Bopomofo in Mandarin non-neutral tones and dialectal non-checked tones. 各种注音符号组合及其调号（平上去声）的排版。各種注音符號組合及其調號（平上去聲）的排版。
 2. The dialectal checked tones are set outside the lower right corner of the phonetic symbols. As seen in [[[#zhuyin-checked-tone]]].
 
    入声调号标注在字音整体外侧右下方，如[[[#zhuyin-checked-tone]]]所示。
@@ -1371,7 +1371,7 @@ The ratios of base characters and their Bopomofo annotations. 注音符号行间
       
 
 
-   The positioning for Bopomofo in dialectal checked tones. 各种注音符号组合及其调号（入声）的排版。 各種注音符號組合及其調號（入聲）的排版。
+   The positioning for Bopomofo in dialectal checked tones. 各种注音符号组合及其调号（入声）的排版。各種注音符號組合及其調號（入聲）的排版。
 3. The Mandarin neutral tone comes before the phonetic symbols. In vertical Bopomofo, the height of the tone mark is 10% of that of its base character, while its width is the same as that of the phonetic characters. In horizontal Bopomofo, the width of the tone mark is 10% of that of its base characters, while its height is the same as that of the phonetic characters. As seen in [[[#zhuyin-neutral-tone]]].
 
    轻声调号标在字音前方。直排注音的轻声符宽度不变，高度与基字比1:15；横排注音的轻声符的高度不变，宽度为基字的10%。如[[[#zhuyin-neutral-tone]]]所示。
@@ -1381,9 +1381,9 @@ The ratios of base characters and their Bopomofo annotations. 注音符号行间
       
 
 
-   The positioning for Bopomofo in Mandarin neutral tones. 各种注音符号组合及其调号（轻声）的排版。 各種注音符號組合及其調號（輕聲）的排版。
+   The positioning for Bopomofo in Mandarin neutral tones. 各种注音符号组合及其调号（轻声）的排版。各種注音符號組合及其調號（輕聲）的排版。
 
-##### Examples of Bopomofo annotations 注音标音排版用例 注音標音排版用例
+##### Examples of Bopomofo annotations注音标音排版用例 注音標音排版用例
 
 1. Examples of annotations with a single Bopomofo phonetic symbol and how they cooperate with different kinds of tones.
    单个注音符号构成的拼式及其搭配各种声调的示例。
@@ -1391,9 +1391,9 @@ The ratios of base characters and their Bopomofo annotations. 注音符号行间
 
    At the beginning of the formulation of Bopomofo phonetic symbol ㄧ (U+3127 BOPOMOFO LETTER I), the typesetting rule was that one horizontal line should be used in vertical writing mode, and one vertical line should be used in horizontal writing mode. This usage appears in the documents of the Republican Era, as well as in the Xinhua Dictionary in Mainland China. However, when the Bopomofo phonetic symbols are used in the Chinese language teaching in Taiwan, regardless of whether it is in vertical or horizontal writing mode, a horizontal line should be used.
 
-   注音符号ㄧ（U+3127 BOPOMOFO LETTER I）于制定初期，排版规定直排时为一横、横排时为一竖。此用法出现在民国时期的文献，以及中国大陆的新华字典上。但注音符号系统应用于台湾的国语文教学，无论直横排列，都以横画为原则。
+   注音符号ㄧ(U+3127 BOPOMOFO LETTER I)于制定初期，排版规定直排时为一横、横排时为一竖。此用法出现在民国时期的文献，以及中国大陆的新华字典上。但注音符号系统应用于台湾的国语文教学，无论直横排列，都以横画为原则。
 
-   注音符號ㄧ（U+3127 BOPOMOFO LETTER I）於制定初期，排版規定直排時為一橫、橫排時為一豎。此用法出現在民國時期的文獻，以及中國大陸的新華字典上。但注音符號系統應用於台灣的國語文教學，無論直橫排列，都以橫畫為原則。
+   注音符號ㄧ(U+3127 BOPOMOFO LETTER I)於制定初期，排版規定直排時為一橫、橫排時為一豎。此用法出現在民國時期的文獻，以及中國大陸的新華字典上。但注音符號系統應用於台灣的國語文教學，無論直橫排列，都以橫畫為原則。
 
    Therefore, the glyph in the Unicode Code Chart is a horizontal line. In terms of font technologies, the OpenType font feature 'hist', which stands for the historical form, can be used to replace the vertical line for presenting historical documents or special needs.
 
@@ -1407,7 +1407,7 @@ The ratios of base characters and their Bopomofo annotations. 注音符号行间
    三个注音符号构成的拼式及其搭配各种声调的示例。
    三個注音符號構成的拼式及其搭配各種聲調的示例。
 
-##### Line prohibition rules for Bopomofo 注音标音分离禁则 注音標音分離禁則
+##### Line prohibition rules for Bopomofo注音标音分离禁则 注音標音分離禁則
 
 Like the line prohibition rules for punctuation, vertical Bopomofo annotations should stick to their base characters in horizontal writing mode. They must not appear in the line start, and must be placed on the right side of their corresponding Han character.
 
@@ -1415,9 +1415,9 @@ Like the line prohibition rules for punctuation, vertical Bopomofo annotations s
 
 如同標點禁則，直式注音在橫排文本中應注意其緊隨漢字的原則，注音標音不得單獨出現在行首，而需永遠緊隨其標注的漢字右側。
 
-#### Positioning of Romanized ruby 罗马拼音标音的排版 羅馬拼音標音的排版
+#### Positioning of Romanized ruby罗马拼音标音的排版 羅馬拼音標音的排版
 
-##### Basic requirements 基本规则 基本規則
+##### Basic requirements基本规则 基本規則
 
 1. Romanization is only available in horizontal writing mode. These phonetic annotations are usually placed on top of the base text. Regardless of the length of the base text and the phonetic annotations, the annotations should set solid and center-aligned with the basic text.
 
@@ -1475,7 +1475,7 @@ What follows is a detailed description of the difference between two typical use
 
 下文描述兩類典型用例之間的差異。
 
-##### Characters as the Basic Units for Annotating Pronunciation 单字标音 單字標音
+##### Characters as the Basic Units for Annotating Pronunciation单字标音 單字標音
 
 1. The base text is a single Han character. Only Han characters are annotated: [European numerals](#term.european-numerals), punctuation marks, and other characters are excluded.
 
@@ -1498,13 +1498,13 @@ What follows is a detailed description of the difference between two typical use
 
    注文全小寫，有時專名首字母大寫。
 
-##### Words as the Basic Units for Annotating Pronunciation 分词连写标音 分詞連寫標音
+##### Words as the Basic Units for Annotating Pronunciation分词连写标音 分詞連寫標音
 
 1. The base text contains one or more Han characters. Rules for separating terms can be found in Basic Rules of Hanyu Pinyin Orthography (GB/T 16159—2012).
 
-   基文为一个或多个汉字构成的词语。分词连写规则可依据《汉语拼音正词法基本规则》（GB/T 16159—2012）。
+   基文为一个或多个汉字构成的词语。分词连写规则可依据《汉语拼音正词法基本规则》(GB/T 16159—2012)。
 
-   基文為一個或多个漢字構成的詞語。分詞連寫規則可依據《汉语拼音正词法基本规则》（GB/T 16159—2012）。
+   基文為一個或多个漢字構成的詞語。分詞連寫規則可依據《汉语拼音正词法基本规则》(GB/T 16159—2012)。
 2. Annotations sometimes appear below the Han characters.
 
    注文有时在下方。
@@ -1524,14 +1524,14 @@ What follows is a detailed description of the difference between two typical use
  
 
 
-An example of words as the basic units for annotating pronunciation. 分词连写标音的排版示例。 分詞連寫標音的排版示例。
+An example of words as the basic units for annotating pronunciation. 分词连写标音的排版示例。分詞連寫標音的排版示例。
 
-#### Atypical cases for Han character phonetic annotations 汉字标音的非典型情况 漢字標音的非典型情況
+#### Atypical cases for Han character phonetic annotations汉字标音的非典型情况 漢字標音的非典型情況
 
-##### Erhua 儿化 兒化
+##### Erhua儿化 兒化
 
 
-Erhua is a unique phonetic phenomenon in certain Chinese dialects. Due to its character-based annotation, rather than word-based annotation, it is difficult to accurately express the continuity of erhua syllables and tone changes while typesetting its Bopomofo annotations according to the Handbook of Mandarin Phonetic Symbols (國語注音符號手冊). Additional explanations are often required in the body text or as footnotes. However, in recent years, numerous Chinese language textbooks published in Taiwan have placed the Bopomofo annotation "ㄦ" nearer to the preceding character rather than centered over the base character "兒". Such an approach could better illustrate the phenomenon of erhua. Romanized ruby already uses words as base text for phonetic annotation and effectively represents erhua.
+Erhua is a unique phonetic phenomenon in certain Chinese dialects. Due to its character-based annotation, rather than word-based annotation, it is difficult to accurately express the continuity of erhua syllables and tone changes while typesetting its Bopomofo annotations according to the Handbook of Mandarin Phonetic Symbols（國語注音符號手冊）. Additional explanations are often required in the body text or as footnotes. However, in recent years, numerous Chinese language textbooks published in Taiwan have placed the Bopomofo annotation "ㄦ" nearer to the preceding character rather than centered over the base character "兒". Such an approach could better illustrate the phenomenon of erhua. Romanized ruby already uses words as base text for phonetic annotation and effectively represents erhua.
 
 儿化是一些汉语方言的特殊语音现象，使用注音符号排版时，受其一字一注文而非分词标音的特性所限制，在《国语注音符号手册》提倡的标准排版模式下，难以准确表达儿化音节的连续性及韵母变音，需要在正文或附注中额外说明方能准确表达儿化的连音变化。但近年来，有不少在台湾出版的国语文课本会将儿化的注音「ㄦ」标注于基文「儿」字旁、靠近前字的位置，而非居中对齐于基文，这个作法则可有效展示儿化现象。罗马拼音因其以词作为基文进行标音的特性，得以有效标注儿化。
 
@@ -1540,9 +1540,9 @@ Erhua is a unique phonetic phenomenon in certain Chinese dialects. Due to its ch
  
 
 
-An example of positioning for Zhuyin in Mandarin rhotacization of syllable finals. 儿化音的排版示例。 兒化音的排版示例。
+An example of positioning for Zhuyin in Mandarin rhotacization of syllable finals. 儿化音的排版示例。兒化音的排版示例。
 
-#### Positioning of bilingual annotations 中外文对照的排版 中外文對照的排版
+#### Positioning of bilingual annotations中外文对照的排版 中外文對照的排版
 
 Typesetting of bilingual annotations is actually quite similar to that of Romanization. Annotations are usually placed to the right of the base text in vertical writing mode, or above the base text in horizontal writing mode.
 
@@ -1550,7 +1550,7 @@ Typesetting of bilingual annotations is actually quite similar to that of Romani
 
 中外文對照的排版方式與羅馬拼音標音類似，多位於受注文本片段頂端——直排時位基文右側，橫排時位基文上方。
 
-##### Word alignment 词的对齐 詞的對齊
+##### Word alignment词的对齐 詞的對齊
 
 In order to maintain the integrity of annotations, when the lengths of annotations and their base text are different it is necessary to adjust the alignment between them to avoid misunderstandings.
 
@@ -1569,7 +1569,7 @@ In order to maintain the integrity of annotations, when the lengths of annotatio
 
    當注文總長大於其基文的長度時，將基文設置居中（適用西文）或加大基文字距（適用漢字）。
 
-#### Positioning of interlinear comments 行间批语的排版 行間批語的排版
+#### Positioning of interlinear comments行间批语的排版 行間批語的排版
 
 Interlinear comments can have very varied layouts and lengths. They are usually placed at the [line foot](#term.line-foot) of the annotated text — to the left side of the base text in vertical writing mode or below the base text in horizontal writing mode. Sometimes the interlinear comments are in other colors to help the reader tell the difference from the body text.
 
@@ -1583,9 +1583,9 @@ Interlinear comments are also used to explain the context and details of a longe
 
 行間批語可用於解釋一段長文本的整體語境。這種情況下，由於沒有明確的基文，其注文常自一個合適的錨點位置展開並向後延伸，長度不拘，時可超過一行。
 
-## Text decoration & other inline features 文本标示与其他行内特性 文本標示與其他行內特性
+## Text decoration & other inline features文本标示与其他行内特性 文本標示與其他行內特性
 
-#### Handling interlinear punctuation 行间标点的处理 行間標點的處理
+#### Handling interlinear punctuation行间标点的处理 行間標點的處理
 
 Most punctuation marks in modern Chinese typesetting are interspersed between the text in a line, but the Proper Noun Mark (underline), the Book Title Mark (only for the type A wavy low line) and the Emphasis Mark need to be positioned between lines. These punctuation marks are known as “interlinear marks”. Of which, the Proper Noun Mark and the Book Title mark are known as interlinear lines.
 
@@ -1593,7 +1593,7 @@ Most punctuation marks in modern Chinese typesetting are interspersed between th
 
 現代中文排版的標點符號，大部分都隨文字穿插在行內，但專名號（下劃線）、書名號（僅指甲式的波浪線）、著重號要擺放在行與行之間，這些標點通稱為「行間標點」。其中專名號（下劃線）、書名號（僅指甲式的波浪線）合稱為「行間線」。
 
-Jùdòu (句读, old-style punctuation) for ancient Chinese texts were all interlinear marks. Although the typesetting of ancient Chinese texts is beyond the scope of this document, the guidance provided in this section can still serve as a reference for the basic principles of interlinear marks.
+Jùdòu（句读，old-style punctuation）for ancient Chinese texts were all interlinear marks. Although the typesetting of ancient Chinese texts is beyond the scope of this document, the guidance provided in this section can still serve as a reference for the basic principles of interlinear marks.
 
 传统中文古籍中的“句读”也都是“行间标点”。传统中文古籍排版虽然已经超出了本文档的范围，但是行间标点的基本原则可参照本节内容。
 
@@ -1623,9 +1623,9 @@ In vertical typesetting, the interlinear lines are positioned to the left of the
 
    To ensure appropriate positioning of interlinear marks, the line gap for single-sided setting must not be smaller than half of the font size, while the line gap for double-sided setting must not be smaller than 5/8 (=1/2+1/8) of the font size.
 
-   为保证行间标点的摆放，单面装的行距不应小于当前字号的一半、双面装的的行距不应小于当前字号的 5/8 （=1/2+1/8）
+   为保证行间标点的摆放，单面装的行距不应小于当前字号的一半、双面装的的行距不应小于当前字号的5/8 (=1/2+1/8)
 
-   為保證行間標點的擺放，單面裝的行距不應小於當前字號的一半、雙面裝的的行距不應小於當前字號的 5/8 （=1/2+1/8）
+   為保證行間標點的擺放，單面裝的行距不應小於當前字號的一半、雙面裝的的行距不應小於當前字號的5/8 (=1/2+1/8)
 
    Emphasis Marks shall be center-aligned with its corresponding character; interlinear lines must be correspond with the length and quantity of content they are marking out. As such, if there are multiple instances which need to be marked out with interlinear lines, multiple interlinear lines need to be used. Interlinear lines cannot be arbitrarily broken up. And a single interlinear line cannot be composed out of multiple fragments. For example, if there are two adjacent Proper Nouns, even if the text being marked out is set solid, both Proper Nouns must be clearly marked with two Proper Noun Marks that are distinguishable from one another. In this instance, a single Proper Noun Mark must not be used, because this would cause the two Proper Nouns to be misunderstood as a single Proper Noun.
 
@@ -1666,21 +1666,21 @@ In vertical typesetting, the interlinear lines are positioned to the left of the
 
    原則上，橫排時不使用雙面裝。橫排時，專名號（下劃線）或書名號（僅指甲式的波浪線）如果遇到和著重號同時出現時，應以「先線後點」原則，讓行間線緊貼漢字，再在其下加著重號。
 
-### Data formats & numbers 数据格式与数字 數據格式與數字
+### Data formats & numbers数据格式与数字 數據格式與數字
 
 TBD(?)
 
-## Line & paragraph layout 行与段落版式 行與段落版式
+## Line & paragraph layout行与段落版式 行與段落版式
 
-## Line breaking & hyphenation 换行与断词连字 換行與斷詞連字
+## Line breaking & hyphenation换行与断词连字 換行與斷詞連字
 
-#### Prohibition rules for line start and line end 行首行尾禁则 行首行尾禁則
+#### Prohibition rules for line start and line end行首行尾禁则 行首行尾禁則
 
 In order to maintain a smooth reading experience and consistency of style, there are certain constraints for the positioning of most punctuation marks. In most cases, according to its function, a punctuation mark is prohibited from appearing at the line start or line end. This rule was first implemented during the time of letterpress printing. In Mainland China, the national standard General Rules for Punctuation (GB/T 15834—2011) sets clear rules about the positioning of punctuation marks. In Taiwan and Hong Kong, there is not yet a standard for the usage and positioning of punctuation marks, but most of the publications apply the rules described in this document.
 
-为了保持阅读顺畅、体例一致，多数标点符号的位置有限制，通常一个标点符号依其性质，禁止出现在行首或行尾。这项规则自活字排版时代开始通行。在中国大陆，《标点符号用法》（GB/T 15834—2011）规定了简体中文标点在行间的位置；在港台，虽没有相应的规范，但多数出版品皆按照此处所述规则对标点符号进行配置。
+为了保持阅读顺畅、体例一致，多数标点符号的位置有限制，通常一个标点符号依其性质，禁止出现在行首或行尾。这项规则自活字排版时代开始通行。在中国大陆，《标点符号用法》(GB/T 15834—2011)规定了简体中文标点在行间的位置；在港台，虽没有相应的规范，但多数出版品皆按照此处所述规则对标点符号进行配置。
 
-為了保持閱讀順暢、體例一致，多數標點符號的位置有其限制，通常一個標點符號依其性質，禁止出現在一行之首或之末。這項規則自活字排版時代開始通行。在中國大陸，《標點符號用法》（GB/T 15834—2011）規定了簡體中文標點在行間的位置；在港台，雖未有相應的規範，但多數出版品皆以此處所述規則對標點符號進行配置。
+為了保持閱讀順暢、體例一致，多數標點符號的位置有其限制，通常一個標點符號依其性質，禁止出現在一行之首或之末。這項規則自活字排版時代開始通行。在中國大陸，《標點符號用法》(GB/T 15834—2011)規定了簡體中文標點在行間的位置；在港台，雖未有相應的規範，但多數出版品皆以此處所述規則對標點符號進行配置。
 
 There are four sets of line-breaking rules with different strictness:
 
@@ -1688,28 +1688,28 @@ There are four sets of line-breaking rules with different strictness:
 
 具體地，可以分為四種級別：
 
-none 不处理 不處理
+none不处理 不處理
 :   Ignore all prohibition against line breaks. Commonly used in newspapers in Taiwan and Hong Kong.
 
     完全不处理行首行尾禁则。常见于台湾香港等地报刊。
 
     完全不處理行首行尾禁則。常見於台灣香港等地報刊。
 
-basic 基本处理 基本處理
+basic基本处理 基本處理
 :   Pause or stop punctuation marks (secondary commas, commas, semicolons, colons, periods, exclamation marks, and question marks), closing quotation marks, closing parentheses, closing angle brackets, connector marks, and interpuncts should not appear at the line start. Opening quotation marks, opening parentheses, and opening angle brackets should not appear at the line end. This is the most recommended method.
 
     点号（顿号、逗号、句号、冒号、分号、叹号、问号）、结束引号、结束括号、结束双书名号（书名号乙式）、连接号、间隔号、分隔号不能出现在一行的开头。开始引号、开始括号、开始单双书名号等符号，不能出现在一行的结尾。这是最推荐的方法。
 
     點號（頓號、逗號、句號、冒號、分號、嘆號、問號）、結束引號、結束括號、結束書名號乙式（雙書名號）、連接號、間隔號、分隔號不能出現在一行的開頭。開始引號、開始括號、開始單雙書名號等符號，不能出現在一行的結尾。這是最推薦的方法。
 
-GB-style GB法 GB法
+GB-style GB法GB法
 :   The set of rules in [basic](#prohibition-rules-basic), and solidi should not appear at the line end.
 
     在执行[基本处理](#prohibition-rules-basic)的基础上增加规定分隔号也不能出现在一行的结尾。
 
     在執行[基本處理](#prohibition-rules-basic)的基礎上增加規定分隔號也不能出現在一行的結尾。
 
-strict 严格处理 嚴格處理
+strict严格处理 嚴格處理
 :   The set of rules in [GB-style](#prohibition-rules-guobiao), and two-em dashes and ellipses should not appear at the line start.
 
     在执行[GB法](#prohibition-rules-guobiao)的基础上再增加规定破折号、省略号不能出现在一行的开头。
@@ -1724,7 +1724,7 @@ Prior to processing the prohibition rules, [[[#punctuation\_width\_adjustment]]]
 
 排版时如果进行禁则处理，应遵守“先挤进，后推出”原则，即不希望标点符号出现在行首时，应在已经标点挤压的基础上再次检讨是否有机会将其挤到前一行，最后没有挤压机会再从前一行取最后一个字至下一行。前行多出来的空间需按照优先顺序拉伸，最后没有拉伸机会再按平均拉大字距的方式处理。
 
-In principle, line-breaking rules within a single document should be consistent. However, in the case where three punctuation marks appear together, such as [。』」], prohibition against line break can be [ignored](#prohibition-rules-none) to keep a reasonable spacing between characters in each line. This should be considered as a remedial measure and is not recommended generally.
+In principle, line-breaking rules within a single document should be consistent. However, in the case where three punctuation marks appear together, such as [.』」], prohibition against line break can be [ignored](#prohibition-rules-none) to keep a reasonable spacing between characters in each line. This should be considered as a remedial measure and is not recommended generally.
 
 原则上，一份文档内的级别应该统一。但若遇连续三个标点符号，如[。』」]等个别特殊状况局部采用“不处理”以避免字距过松造成体例不良，应该视为救济措施的个例，不作为推荐。
 
@@ -1736,9 +1736,9 @@ Prohibition rules for line start and line end are styling issues. The user agent
 
 行首行尾禁則規定屬於排版風格，用戶代理實現時可以根據自身實際情況，選擇或者自定義適合自己的、更寬松或者嚴格的禁則。
 
-#### Prohibition rules for unbreakable marks 符号分离禁则 符號分離禁則
+#### Prohibition rules for unbreakable marks符号分离禁则 符號分離禁則
 
-##### Punctuation marks 标点符号 標點符號
+##### Punctuation marks标点符号 標點符號
 
 The following punctuation marks should be considered as one unit and take up 2 em of space. They should not be broken across two lines. In cases where multiples of such punctuation marks appear together, it is allowed to separate them into two lines. If they were forced to remain on one line, it might cause too much space between the characters in the previous line and decrease the aesthetics of the entire composition.
 
@@ -1757,7 +1757,7 @@ The following punctuation marks should be considered as one unit and take up 2 
 
    [刪節號](#h_ellipsis)
 
-##### Digits and their prefix and suffix 数字及其相应的前后缀单位符号 數字及其相應的前後綴單位符號
+##### Digits and their prefix and suffix数字及其相应的前后缀单位符号 數字及其相應的前後綴單位符號
 
 1. [European numerals](#term.european-numerals) cannot be split into two lines.
 
@@ -1766,21 +1766,21 @@ The following punctuation marks should be considered as one unit and take up 2 
    [阿拉伯數字](#term.european-numerals)應作爲壹個整體，不能拆成兩行。
 2. The percent sign (%), thousandth sign (‰), degree symbol (°, ℃, ℉) and the European numerals preceding them cannot be separated into two lines.
 
-   百分号（%）、千分号（‰）、度数符号（°、℃、℉）与其前面的阿拉伯数字之间不能拆成两行。
+   百分号(%)、千分号(‰)、度数符号(°、℃、℉)与其前面的阿拉伯数字之间不能拆成两行。
 
-   百分號（%）、千分號（‰）、度數符號（°、℃、℉）與其前面的阿拉伯數字之間不能拆成兩行。
+   百分號(%)、千分號(‰)、度數符號(°、℃、℉)與其前面的阿拉伯數字之間不能拆成兩行。
 3. The positive sign (+), negative sign (-), plus–minus sign (±) and the European numerals following it cannot be separated into two lines.
 
-   正号（+）、负号（-）、正负号（±）与其后面的阿拉伯数字之间不能拆成两行。
+   正号(+)、负号(-)、正负号(±)与其后面的阿拉伯数字之间不能拆成两行。
 
-   正號（+）、負號（-）、正負號（±）與其後面的阿拉伯數字之間不能拆成兩行。
+   正號(+)、負號(-)、正負號(±)與其後面的阿拉伯數字之間不能拆成兩行。
 4. There should be no line break between the currency symbol and its associated European numerals, including leading currency symbols (such as the RMB symbol ¥) and trailing currency symbols (such as the Vietnamese dong symbol ₫).
 
    货币符号与其相关的阿拉伯数字之间不能断行，包括前置货币符号（如人民币符号¥）和后置货币符号（如越南盾符号₫）。
 
    貨幣符號與其相關的阿拉伯數字之間不能斷行，包括前置貨幣符號（如人民幣符號¥）和後置貨幣符號（如越南盾符號₫）。
 
-##### Annotation marks 注释符号 注釋符號
+##### Annotation marks注释符号 注釋符號
 
 There should be no line break between superscripts, subscripts, and annotation marks and the text they are marking.
 
@@ -1788,7 +1788,7 @@ There should be no line break between superscripts, subscripts, and annotation m
 
 上標、下標、注釋記號與被標記的正常字體文字之間不能斷行。
 
-#### Hanging punctuation at line end 行尾点号悬挂 行尾點號懸掛
+#### Hanging punctuation at line end行尾点号悬挂 行尾點號懸掛
 
 Most Chinese publications do not use hanging punctuation at line end. According to the [Japanese Layout Requirements](https://www.w3.org/TR/jlreq/#positioning_of_punctuation_marks) document, hanging punctuation at the line end is a kind of extension of the prohibition rules at line start. This rule helps to avoid moving characters or punctuation marks between lines and avoids inconsistency of space between the characters in different lines.
 
@@ -1816,7 +1816,7 @@ However, in Taiwan and Hong Kong, since punctuation marks are positioned in the 
 
 In the case of a succession of punctuation marks, punctuation hanging should not be applied.
 
-#### Handling Western text in Chinese text using proportional Western fonts 西文使用比例字体时的混排处理 西文使用比例字體時的混排處理
+#### Handling Western text in Chinese text using proportional Western fonts西文使用比例字体时的混排处理 西文使用比例字體時的混排處理
 
 Western words interspersed in horizontal text, or those rotated 90 degrees clockwise in vertical text, must not be broken across two lines, unless they're hyphenated.
 
@@ -1824,11 +1824,11 @@ Western words interspersed in horizontal text, or those rotated 90 degrees clock
 
 橫排中混排的西文單詞，及直排中將文字順時針旋轉90°配置的西文單詞，在可使用連字符處之外，不得分隔爲兩行。
 
-## Text alignment & justification 文本对齐 文本對齊
+## Text alignment & justification文本对齐 文本對齊
 
-### Paragraph adjustment rules 段落调整 段落調整
+### Paragraph adjustment rules段落调整 段落調整
 
-#### First-line indents 段首缩排 段首縮排
+#### First-line indents段首缩排 段首縮排
 
 
 In order to make different text separate and form paragraphs, a new line is used to mark the beginning of a paragraph. At the same time, spacing are added to the first line of the paragraph for indentation. In principle, the indentation unit is a multiple of the Han character size. The main presentation methods are as follows.
@@ -1882,7 +1882,7 @@ When the tupai [凸排] or itemization method is used, the indent of the second 
 
 凸排時，次行起縮排通常為固定量的空白，例如人名三字加冒號共四字，凡遇對話時次行皆縮排四個全形空白。遇人名少於三字時，則於姓與名間加入空白，以保持體例一致。
 
-#### Paragraph Indent 段落缩排 段落縮排
+#### Paragraph Indent段落缩排 段落縮排
 
 
 The paragraph indent is the indentation of the line start by a fixed amount, starting from the line start side of the type area (in the case of one column) or of the column area (in the case of several columns). This method is usually applied for quotations, poetry or subtitles in a paragraph or between the paragraphs.
@@ -1897,7 +1897,7 @@ Generally speaking, the characters in the paragraphs which apply paragraph inden
 
 一般而言以縮排處理的段落，文字尺寸與內文相同。有時會調整字體，與內文做出差異。或可在前後段落間加入段落間距，使該段落與內文段落差異更為明顯。加入間距所佔空間應為內文行的整數倍。
 
-#### Single line alignment processing 单行对齐处理 單行對齊處理
+#### Single line alignment processing单行对齐处理 單行對齊處理
 
 Line alignment method is a process for setting the alignment of each line of text so that the actual position of the text can be matched with their preset position. "Single line alignment" is a process for setting alignment for a run of text that is shorter than a given line length. This method is frequently used for items, headings, and poems. The following methods are available.
 
@@ -1956,20 +1956,20 @@ Line alignment method is a process for setting the alignment of each line of tex
 
    均排多見於以下兩種狀況：
 
-   1. A frequently seen case of even inter-character spacing is that, after applying the punctuation prohibition rules to each line, some lines will have more than one character space left, so in order to align the beginning and ending with the rest of the lines, this line should apply even inter-character spacing.
+1. A frequently seen case of even inter-character spacing is that, after applying the punctuation prohibition rules to each line, some lines will have more than one character space left, so in order to align the beginning and ending with the rest of the lines, this line should apply even inter-character spacing.
 
       此种情况较常见。各行套用标点禁则处理后，部分行行内将剩余一个字以上的空白，为符合中文排版段落头尾对齐的规则，该行以均排处理；段落末行或段落仅有一行时则不使用均排。
 
       此種情況較常見。各行套用標點禁則處理後，部分行行內將剩餘一字以上的空白，為符合中文排版段落頭尾對齊的規則，該行以均排處理；於段落末行或段落僅有一行時則不使用均排。
-   2. Even inter-character spacing is often used for listing names of people or objects. The last line of a paragraph or a paragraph with only one line can have even inter-character spacing applied as well.
+2. Even inter-character spacing is often used for listing names of people or objects. The last line of a paragraph or a paragraph with only one line can have even inter-character spacing applied as well.
 
       在列表中，如列举人名、物品名时，采用均排以求体例一致，当段落末行或段落仅有一行时，亦使用均排。
 
       於列表，如列舉人名、物品名時，採均排以求體例一致，於段落末行或段落僅有一行時，亦使用均排。
 
-### Line adjustment 行内调整 行內調整
+### Line adjustment行内调整 行內調整
 
-#### Necessity for line adjustment 行内调整的必要性 行內調整的必要性
+#### Necessity for line adjustment行内调整的必要性 行內調整的必要性
 
 There are numerous reasons, e.g. [[[#prohibition\_rules\_for\_line\_start\_end]]], that result in line lengths being uneven. Under such circumstances, [line adjustment](#term.line-adjustment) is required. With the exception of [[[#prohibition\_rules\_for\_unbreakable\_marks]]], a run of text may be broken at the specified line length, allowing the text to be arranged into even rows. Other than the last line of a paragraph, the start and end of a line must be placed at the specified line start and line end position respectively. The last line of the paragraph will be adjusted accordingly to the overall flow of the text with adjustments made to the width of its punctuation. It is not necessary for the end of the last line to be aligned with the rest of the text. Please refer to [[[#adjustments\_of\_orphans\_and\_widows]]]. If the text only comprises of 1 line, please refer to [[[#ways\_of\_alignments]]].
 
@@ -2006,11 +2006,11 @@ There are a number of reasons for line adjustment, mainly:
 
 In contrast to Western typesetting, the body text in Chinese books are rarely left-aligned, and instead should be justified. Justification of Western text hinges on the adjustment of space between the words on a line, whereas there are more options for line justification when it comes to Chinese typesetting.
 
-与西文排版不同，中文排版特别是书籍正文排版极少使用左齐右不齐，原则上应该进行两端对齐。西文排版两端对齐（justification）时，主要是调整单词之间的间隙（词距），而中文排版在两端对齐时，能调整的地方更多，具体如下所述。
+与西文排版不同，中文排版特别是书籍正文排版极少使用左齐右不齐，原则上应该进行两端对齐。西文排版两端对齐(justification)时，主要是调整单词之间的间隙（词距），而中文排版在两端对齐时，能调整的地方更多，具体如下所述。
 
-與西文排版不同，中文排版特別是書籍正文排版極少使用左齊右不齊，原則上應該進行兩端對齊。西文排版兩端對齊（justification）時，主要是調整單詞之間的間隙（詞距），而中文排版在兩端對齊時，能調整的地方更多，具體如下所述。
+與西文排版不同，中文排版特別是書籍正文排版極少使用左齊右不齊，原則上應該進行兩端對齊。西文排版兩端對齊(justification)時，主要是調整單詞之間的間隙（詞距），而中文排版在兩端對齊時，能調整的地方更多，具體如下所述。
 
-#### Reduction and expansion of inter-character spacing 挤压处理和拉伸处理 擠壓處理和拉伸處理
+#### Reduction and expansion of inter-character spacing挤压处理和拉伸处理 擠壓處理和拉伸處理
 
 Line adjustments are predicated upon the amount of available space, for example, spacing between Western words, [[[#h-punctuation\_adjustment\_space]]], and so on. There are two methods for line adjustment:
 
@@ -2043,7 +2043,7 @@ The word spacing in Western text described here only pertains to situations whic
 
 本文涉及到行內的「西文詞距」調整，僅是針對「在中文排版內混排的西文」，因此，與純西文排版的習慣不盡相同。一般的西文排版中的詞距，需要依照所用字體、字號、字距進行不同判斷，而且一般只拉伸、不擠壓。
 
-#### Procedures for inter-character spacing reduction 挤压处理的优先顺序 擠壓處理的優先順序
+#### Procedures for inter-character spacing reduction挤压处理的优先顺序 擠壓處理的優先順序
 
 Inter-character spacing reduction should be processed according to the following steps, in order of precedence:
 
@@ -2059,9 +2059,9 @@ Inter-character spacing reduction should be processed according to the following
 
    In Japanese texts, periods at the end of a line typically do not have their space reduced, but Chinese texts do. This is especially important in Mainland China where the General Rules for Punctuation (GB/T 15834—2011) defines in 5.1.10 that if a full-width punctuation occurs at the end of a line, it should take up 1/2 em for a more pleasing aesthetic.
 
-   行末的句号，在日文排版中往往不进行挤压处理。但是对于中文排版，一般要进行处理，这对于中国大陆的排版规范尤其重要。《标点符号用法》（GB/T 15834—2011）有明确规定“5.1.10 标点符号排在一行末尾时，若为全角字符则应占半角字符的宽度（即半个字位置），以使视觉效果更美观。”
+   行末的句号，在日文排版中往往不进行挤压处理。但是对于中文排版，一般要进行处理，这对于中国大陆的排版规范尤其重要。《标点符号用法》(GB/T 15834—2011)有明确规定“5.1.10标点符号排在一行末尾时，若为全角字符则应占半角字符的宽度（即半个字位置），以使视觉效果更美观。”
 
-   行末的句號，在日文排版中往往不進行擠壓處理。但是對於中文排版，一般要進行處理，這對於中國大陸的排版規範尤其重要。《標點符號用法》（GB/T 15834—2011）有明確規定「5.1.10 標點符號排在一行末尾時，若為全形字元則應占半形字元的寬度（即半個字位置），以使視覺效果更美觀。」
+   行末的句號，在日文排版中往往不進行擠壓處理。但是對於中文排版，一般要進行處理，這對於中國大陸的排版規範尤其重要。《標點符號用法》(GB/T 15834—2011)有明確規定「5.1.10標點符號排在一行末尾時，若為全形字元則應占半形字元的寬度（即半個字位置），以使視覺效果更美觀。」
 2. The spacing between Western words within a line: for lines with several Western words, their spacing should be processed in the same way. The minimum spacing between two Western words should be 1/4 em.
 
    位于行内的西文词距。一行内若有多处西文词距，应该同时、同等量处理，每个西文词距最小可以挤压到四分之一汉字宽。
@@ -2105,7 +2105,7 @@ Inter-character spacing reduction should be processed according to the following
 
    由於句末標點表示停頓較大，因此有些排版風格禁止此項調整，而保持句號、問號、驚嘆號固定一個字寬。
 
-#### Procedures for inter-character space expansion 拉伸处理的优先顺序 拉伸處理的優先順序
+#### Procedures for inter-character space expansion拉伸处理的优先顺序 拉伸處理的優先順序
 
 Inter-character space expansion should be processed according to the following steps, in order of precedence:
 
@@ -2147,7 +2147,7 @@ If all the aforementioned adjustments are not applicable, or the desired line le
 
    避免對連接號、分隔號與其前後的字元進行拉伸處理。
 
-#### Handling Western text in Chinese text using proportional Western fonts 西文使用比例字体时的混排处理 西文使用比例字體時的混排處理
+#### Handling Western text in Chinese text using proportional Western fonts西文使用比例字体时的混排处理 西文使用比例字體時的混排處理
 
 Justified text alignment is an important feature of Chinese composition. It is harder to align text as expected when a line contains Western characters. Typically, spacing or tracking is applied equally across the line, but such adjustments are only applied between Han characters, or between a Han character and a Western character. The spacing is not equally distributed between characters in Western words and/or European numerals.
 
@@ -2155,7 +2155,7 @@ Justified text alignment is an important feature of Chinese composition. It is h
 
 由於中文排版強調行首與行尾對齊，當行內包含西文時，較難對齊，這時多使用均排的方式處理。均排時，各西文詞組間、阿拉伯數字間之空格，以及西文字母與阿拉伯數字之間不使用均排，僅調整漢字、漢字與西文間的字距或空白。
 
-#### Handling of grid alignment in Chinese and Western mixed text composition 纵横对齐下的中西文混排处理 縱橫對齊下的中西文混排處理
+#### Handling of grid alignment in Chinese and Western mixed text composition纵横对齐下的中西文混排处理 縱橫對齊下的中西文混排處理
 
 Due to the fixed-width nature of Han characters, whether in vertical or horizontal text, in addition to aligning the ends of each line, the goal is also to ensure that all Han characters within each line are aligned both vertically and horizontally. If Western alphas or European numerals with proportional fonts are present, this principle is harder to achieve. Possible approaches are listed below:
 
@@ -2186,9 +2186,9 @@ Grid alignment is adopted more often in Traditional Chinese typesetting, whereas
 
 縱橫對齊多使用於繁體中文排版，簡體中文較為少見。
 
-### Text spacing 文本的间距调整 文本的間距調整
+### Text spacing文本的间距调整 文本的間距調整
 
-#### Principles for arranging characters during Chinese composition 汉字的配置原则 漢字的配置原則
+#### Principles for arranging characters during Chinese composition汉字的配置原则 漢字的配置原則
 
 When composing a line with characters, in principle, no extra spacing appears between their character frames. This is called [solid setting](#term.solid-setting).
 
@@ -2212,7 +2212,7 @@ Depending on the context, in addition to solid setting, several alternative sett
 
 依照內容的不同，也會採用以下方式排列。
 
-##### Increased inter-character spacing 增加字距 增加字距
+##### Increased inter-character spacing增加字距 增加字距
 
 Examples of loose setting in horizontal writing mode: A) 1/4 em spacing; B) 1/3 em spacing; C) 1/2 em spacing; D) 1 em spacing
 疏排
@@ -2245,7 +2245,7 @@ It is common in books to increase the tracking between each character frame (i.e
 
    針對兒童書籍等，為提升易讀性，而加大字距。
 
-##### Even inter-character spacing 均排 均排
+##### Even inter-character spacing均排 均排
 
 Text may be set with equal inter-character spacing between all characters on a given line, so that each line is aligned to the same line head and line end. Since the Han characters and punctuation marks are all in square frames with almost the same dimensions, it is natural that each line is aligned to the same line head and line end. Even inter-character spacing is mainly used in the following cases:
 
@@ -2264,7 +2264,7 @@ Text may be set with equal inter-character spacing between all characters on a g
 
    表格標題、名單等求呈現一致時，會採用均排的方式處理。
 
-##### Reduced inter-character spacing 减少字距 減少字距
+##### Reduced inter-character spacing减少字距 減少字距
 
 Reduced inter-character spacing
 紧排
@@ -2287,16 +2287,16 @@ By reducing the inter-character spacing, a portion of two character frames overl
 
    由於漢字皆為正方形，此方式並不適用於活字排版，故不應用於書籍標題與內文的排列上。
 
-#### Punctuation Width Adjustment 标点符号的宽度调整 標點符號的寬度調整
+#### Punctuation Width Adjustment标点符号的宽度调整 標點符號的寬度調整
 
 
 Punctuation marks between characters (except for two-em dash and ellipsis) usually occupy 1 em, making it easy to recognize and lay out. Some layout styles do not adjust the punctuation width at all. However, in order to make the the composition tighter and more readable, and when implementing [[[#prohibition\_rules\_for\_line\_start\_end]]], the width of the punctuation marks may be adjusted. Whether to adjust depends on the judgment of the typesetter. Many publications in Taiwan do not adjust punctuation width, while most publications in Mainland China and Hong Kong do adjust punctuation width. Punctuation width adjustment usually occurs in two situations: 1) when consecutive punctuation marks appear 2) when the punctuation mark appears at the beginning or end of a line. There are more than one style of width adjustment, and only the basic principles are explained below.
 
-标注在字间的标点符号（除乙式括号、破折号、省略号以外）通常占一个汉字宽度，使其易于识别、适合配置及排版，有些排版风格完全不对标点宽度进行任何调整。但是为了让文字体裁更加紧凑易读，以及执行[[[#prohibition\_rules\_for\_line\_start\_end]]]时，就需要对标点符号的宽度进行调整。是否调整取决于对排版风格的判断，台湾的很多印刷品都采用不调整的风格；而在中国大陆和香港的出版物中，多数采取调整的风格。标点符号宽度调整通常分为两种情形：1. 标点符号连续出现 2.标点出现在行首或行尾。调整时的风格不尽相同，下文仅阐述基本原则。
+标注在字间的标点符号（除乙式括号、破折号、省略号以外）通常占一个汉字宽度，使其易于识别、适合配置及排版，有些排版风格完全不对标点宽度进行任何调整。但是为了让文字体裁更加紧凑易读，以及执行[[[#prohibition\_rules\_for\_line\_start\_end]]]时，就需要对标点符号的宽度进行调整。是否调整取决于对排版风格的判断，台湾的很多印刷品都采用不调整的风格；而在中国大陆和香港的出版物中，多数采取调整的风格。标点符号宽度调整通常分为两种情形：1. 标点符号连续出现2。标点出现在行首或行尾。调整时的风格不尽相同，下文仅阐述基本原则。
 
-標註在字間的標點符號（除乙式括號、破折號、省略號以外）通常占一個漢字寬度，使其易於識別、適合配置及排版，有些排版風格完全不對標點寬度進行任何調整。但是為了讓文字體裁更加緊湊易讀，以及執行[[[#prohibition\_rules\_for\_line\_start\_end]]]時，就需要對標點符號的寬度進行調整。是否調整取決於對排版風格的判斷，臺灣的很多印刷品都採用不調整的風格；而在中國大陸和香港的出版物中，多數採取調整的風格。標點符號寬度調整通常分為兩種情形：1. 標點符號連續出現 2.標點出現在行首或行尾。調整時的風格不盡相同，下文僅闡述基本原則。
+標註在字間的標點符號（除乙式括號、破折號、省略號以外）通常占一個漢字寬度，使其易於識別、適合配置及排版，有些排版風格完全不對標點寬度進行任何調整。但是為了讓文字體裁更加緊湊易讀，以及執行[[[#prohibition\_rules\_for\_line\_start\_end]]]時，就需要對標點符號的寬度進行調整。是否調整取決於對排版風格的判斷，臺灣的很多印刷品都採用不調整的風格；而在中國大陸和香港的出版物中，多數採取調整的風格。標點符號寬度調整通常分為兩種情形：1. 標點符號連續出現2。標點出現在行首或行尾。調整時的風格不盡相同，下文僅闡述基本原則。
 
-##### Punctuation adjustment space 标点符号的调整空间 標點符號的調整空間
+##### Punctuation adjustment space标点符号的调整空间 標點符號的調整空間
 
 Punctuation marks are divided into two types: "fixed" and "adjustable", and "adjustable" is divided into six categories according to the position of the adjustable space: left of character face in horizontal writing mode, right of character face in horizontal writing mode, left and right of character face in horizontal writing modes; top of character face in vertical writing mode, bottom of character face in vertical writing mode, top and bottom of character face in vertical writing mode.
 
@@ -2314,7 +2314,7 @@ Fixed punctuation marks include: GB-style short connector marks, interpuncts, an
 
 不可調整的標點包括：中國大陸GB式的半字連接號、間隔號、分隔號，因為這幾個標點固定半個字寬；橫排的港台式問號、驚嘆號和直排的冒號、分號、問號、驚嘆號（包括GB偏靠式和港台居中式），因為這幾個標點固定一個字寬。
 
-##### Adjustment of adjacent punctuation marks 连续标点符号的调整 連續標點符號的調整
+##### Adjustment of adjacent punctuation marks连续标点符号的调整 連續標點符號的調整
 
 
 Regardless of the style of the text as a whole, adjustments should be made in principle when brackets appear next to other punctuation marks, or when brackets appear repeatedly (such as opening & opening, closing & closing, or closing & opening) to make the text more compact and easy to read.
@@ -2335,7 +2335,7 @@ In principle, the compression should let the opening and closing bracket be clos
 
 擠壓方向判定原則上應該讓開始、結束夾注符號緊靠被夾注的內容。
 
-##### Compression of punctuation marks at line start or line end 行首行尾标点挤压 行首行尾標點擠壓
+##### Compression of punctuation marks at line start or line end行首行尾标点挤压 行首行尾標點擠壓
 
 When a punctuation mark appears at line start or line end, the following rules for space adjustment will make the composition tighter and more readable.
 
@@ -2359,7 +2359,7 @@ When a punctuation mark appears at line start or line end, the following rules f
 
    依照中國大陸國標GB/T 15834—2011《標點符號用法》第5.1.10條的規定，原本佔一個字寬的標點出現在行尾時，應縮減該符號末側二分之一個漢字大小的空白。
 
-#### Mixed text composition in horizontal writing mode 横排的中、西文混排配置 橫排的中、西文混排配置
+#### Mixed text composition in horizontal writing mode横排的中、西文混排配置 橫排的中、西文混排配置
 
 In horizontal writing mode, the basic approach uses proportional fonts to represent Western alphas and uses proportional or monospace fonts for [European numerals](#term.european-numerals). In principle, there is tracking or spacing between an adjacent Han character and a Western character or a European numerals of up to 1/4 em, except at the line start or end.
 
@@ -2394,11 +2394,11 @@ Character size is measured by the size of the character frame. Character advance
 
 文字尺寸則為文字外框的尺寸。此外，字幅則是依照文字排列方向的文字外框大小，為文字的寬度。
 
-## Page & book layout 页面与书籍版式 頁面與書籍版式
+## Page & book layout页面与书籍版式 頁面與書籍版式
 
-## General page layout & progression 基本页面版式与装订方向 基本頁面版式與裝訂方向
+## General page layout & progression基本页面版式与装订方向 基本頁面版式與裝訂方向
 
-### Page design 中文排版的页面设计 中文排版的頁面設計
+### Page design中文排版的页面设计 中文排版的頁面設計
 
 
 Books are usually designed in the following sequence.
@@ -2442,7 +2442,7 @@ Magazines usually contain various kinds of content, which naturally leads to a v
 
 雜誌則因內容不同，排版樣式多變，文字大小、欄數依照內容不同會有所變化。
 
-#### Basic elements of page formatting 排版样式的主要元素 排版樣式的主要元素
+#### Basic elements of page formatting排版样式的主要元素 排版樣式的主要元素
 
 The following are the basic elements of a [page format](#term.page-format).
 
@@ -2477,7 +2477,7 @@ Establishing a type area may be seen as defining not only a rectangular area on 
 
 基本版式設定步驟不僅是在頁面中設定一個長方形空間，還需要為內文、標題、圖片配置等做出一個基礎的格子設定。於中文排版原則下，內文逐格進行配置，而得以對齊行首與行尾。但與西文混排、或配置[標點禁則](#prohibition_rules_for_line_start_end)處理時，內文可不按照格子排列；但仍須遵守對齊行首行尾的原則。
 
-#### Design of the type area 基本版式的设计元素 基本版式的設計元素
+#### Design of the type area基本版式的设计元素 基本版式的設計元素
 
 The type area defines the basic printing style of a book. The following are the basic elements of the type area.
 
@@ -2521,7 +2521,7 @@ The type area defines the basic printing style of a book. The following are the 
 
   字距
 
-#### From the template of the page format to the actual page format 从基本版式到实际版面的定版设计 從基本版式到實際版面的定版設計
+#### From the template of the page format to the actual page format从基本版式到实际版面的定版设计 從基本版式到實際版面的定版設計
 
 This section explains how to create an actual page format based on the type area, a step referred to as "page format finalization" for specific pages.
 
@@ -2551,7 +2551,7 @@ Newspapers and magazines often adjust the number of columns based on needs durin
 
    目錄、索引、參考文獻：此類頁面也以基本版式為基准進行排版。但具體實踐中，行首、行尾常會添加額外留白；此外，在正文採用單欄排版的同時，此類頁面也有可能分為多欄。
 
-#### Procedure for defining the type area 设计基本版式的步骤 設計基本版式的步驟
+#### Procedure for defining the type area设计基本版式的步骤 設計基本版式的步驟
 
 1. Specifying the dimensions of the type area
 
@@ -2559,12 +2559,12 @@ Newspapers and magazines often adjust the number of columns based on needs durin
 
    決定版心尺寸
 
-   1. For a document with a single column per page, specify the character size, the line length (the number of characters per line), the number of lines per page, and the line gap.
+1. For a document with a single column per page, specify the character size, the line length (the number of characters per line), the number of lines per page, and the line gap.
 
       无分栏时，需决定文字尺寸、一行的字数（即行长）、一页的行数以及行距。
 
       無分欄時，需決定文字尺寸、一行的字數（即行長）、一頁的行數以及行距。
-   2. For a document with multiple columns per page, specify the character size, the line length (the number of characters per line), the number of lines per column, the line gap, the number of columns and the column gap.
+2. For a document with multiple columns per page, specify the character size, the line length (the number of characters per line), the number of lines per column, the line gap, the number of columns and the column gap.
 
       当分栏时，需决定文字尺寸、一行的字数（即行长）、一栏的行数、行距、栏数以及栏距。
 
@@ -2575,22 +2575,22 @@ Newspapers and magazines often adjust the number of columns based on needs durin
 
    決定相對於完成尺寸，版心的配置位置。版心配置位置的設計順序有著以下方式。
 
-   1. Set the type area at the horizontal and vertical center of the trim size.
+1. Set the type area at the horizontal and vertical center of the trim size.
 
       将版心置于完成尺寸的正中央，天地等高、左右等宽。
 
       將版心置於完成尺寸的正中央，天地等高、左右等寬。
-   2. Position vertically by specifying the size of the space at the head (for horizontal writing mode) or the space at the foot (for vertical writing mode). Position horizontally by centering the type area.
+2. Position vertically by specifying the size of the space at the head (for horizontal writing mode) or the space at the foot (for vertical writing mode). Position horizontally by centering the type area.
 
       横排时指定天的留白量、直排时则指定地的留白量，左右等宽。
 
       橫排時指定天的留白量、直排時則指定地的留白量，左右等寬。
-   3. Position vertically by centering the type area. Position horizontally by specifying the size of the space for the gutter.
+3. Position vertically by centering the type area. Position horizontally by specifying the size of the space for the gutter.
 
       天地等高，指定装订线的留白量。
 
       天地等高，指定裝訂邊的留白量。
-   4. Position vertically by specifying the space at the head (for horizontal writing mode) or the space at the foot (for vertical writing mode). Position horizontally by specifying the size of the space for the gutter.
+4. Position vertically by specifying the space at the head (for horizontal writing mode) or the space at the foot (for vertical writing mode). Position horizontally by specifying the size of the space for the gutter.
 
       指定装订线的留白量，横排时指定天的留白量、直排时则指定地的留白量。
 
@@ -2602,7 +2602,7 @@ In most cases the type area is set at the horizontal and vertical center of the 
 
 一般而言，版心多置於完成尺寸的的正中央，後依照版心尺寸不同，向上下、左右調整。這種設計方式主要承襲自活字印刷，但在桌面排版中，則多以完成尺寸計算與版心尺寸四方邊界之差為之。
 
-#### Considerations when designing the type area 基本版式设计的注意事项 基本版式設計的注意事項
+#### Considerations when designing the type area基本版式设计的注意事项 基本版式設計的注意事項
 
 The following are considerations that need to be taken into account when designing the type area:
 
@@ -2617,9 +2617,9 @@ The following are considerations that need to be taken into account when designi
    決定版心尺寸時，須先考量到完成尺寸與留白後進行。一般而言，版心與完成尺寸會呈相似形的設計。
 2. There have been different size systems for Chinese fonts. The size system in traditional metal type utilized hào (literally number) units, while in the phototypesetting era, Q was used as the sizing unit instead. When it came to desktop publishing, font sizes were determined by the DTP point system which was built into the software itself. Currently, the traditional hào-system is still used for typesetting in many Chinese publications.
 
-   中文活字大小有不同单位。在金属活字时代，传统中文活字尺寸以“号”为单位，故称作“字号”；在照相排版时代沿用照排机尺寸的单位“级”，故称作“字级”；在桌面排版时代，直接使用桌面排版软件中的“点”（DTP point）。目前，很多场合的中文排版依旧习惯沿用“号”。
+   中文活字大小有不同单位。在金属活字时代，传统中文活字尺寸以“号”为单位，故称作“字号”；在照相排版时代沿用照排机尺寸的单位“级”，故称作“字级”；在桌面排版时代，直接使用桌面排版软件中的“点”(DTP point)。目前，很多场合的中文排版依旧习惯沿用“号”。
 
-   中文活字大小有不同單位。在金屬活字時代，傳統中文活字尺寸以「號」為單位，故稱作「字號」；在照相排版時代沿用照排機尺寸的單位「級」，故稱作「字級」；在桌面排版時代，直接使用桌面排版軟件中的「點」（DTP point）。目前，很多場合的中文排版依舊習慣沿用「號」。
+   中文活字大小有不同單位。在金屬活字時代，傳統中文活字尺寸以「號」為單位，故稱作「字號」；在照相排版時代沿用照排機尺寸的單位「級」，故稱作「字級」；在桌面排版時代，直接使用桌面排版軟件中的「點」(DTP point)。目前，很多場合的中文排版依舊習慣沿用「號」。
 
    These hào-systems were not standardized by the various foundries in the past. In addition, point-systems were also different in Anglo-American point systems, Europe Continental point systems, DTP point systems and other systems, which resulted in numerous conversion methods between the hào-system and the point-system. The following table lists their most common corresponding conversions as a reference. It is not normative information.
 
@@ -2627,56 +2627,56 @@ The following are considerations that need to be taken into account when designi
 
    「號」由於當年金屬活字各地廠家的規範不一而不盡相同，「號」也有英美、歐陸、DTP等多種制式，導致「號」與「點」的換算有不同方法。下表僅列出常見的一些換算數值，僅供參考，不作為規範性規定：
 
-   | Chinese size system | Western point system |
-   | --- | --- |
-   | Size 0 | 42 pt |
-   | Size 1 | 27.5/28 pt |
-   | Size Small 1 | 24 pt |
-   | Size 2 | 21/22 pt |
-   | Size Small 2 | 18 pt |
-   | Size 3 | 15.75/16 pt |
-   | Size 4 | 13.75/14 pt |
-   | Size Small 4 | 12 pt |
-   | Size 5 | 10.5 pt |
-   | Size Small 5 | 9 pt |
-   | Size 6 | 7.875/8 pt |
-   | Size 7 | 5.25 pt |
+| Chinese size system | Western point system |
+| ------------------- | -------------------- |
+| Size 0              | 42 pt                |
+| Size 1              | 27.5/28 pt           |
+| Size Small 1        | 24 pt                |
+| Size 2              | 21/22 pt             |
+| Size Small 2        | 18 pt                |
+| Size 3              | 15.75/16 pt          |
+| Size 4              | 13.75/14 pt          |
+| Size Small 4        | 12 pt                |
+| Size 5              | 10.5 pt              |
+| Size Small 5        | 9 pt                 |
+| Size 6              | 7.875/8 pt           |
+| Size 7              | 5.25 pt              |
 
-   | 号数 | 点数 |
-   | --- | --- |
-   | 初号 | 42 pt |
-   | 一号 | 27.5/28 pt |
-   | 小（新）一号 | 24 pt |
-   | 二号 | 21/22 pt |
-   | 小（新）二号 | 18 pt |
-   | 三号 | 15.75/16 pt |
-   | 四号 | 13.75/14 pt |
-   | 小（新）四号 | 12 pt |
-   | 五号 | 10.5 pt |
-   | 小（新）五号 | 9 pt |
-   | 六号 | 7.875/8 pt |
-   | 七号 | 5.25 pt |
+| 号数         | 点数        |
+| ------------ | ----------- |
+| 初号         | 42 pt       |
+| 一号         | 27.5/28 pt  |
+| 小（新）一号 | 24 pt       |
+| 二号         | 21/22 pt    |
+| 小（新）二号 | 18 pt       |
+| 三号         | 15.75/16 pt |
+| 四号         | 13.75/14 pt |
+| 小（新）四号 | 12 pt       |
+| 五号         | 10.5 pt     |
+| 小（新）五号 | 9 pt        |
+| 六号         | 7.875/8 pt  |
+| 七号         | 5.25 pt     |
 
-   | 號數 | 點數 |
-   | --- | --- |
-   | 初號 | 42 pt |
-   | 一號 | 27.5/28 pt |
-   | 小（新）一號 | 24 pt |
-   | 二號 | 21/22 pt |
-   | 小（新）二號 | 18 pt |
-   | 三號 | 15.75/16 pt |
-   | 四號 | 13.75/14 pt |
-   | 小（新）四號 | 12 pt |
-   | 五號 | 10.5 pt |
-   | 小（新）五號 | 9 pt |
-   | 六號 | 7.875/8 pt |
-   | 七號 | 5.25 pt |
+| 號數         | 點數        |
+| ------------ | ----------- |
+| 初號         | 42 pt       |
+| 一號         | 27.5/28 pt  |
+| 小（新）一號 | 24 pt       |
+| 二號         | 21/22 pt    |
+| 小（新）二號 | 18 pt       |
+| 三號         | 15.75/16 pt |
+| 四號         | 13.75/14 pt |
+| 小（新）四號 | 12 pt       |
+| 五號         | 10.5 pt     |
+| 小（新）五號 | 9 pt        |
+| 六號         | 7.875/8 pt  |
+| 七號         | 5.25 pt     |
 
    Size 5 is usually used for body text. Newspapers and magazines use both Size 5 and New Size 5. The acceptable minimum size for the text in content is Size 6 (7.875 pt ≒ 2.8 mm). If a smaller size is used, it will be difficult to read due to the complex structure of Han characters.
 
-   一般内文主要使用五号字（10.5 pt ≒ 3.7 mm），而报纸、杂志则使用新五号字（9 pt ≒ 3.2 mm），两种皆常用。而一般内文字最小使用到六号字（7.875 pt ≒ 2.8 mm），若小于此尺寸，由于汉字结构复杂，较难阅读。
+   一般内文主要使用五号字(10.5 pt ≒ 3.7 mm)，而报纸、杂志则使用新五号字(9 pt ≒ 3.2 mm)，两种皆常用。而一般内文字最小使用到六号字(7.875 pt ≒ 2.8 mm)，若小于此尺寸，由于汉字结构复杂，较难阅读。
 
-   一般內文主要使用五號字（10.5 pt ≒ 3.7 mm），而報紙、雜誌則使用新五號字（9 pt ≒ 3.2 mm），兩種皆常用。而一般內文字最小使用到六號字（7.875 pt ≒ 2.8 mm），若小於此尺寸，由於漢字結構複雜，較難閱讀。
+   一般內文主要使用五號字(10.5 pt ≒ 3.7 mm)，而報紙、雜誌則使用新五號字(9 pt ≒ 3.2 mm)，兩種皆常用。而一般內文字最小使用到六號字(7.875 pt ≒ 2.8 mm)，若小於此尺寸，由於漢字結構複雜，較難閱讀。
 3. Line length should be multiples of the character size and the line ends should be aligned with each other.
 
    一行的行长应为文字尺寸的整数倍，各行的位置尽可能头尾对齐。
@@ -2693,17 +2693,17 @@ The following are considerations that need to be taken into account when designi
 
    基于下述理由，行长必须为文字尺寸的整数倍：
 
-   1. The basic principle of Chinese typesetting is, with the exception of the last line of a paragraph, the end of every line should be aligned with each other.
+1. The basic principle of Chinese typesetting is, with the exception of the last line of a paragraph, the end of every line should be aligned with each other.
 
       中文排版的基本原则是，除段落最后一行以外，每行行尾应对齐。
 
       中文排版的基本原則是，除段落最後一行以外，每行行尾應對齊。
-   2. All characters used in Chinese typesetting (including Han characters and punctuation) are square characters.
+2. All characters used in Chinese typesetting (including Han characters and punctuation) are square characters.
 
       中文排版所用的文字（包括汉字、标点），其字框的设计原则是正方形。
 
       中文排版所用的文字（包括漢字、標點），其字框的設計原則是正方形。
-   3. Characters in Chinese typesetting are set solid.
+3. Characters in Chinese typesetting are set solid.
 
       中文排版的排字原则是，文字应为密排。
 
@@ -2738,18 +2738,18 @@ The following are considerations that need to be taken into account when designi
 
    指定版心的方法中，有著不以行距，而是依[行高](#term.line-height)來設定的方法。行高就是彼此鄰接的兩行之基準點間的距離。基準點依照處理方式而會有所不同。比如，在直排時可以行左右的中央線為基準點，橫排時可以行上下的中央線為基準點。當配置的文字全部尺寸相同時，有著以下關係：
 
-   - line height = character size / 2 + line gap + character size / 2 = character size + line gap
+- line height = character size / 2 + line gap + character size / 2 = character size + line gap
 
      行高=文字尺寸÷2+行距+文字尺寸÷2=文字尺寸+行距
 
      行高=文字尺寸÷2+行距+文字尺寸÷2=文字尺寸+行距
-   - line gap = line height - character size
+- line gap = line height - character size
 
      行距=行高-文字尺寸
 
      行距=行高-文字尺寸
 
-#### Handling of widows and orphans 孤行与孤字处理 孤行與孤字處理
+#### Handling of widows and orphans孤行与孤字处理 孤行與孤字處理
 
 In the tradition of Chinese composition, an orphan does not make a line, nor does a widow make a page. The principles are as described below.
 
@@ -2763,17 +2763,17 @@ In the tradition of Chinese composition, an orphan does not make a line, nor doe
 
    若段落末行僅有一個漢字，或一個漢字加上標點符號，即為[孤字](#term.orphan)。孤字可以以下方法處理，使段落末行能有兩個漢字以上：
 
-   1. Similar to the handling for the [prohibition rule](#prohibition_rules_for_line_start_end) that punctuation marks should not appear at the line start, the last character of the previous line can be moved to the next line, and the previous line should apply even inter-character spacing.
+1. Similar to the handling for the [prohibition rule](#prohibition_rules_for_line_start_end) that punctuation marks should not appear at the line start, the last character of the previous line can be moved to the next line, and the previous line should apply even inter-character spacing.
 
       按照[避头点的处理方式](#prohibition_rules_for_line_start_end)，由前一行取一字至末行，前一行采用均排。
 
       比照[避頭點的處理方式](#prohibition_rules_for_line_start_end)，由前一行取一字至末行，前一行採均排。
-   2. Delete some characters from the paragraph so that there will be enough space to move the orphan back to the previous line.
+2. Delete some characters from the paragraph so that there will be enough space to move the orphan back to the previous line.
 
       删减该段落文字，使孤字缩进段落前一行。
 
       刪減該段落文字，使孤字縮進段落前一行。
-   3. Add more characters to the last line.
+3. Add more characters to the last line.
 
       在该段落增加文字。
 
@@ -2790,22 +2790,22 @@ In the tradition of Chinese composition, an orphan does not make a line, nor doe
 
    若頁面中第一行為前一頁最後一個段落的末行，即為[孤行](#term.widow)。孤行可以以下方法處理：
 
-   1. Move the widow line to the previous page and it can go beyond the type area.
+1. Move the widow line to the previous page and it can go beyond the type area.
 
       将孤行移至前一页，使其突出版心。
 
       將孤行移至前一頁，使其突出版心。
-   2. Move the last line of the previous page to join the widow.
+2. Move the last line of the previous page to join the widow.
 
       前一页最后段落取一行置于该页。
 
       前一頁最後段落取一行置於該頁。
-   3. Delete some characters from the paragraph so that there will be enough space for the widow to be moved back to the previous page.
+3. Delete some characters from the paragraph so that there will be enough space for the widow to be moved back to the previous page.
 
       删除该段落文字，使该行能纳入前一页的段落。
 
       刪除該段落文字，使該行能納入前一頁之段落。
-   4. Add more characters to the widow so that there will be more than two lines on the page.
+4. Add more characters to the widow so that there will be more than two lines on the page.
 
       在该段落增加文字，让该行文字能够超过一行以上。
 
@@ -2851,13 +2851,13 @@ In the tradition of Chinese composition, an orphan does not make a line, nor doe
 
 There are different viewpoints on how the orphans and widows should be handled in the cases above due to differences between publishers. Case (a) and case (b) have a bigger affect on typesetting while case (c) affects it less. Cases (d) and (e) are rarely seen.
 
-以上状况是否需进行处理，各排版者有不同的标准。其中（a）与（b）对体裁的影响较为严重，（c）次之，（d）与（e）的处理则较少见。
+以上状况是否需进行处理，各排版者有不同的标准。其中(a)与(b)对体裁的影响较为严重，(c)次之，(d)与(e)的处理则较少见。
 
-以上狀況是否需進行處理，各排版者有不同的標準。其中a.與b. 對體裁的影響較為嚴重，c.次之，d.與e.之處理則較少見。
+以上狀況是否需進行處理，各排版者有不同的標準。其中a。與b。對體裁的影響較為嚴重，c.次之，d.與e。之處理則較少見。
 
-### Headings & page breaks 标题处理（包含换页处理） 標題處理（包含換頁處理）
+### Headings & page breaks标题处理（包含换页处理）標題處理（包含換頁處理）
 
-#### Types of headings 标题的种类 標題的種類
+#### Types of headings标题的种类 標題的種類
 
 In terms of text composition, there are three types of headings.
 
@@ -2929,7 +2929,7 @@ A run-in heading is a heading immediately followed by main text without a line b
 
 同行標題為標題後接的文章不予換行，而以接續在標題後面繼續排列的形式呈現。同行標題主要利用於小標。此外，小標也會使用換行標題。
 
-#### Font selection and heading font size 突显标题的方式 突顯標題的方式
+#### Font selection and heading font size突显标题的方式 突顯標題的方式
 
 Since they aim to indicate the structural level, most of the time headings have some special way to indicate their level. Here are some rules for the headings:
 
@@ -2939,7 +2939,7 @@ Since they aim to indicate the structural level, most of the time headings have 
 
 1. Character size for the heading: The character size of headings should be selected in accordance with the level of headings. For example, when the character size of main text is 9 point, the small headings are usually set in 10 points, medium headings are usually set in 12 points and large headings are usually set in 14 points.
 
-   使用不同的文字尺寸呈现标题的阶层，例如，有着大标、中标、小标时，小标比本文文字尺寸(例如：9 pt)大一阶段(例如：10 pt)，中标则比小标大一阶段(例如：12 pt)，大标则比中标大一阶段(例如:14 pt)。
+   使用不同的文字尺寸呈现标题的阶层，例如，有着大标、中标、小标时，小标比本文文字尺寸（例如：9 pt）大一阶段（例如：10 pt），中标则比小标大一阶段（例如：12 pt），大标则比中标大一阶段（例如：14 pt）。
 
    使用不同的文字尺寸呈現標題的階層，例如，有著大標、中標、小標時，小標比本文文字尺寸（例如：9 pt）大一階段（例如：10 pt），中標則比小標大一階段（例如：12 pt），大標則比中標大一階段（例如：14 pt）。
 
@@ -2982,7 +2982,7 @@ Since they aim to indicate the structural level, most of the time headings have 
 
    其他加上框線、圖片、記號等。
 
-#### How to handle headings with new recto and page break 单页起、换页处理 單頁起、換頁處理
+#### How to handle headings with new recto and page break单页起、换页处理 單頁起、換頁處理
 
 A large heading sometimes starts with a new page following a page break, to clearly demarcate the separation between sections, in which case the process below should be followed:
 
@@ -3012,11 +3012,11 @@ A large heading sometimes starts with a new page following a page break, to clea
 
    當中標、小標出現於某一頁的最末尾，其後沒有空間以至於無法接續內文段落時，由於這樣的呈現會使得體裁不良，也會讓中標、小標換頁，於下一頁開頭呈現。
 
-#### Handling of spaces just before the new recto, page breaks and new edges 单页起、换页处理时，前一页的处理 單頁起、換頁處理時，前一頁的處理
+#### Handling of spaces just before the new recto, page breaks and new edges单页起、换页处理时，前一页的处理 單頁起、換頁處理時，前一頁的處理
 
 Spaces just before new rectos, page breaks and new columns are treated as follows (the last pages are treated as the same):
 
-单页起、换页处理时，前一页的排版处理会是问题(最终页的处理亦同)，按照以下原则处理：
+单页起、换页处理时，前一页的排版处理会是问题（最终页的处理亦同），按照以下原则处理：
 
 單頁起、換頁處理時，前一頁的排版處理會是問題（最終頁的處理亦同），以以下原則處理：
 
@@ -3041,7 +3041,7 @@ Spaces just before new rectos, page breaks and new columns are treated as follow
 
    橫排多欄排版時，各欄行數原則上需對齊。若無法對齊時，不足的行數於最右欄末留空。
 
-#### Processing of run-in headings 同行标题的处理方式 同行標題的處理方式
+#### Processing of run-in headings同行标题的处理方式 同行標題的處理方式
 
 Run-in headings are usually used for low level headings. The following are some examples of run-in headings. Inter-character space between the run-in heading and following main text is usually a one character space of the base character size decided for the type area. Note that the run-in heading may be set at the last line of the page, or of the column in multi column style.
 
@@ -3071,24 +3071,24 @@ Run-in headings are usually used for low level headings. The following are some 
 
    與內文採用相同文字尺寸與字體，但於前面添加漢字數字或阿拉伯數字。
 
-## Forms & user interaction 表单与用户交互 表單與用戶交互
+## Forms & user interaction表单与用户交互 表單與用戶交互
 
-## Punctuation marks in Chinese 中文标点符号表 中文標點符號表
+## Punctuation marks in Chinese中文标点符号表 中文標點符號表
 
-### Pause or stop punctuation marks 点号 點號
+### Pause or stop punctuation marks点号 點號
 
-| Name (TC) 名称（繁） 名稱（繁） | Name (SC) 名称（简） 名稱（簡） | Character 字符 字符 | Unicode Unicode Unicode | Name Unicode名称 Unicode名稱 | Note 注 注 |
-| --- | --- | --- | --- | --- | --- |
-| 句號 | 句号 | 。 | 3002 | IDEOGRAPHIC FULL STOP |  |
-| ． | FF0E | FULLWIDTH FULL STOP |  |
-| 逗號 | 逗号 | ， | FF0C | FULLWIDTH COMMA |  |
-| 頓號 | 顿号 | 、 | 3001 | IDEOGRAPHIC COMMA |  |
-| 冒號 | 冒号 | ： | FF1A | FULLWIDTH COLON |  |
-| 分號 | 分号 | ； | FF1B | FULLWIDTH SEMICOLON |  |
-| 驚嘆號 | 叹号 | ！ | FF01 | FULLWIDTH EXCLAMATION MARK | Three exclamation marks used sequentially should take space of two characters. 三个叹号叠用时应占二个汉字大小。 三個驚嘆號疊用時應佔二個漢字大小。 |
-| ‼ | 203C | DOUBLE EXCLAMATION MARK | Takes 1 em. 占一个汉字大小。 佔一個漢字大小。 |
-| 問號 | 问号 | ？ | FF1F | FULLWIDTH QUESTION MARK | Three exclamation marks used sequentially should take space of two characters. 三个问号叠用时应占二个汉字大小。 三個問號疊用時應佔二個漢字大小。 |
-| ⁇ | 2047 | DOUBLE QUESTION MARK | Takes 1 em. 占一个汉字大小。 佔一個漢字大小。 |
+| Name (TC)名称（繁）名稱（繁） | Name (SC)名称（简）名稱（簡） | Character字符 字符      | Unicode Unicode Unicode                      | Name Unicode名称Unicode名稱 | Note注 注                                                                                                                                         |
+| ----------------------------- | ----------------------------- | ----------------------- | -------------------------------------------- | --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 句號                          | 句号                          | 。                      | 3002                                         | IDEOGRAPHIC FULL STOP       |                                                                                                                                                   |
+| ．                            | FF0E                          | FULLWIDTH FULL STOP     |                                              |                             |                                                                                                                                                   |
+| 逗號                          | 逗号                          | ，                      | FF0C                                         | FULLWIDTH COMMA             |                                                                                                                                                   |
+| 頓號                          | 顿号                          | 、                      | 3001                                         | IDEOGRAPHIC COMMA           |                                                                                                                                                   |
+| 冒號                          | 冒号                          | ：                      | FF1A                                         | FULLWIDTH COLON             |                                                                                                                                                   |
+| 分號                          | 分号                          | ；                      | FF1B                                         | FULLWIDTH SEMICOLON         |                                                                                                                                                   |
+| 驚嘆號                        | 叹号                          | ！                      | FF01                                         | FULLWIDTH EXCLAMATION MARK  | Three exclamation marks used sequentially should take space of two characters. 三个叹号叠用时应占二个汉字大小。三個驚嘆號疊用時應佔二個漢字大小。 |
+| ‼                             | 203C                          | DOUBLE EXCLAMATION MARK | Takes 1 em. 占一个汉字大小。佔一個漢字大小。 |                             |                                                                                                                                                   |
+| 問號                          | 问号                          | ？                      | FF1F                                         | FULLWIDTH QUESTION MARK     | Three exclamation marks used sequentially should take space of two characters. 三个问号叠用时应占二个汉字大小。三個問號疊用時應佔二個漢字大小。   |
+| ⁇                             | 2047                          | DOUBLE QUESTION MARK    | Takes 1 em. 占一个汉字大小。佔一個漢字大小。 |                             |                                                                                                                                                   |
 
 1. Although pause or stop punctuation marks may be positioned differently within the character square in vertical writing mode and horizontal writing mode, neither need to be rotated. Refer to the main text for details on the differences between them.
 
@@ -3096,23 +3096,23 @@ Run-in headings are usually used for low level headings. The following are some 
 
    分別於直排、橫排時，點號的字面分布可能有所差異，但皆毋需轉向。具體差別詳見正文。
 
-### Non-parenthetical indication punctuation marks 非夹注型标号 非夾注型標號
+### Non-parenthetical indication punctuation marks非夹注型标号 非夾注型標號
 
-| Name (TC) 名称（繁） 名稱（繁） | Name (SC) 名称（简） 名稱（簡） | Character 字符 字符 | Unicode Unicode Unicode | Name Unicode名称 Unicode名稱 | Note 注 注 |
-| --- | --- | --- | --- | --- | --- |
-| 破折號 | 破折号 | ⸺ | 2E3A | TWO-EM DASH | Takes space of two characters, in the shape of a single line without a break. 占二个汉字大小，呈一直线、中间不断开。 佔二個漢字大小，呈一直線、中間不斷開。 |
-| —— | 2014 | EM DASH |
-| 刪節號 | 省略号 | …… | 2026 | HORIZONTAL ELLIPSIS | Takes space of two characters, in the shape of a single line without a break, center-aligned both vertically and horizontally. 占二个汉字大小，呈一点线、中间不断开，应将省略点置于字面中央。 佔二個漢字大小，呈一點線、中間不斷開，應將省略點置於字面中央。 |
-| ⋯⋯ | 22EF | MIDLINE HORIZONTAL ELLIPSIS |
-| 連接號 | 连接号 | ～ | FF5E | FULLWIDTH TILDE |  |
-| - | 002D | HYPHEN-MINUS |
-| – | 2013 | EN DASH |
-| — | 2014 | EM DASH |
-| 間隔號 | 间隔号 | · | 00B7 | MIDDLE DOT |  |
-| ・ | 30FB | KATAKANA MIDDLE DOT |
-| ‧ | 2027 | HYPHENATION POINT | From Big5 encoding.  来自大五码。  來自大五碼。 |
-| 分隔號 | 分隔号 | / | 002F | SOLIDUS | Mainly used in Mainland China. 主要用于中国大陆。 主要用於中國大陸。 |
-| ／ | FF0F | FULLWIDTH SOLIDUS | Mainly used in Traditional Chinese. 主要用于繁体中文。 主要用於繁體中文。 |
+| Name (TC)名称（繁）名稱（繁） | Name (SC)名称（简）名稱（簡） | Character字符 字符          | Unicode Unicode Unicode                                                  | Name Unicode名称Unicode名稱 | Note注 注                                                                                                                                                                                                                                                   |
+| ----------------------------- | ----------------------------- | --------------------------- | ------------------------------------------------------------------------ | --------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 破折號                        | 破折号                        | ⸺                           | 2E3A                                                                     | TWO-EM DASH                 | Takes space of two characters, in the shape of a single line without a break. 占二个汉字大小，呈一直线、中间不断开。佔二個漢字大小，呈一直線、中間不斷開。                                                                                                  |
+| ——                            | 2014                          | EM DASH                     |                                                                          |                             |                                                                                                                                                                                                                                                             |
+| 刪節號                        | 省略号                        | ……                          | 2026                                                                     | HORIZONTAL ELLIPSIS         | Takes space of two characters, in the shape of a single line without a break, center-aligned both vertically and horizontally. 占二个汉字大小，呈一点线、中间不断开，应将省略点置于字面中央。佔二個漢字大小，呈一點線、中間不斷開，應將省略點置於字面中央。 |
+| ⋯⋯                            | 22EF                          | MIDLINE HORIZONTAL ELLIPSIS |                                                                          |                             |                                                                                                                                                                                                                                                             |
+| 連接號                        | 连接号                        | ～                          | FF5E                                                                     | FULLWIDTH TILDE             |                                                                                                                                                                                                                                                             |
+| -                             | 002D                          | HYPHEN-MINUS                |                                                                          |                             |                                                                                                                                                                                                                                                             |
+| –                             | 2013                          | EN DASH                     |                                                                          |                             |                                                                                                                                                                                                                                                             |
+| —                             | 2014                          | EM DASH                     |                                                                          |                             |                                                                                                                                                                                                                                                             |
+| 間隔號                        | 间隔号                        | ·                           | 00B7                                                                     | MIDDLE DOT                  |                                                                                                                                                                                                                                                             |
+| ・                            | 30FB                          | KATAKANA MIDDLE DOT         |                                                                          |                             |                                                                                                                                                                                                                                                             |
+| ‧                             | 2027                          | HYPHENATION POINT           | From Big5 encoding.  来自大五码。來自大五碼。                            |                             |                                                                                                                                                                                                                                                             |
+| 分隔號                        | 分隔号                        | /                           | 002F                                                                     | SOLIDUS                     | Mainly used in Mainland China. 主要用于中国大陆。主要用於中國大陸。                                                                                                                                                                                         |
+| ／                            | FF0F                          | FULLWIDTH SOLIDUS           | Mainly used in Traditional Chinese. 主要用于繁体中文。主要用於繁體中文。 |                             |                                                                                                                                                                                                                                                             |
 
 1. Two-em dashes, ellipses, and connector marks need to be rotated 90 degrees clockwise in vertical writing mode.
 
@@ -3120,34 +3120,34 @@ Run-in headings are usually used for low level headings. The following are some 
 
    破折號、刪節號及連接號於直排時，需順時針旋轉90°。
 
-### Parenthetical indication punctuation marks 夹注符号 夾注符號
+### Parenthetical indication punctuation marks夹注符号 夾注符號
 
-| Name (TC) 名称（繁） 名稱（繁） | Name (SC) 名称（简） 名稱（簡） | Character 字符 字符 | Unicode Unicode Unicode | Name Unicode名称 Unicode名稱 | Note 注 注 |
-| --- | --- | --- | --- | --- | --- |
-| 引號 | 引号 | 「 | 300C | LEFT CORNER BRACKET | Mainly used in Traditional Chinese. 主要用于繁体中文。 主要用於繁體中文。 |
-| 」 | 300D | RIGHT CORNER BRACKET |
-| 『 | 300E | LEFT WHITE CORNER BRACKET |
-| 』 | 300F | RIGHT WHITE CORNER BRACKET |
-| “ | 201C | LEFT DOUBLE QUOTATION MARK | Takes space of one character, and usually used in Simplified Chinese. Corner brackets (『』「」) are usually used in vertical writing mode. 占一个汉字大小，主要用于简体中文。文字直排时通常改用角引号（『』「」）。 佔一個漢字大小，主要用於簡體中文。文字直排時通常改用角引號（『』「」）。 |
-| ” | 201D | RIGHT DOUBLE QUOTATION MARK |
-| ‘ | 2018 | LEFT SINGLE QUOTATION MARK |
-| ’ | 2019 | RIGHT SINGLE QUOTATION MARK |
-| 夾注號 | 括号 | （ | FF08 | FULLWIDTH LEFT PARENTHESIS |  |
-| ） | FF09 | FULLWIDTH RIGHT PARENTHESIS |
-| 書名號乙式 | 书名号 | 《 | 300A | LEFT DOUBLE ANGLE BRACKET |  |
-| 》 | 300B | RIGHT DOUBLE ANGLE BRACKET |
-| 篇名號 | 书名号 | 〈 | 3008 | LEFT ANGLE BRACKET |
-| 〉 | 3009 | RIGHT ANGLE BRACKET |
-| 其他 | 其他 | 【 | 3010 | LEFT BLACK LENTICULAR BRACKET |  |
-| 】 | 3011 | RIGHT BLACK LENTICULAR BRACKET |
-| 〖 | 3016 | LEFT WHITE LENTICULAR BRACKET |
-| 〗 | 3017 | RIGHT WHITE LENTICULAR BRACKET |
-| 〔 | 3014 | LEFT TORTOISE SHELL BRACKET |
-| 〕 | 3015 | RIGHT TORTOISE SHELL BRACKET |
-| ［ | FF3B | FULLWIDTH LEFT SQUARE BRACKET |
-| ］ | FF3D | FULLWIDTH RIGHT SQUARE BRACKET |
-| ｛ | FF5B | FULLWIDTH LEFT CURLY BRACKET |
-| ｝ | FF5D | FULLWIDTH RIGHT CURLY BRACKET |
+| Name (TC)名称（繁）名稱（繁） | Name (SC)名称（简）名稱（簡） | Character字符 字符             | Unicode Unicode Unicode                                                                                                                                                                                                                                                                  | Name Unicode名称Unicode名稱   | Note注 注                                                                |
+| ----------------------------- | ----------------------------- | ------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------- | ------------------------------------------------------------------------ |
+| 引號                          | 引号                          | 「                             | 300C                                                                                                                                                                                                                                                                                     | LEFT CORNER BRACKET           | Mainly used in Traditional Chinese. 主要用于繁体中文。主要用於繁體中文。 |
+| 」                            | 300D                          | RIGHT CORNER BRACKET           |                                                                                                                                                                                                                                                                                          |                               |                                                                          |
+| 『                            | 300E                          | LEFT WHITE CORNER BRACKET      |                                                                                                                                                                                                                                                                                          |                               |                                                                          |
+| 』                            | 300F                          | RIGHT WHITE CORNER BRACKET     |                                                                                                                                                                                                                                                                                          |                               |                                                                          |
+| “                             | 201C                          | LEFT DOUBLE QUOTATION MARK     | Takes space of one character, and usually used in Simplified Chinese. Corner brackets (『』「」) are usually used in vertical writing mode. 占一个汉字大小，主要用于简体中文。文字直排时通常改用角引号(『』「」)。佔一個漢字大小，主要用於簡體中文。文字直排時通常改用角引號(『』「」)。 |                               |                                                                          |
+| ”                             | 201D                          | RIGHT DOUBLE QUOTATION MARK    |                                                                                                                                                                                                                                                                                          |                               |                                                                          |
+| ‘                             | 2018                          | LEFT SINGLE QUOTATION MARK     |                                                                                                                                                                                                                                                                                          |                               |                                                                          |
+| ’                             | 2019                          | RIGHT SINGLE QUOTATION MARK    |                                                                                                                                                                                                                                                                                          |                               |                                                                          |
+| 夾注號                        | 括号                          | (                              | FF08                                                                                                                                                                                                                                                                                     | FULLWIDTH LEFT PARENTHESIS    |                                                                          |
+| )                             | FF09                          | FULLWIDTH RIGHT PARENTHESIS    |                                                                                                                                                                                                                                                                                          |                               |                                                                          |
+| 書名號乙式                    | 书名号                        | 《                             | 300A                                                                                                                                                                                                                                                                                     | LEFT DOUBLE ANGLE BRACKET     |                                                                          |
+| 》                            | 300B                          | RIGHT DOUBLE ANGLE BRACKET     |                                                                                                                                                                                                                                                                                          |                               |                                                                          |
+| 篇名號                        | 书名号                        | 〈                             | 3008                                                                                                                                                                                                                                                                                     | LEFT ANGLE BRACKET            |                                                                          |
+| 〉                            | 3009                          | RIGHT ANGLE BRACKET            |                                                                                                                                                                                                                                                                                          |                               |                                                                          |
+| 其他                          | 其他                          | 【                             | 3010                                                                                                                                                                                                                                                                                     | LEFT BLACK LENTICULAR BRACKET |                                                                          |
+| ]                             | 3011                          | RIGHT BLACK LENTICULAR BRACKET |                                                                                                                                                                                                                                                                                          |                               |                                                                          |
+| 〖                            | 3016                          | LEFT WHITE LENTICULAR BRACKET  |                                                                                                                                                                                                                                                                                          |                               |                                                                          |
+| 〗                            | 3017                          | RIGHT WHITE LENTICULAR BRACKET |                                                                                                                                                                                                                                                                                          |                               |                                                                          |
+| 〔                            | 3014                          | LEFT TORTOISE SHELL BRACKET    |                                                                                                                                                                                                                                                                                          |                               |                                                                          |
+| 〕                            | 3015                          | RIGHT TORTOISE SHELL BRACKET   |                                                                                                                                                                                                                                                                                          |                               |                                                                          |
+| ［                            | FF3B                          | FULLWIDTH LEFT SQUARE BRACKET  |                                                                                                                                                                                                                                                                                          |                               |                                                                          |
+| ］                            | FF3D                          | FULLWIDTH RIGHT SQUARE BRACKET |                                                                                                                                                                                                                                                                                          |                               |                                                                          |
+| ｛                            | FF5B                          | FULLWIDTH LEFT CURLY BRACKET   |                                                                                                                                                                                                                                                                                          |                               |                                                                          |
+| ｝                            | FF5D                          | FULLWIDTH RIGHT CURLY BRACKET  |                                                                                                                                                                                                                                                                                          |                               |                                                                          |
 
 1. Parenthetical punctuation needs to be rotated 90 degrees clockwise in vertical writing mode.
 
@@ -3155,14 +3155,14 @@ Run-in headings are usually used for low level headings. The following are some 
 
    夾注符號於直排時，需順時針旋轉90°。
 
-### Interlinear indication punctuation marks 行间标号 行間標號
+### Interlinear indication punctuation marks行间标号 行間標號
 
-| Name (TC) 名称（繁） 名稱（繁） | Name (SC) 名称（简） 名稱（簡） | Character 字符 字符 | Unicode Unicode Unicode | Name Unicode名称 Unicode名稱 |
-| --- | --- | --- | --- | --- |
-| 專名號 | 专名号 | ＿ | FF3F | LOW LINE |
-| 書名號甲式 | 书名号 | ﹏ | FE4F | WAVY LOW LINE |
-| 著重號 | 着重号 | ● | 25CF | BLACK CIRCLE |
-| • | 2022 | BULLET |
+| Name (TC)名称（繁）名稱（繁） | Name (SC)名称（简）名稱（簡） | Character字符 字符 | Unicode Unicode Unicode | Name Unicode名称Unicode名稱 |
+| ----------------------------- | ----------------------------- | ------------------ | ----------------------- | --------------------------- |
+| 專名號                        | 专名号                        | ＿                 | FF3F                    | LOW LINE                    |
+| 書名號甲式                    | 书名号                        | ﹏                 | FE4F                    | WAVY LOW LINE               |
+| 著重號                        | 着重号                        | ●                  | 25CF                    | BLACK CIRCLE                |
+| •                             | 2022                          | BULLET             |                         |                             |
 
 1. Interlinear indication punctuation marks need to be rotated 90 degrees clockwise in vertical writing mode.
 
@@ -3170,149 +3170,149 @@ Run-in headings are usually used for low level headings. The following are some 
 
    行間標號於直排時，需順時針旋轉90°。
 
-### Table of punctuation marks 标点符号全表 標點符號全表
+### Table of punctuation marks标点符号全表 標點符號全表
 
-| Character 字符 字符 | Unicode Unicode Unicode | Name Unicode名称 Unicode名稱 | Unbreakable 不可分离 不可分離 | Rotated 90° clockwise in vertical writing mode 直排时右旋90° 直排時右旋90° |
-| --- | --- | --- | --- | --- |
-| 。 | 3002 | IDEOGRAPHIC FULL STOP |  |  |
-| ． | FF0E | FULLWIDTH FULL STOP |  |  |
-| ， | FF0C | FULLWIDTH COMMA |  |  |
-| 、 | 3001 | IDEOGRAPHIC COMMA |  |  |
-| ： | FF1A | FULLWIDTH COLON |  |  |
-| ； | FF1B | FULLWIDTH SEMICOLON |  |  |
-| ！ | FF01 | FULLWIDTH EXCLAMATION MARK |  |  |
-| ‼ | 203C | DOUBLE EXCLAMATION MARK |  |  |
-| ？ | FF1F | FULLWIDTH QUESTION MARK |  |  |
-| ⁇ | 2047 | DOUBLE QUESTION MARK |  |  |
-| ⸺ | 2E3A | TWO-EM DASH | ✓ | ✓ |
-| —— | 2014 | EM DASH | ✓ | ✓ |
-| …… | 2026 | HORIZONTAL ELLIPSIS | ✓ | ✓ |
-| ⋯⋯ | 22EF | MIDLINE HORIZONTAL ELLIPSIS | ✓ | ✓ |
-| ～ | FF5E | FULLWIDTH TILDE |  | ✓ |
-| - | 002D | HYPHEN-MINUS |  | ✓ |
-| – | 2013 | EN DASH |  | ✓ |
-| — | 2014 | EM DASH |  | ✓ |
-| · | 00B7 | MIDDLE DOT |  |  |
-| ・ | 30FB | KATAKANA MIDDLE DOT |  |  |
-| ‧ | 2027 | HYPHENATION POINT |  |  |
-| / | 002F | SOLIDUS |  | ✓ |
-| ／ | FF0F | FULLWIDTH SOLIDUS |  |  |
-| 「 | 300C | LEFT CORNER BRACKET |  | ✓ |
-| 」 | 300D | RIGHT CORNER BRACKET |  | ✓ |
-| 『 | 300E | LEFT WHITE CORNER BRACKET |  | ✓ |
-| 』 | 300F | RIGHT WHITE CORNER BRACKET |  | ✓ |
-| “ | 201C | LEFT DOUBLE QUOTATION MARK |  | ✓ |
-| ” | 201D | RIGHT DOUBLE QUOTATION MARK |  | ✓ |
-| ‘ | 2018 | LEFT SINGLE QUOTATION MARK |  | ✓ |
-| ’ | 2019 | RIGHT SINGLE QUOTATION MARK |  | ✓ |
-| （ | FF08 | FULLWIDTH LEFT PARENTHESIS |  | ✓ |
-| ） | FF09 | FULLWIDTH RIGHT PARENTHESIS |  | ✓ |
-| 《 | 300A | LEFT DOUBLE ANGLE BRACKET |  | ✓ |
-| 》 | 300B | RIGHT DOUBLE ANGLE BRACKET |  | ✓ |
-| 〈 | 3008 | LEFT ANGLE BRACKET |  | ✓ |
-| 〉 | 3009 | RIGHT ANGLE BRACKET |  | ✓ |
-| 【 | 3010 | LEFT BLACK LENTICULAR BRACKET |  | ✓ |
-| 】 | 3011 | RIGHT BLACK LENTICULAR BRACKET |  | ✓ |
-| 〖 | 3016 | LEFT WHITE LENTICULAR BRACKET |  | ✓ |
-| 〗 | 3017 | RIGHT WHITE LENTICULAR BRACKET |  | ✓ |
-| 〔 | 3014 | LEFT TORTOISE SHELL BRACKET |  | ✓ |
-| 〕 | 3015 | RIGHT TORTOISE SHELL BRACKET |  | ✓ |
-| ［ | FF3B | FULLWIDTH LEFT SQUARE BRACKET |  | ✓ |
-| ］ | FF3D | FULLWIDTH RIGHT SQUARE BRACKET |  | ✓ |
-| ｛ | FF5B | FULLWIDTH LEFT CURLY BRACKET |  | ✓ |
-| ｝ | FF5D | FULLWIDTH RIGHT CURLY BRACKET |  | ✓ |
-| ＿ | FF3F | LOW LINE |  | ✓ |
-| ﹏ | FE4F | WAVY LOW LINE |  | ✓ |
-| ● | 25CF | BLACK CIRCLE |  |  |
-| • | 2022 | BULLET |  |  |
+| Character字符 字符 | Unicode Unicode Unicode | Name Unicode名称Unicode名稱    | Unbreakable不可分离 不可分離 | Rotated 90° clockwise in vertical writing mode直排时右旋90°直排時右旋90° |
+| ------------------ | ----------------------- | ------------------------------ | ---------------------------- | ------------------------------------------------------------------------ |
+| .                  | 3002                    | IDEOGRAPHIC FULL STOP          |                              |                                                                          |
+| ．                 | FF0E                    | FULLWIDTH FULL STOP            |                              |                                                                          |
+| ,                  | FF0C                    | FULLWIDTH COMMA                |                              |                                                                          |
+| 、                 | 3001                    | IDEOGRAPHIC COMMA              |                              |                                                                          |
+| :                  | FF1A                    | FULLWIDTH COLON                |                              |                                                                          |
+| ;                  | FF1B                    | FULLWIDTH SEMICOLON            |                              |                                                                          |
+| !                  | FF01                    | FULLWIDTH EXCLAMATION MARK     |                              |                                                                          |
+| ‼                  | 203C                    | DOUBLE EXCLAMATION MARK        |                              |                                                                          |
+| ?                  | FF1F                    | FULLWIDTH QUESTION MARK        |                              |                                                                          |
+| ⁇                  | 2047                    | DOUBLE QUESTION MARK           |                              |                                                                          |
+| ⸺                  | 2E3A                    | TWO-EM DASH                    | ✓                            | ✓                                                                        |
+| ——                 | 2014                    | EM DASH                        | ✓                            | ✓                                                                        |
+| ……                 | 2026                    | HORIZONTAL ELLIPSIS            | ✓                            | ✓                                                                        |
+| ⋯⋯                 | 22EF                    | MIDLINE HORIZONTAL ELLIPSIS    | ✓                            | ✓                                                                        |
+| ～                 | FF5E                    | FULLWIDTH TILDE                |                              | ✓                                                                        |
+| -                  | 002D                    | HYPHEN-MINUS                   |                              | ✓                                                                        |
+| –                  | 2013                    | EN DASH                        |                              | ✓                                                                        |
+| —                  | 2014                    | EM DASH                        |                              | ✓                                                                        |
+| ·                  | 00B7                    | MIDDLE DOT                     |                              |                                                                          |
+| ・                 | 30FB                    | KATAKANA MIDDLE DOT            |                              |                                                                          |
+| ‧                  | 2027                    | HYPHENATION POINT              |                              |                                                                          |
+| /                  | 002F                    | SOLIDUS                        |                              | ✓                                                                        |
+| ／                 | FF0F                    | FULLWIDTH SOLIDUS              |                              |                                                                          |
+| 「                 | 300C                    | LEFT CORNER BRACKET            |                              | ✓                                                                        |
+| 」                 | 300D                    | RIGHT CORNER BRACKET           |                              | ✓                                                                        |
+| 『                 | 300E                    | LEFT WHITE CORNER BRACKET      |                              | ✓                                                                        |
+| 』                 | 300F                    | RIGHT WHITE CORNER BRACKET     |                              | ✓                                                                        |
+| “                  | 201C                    | LEFT DOUBLE QUOTATION MARK     |                              | ✓                                                                        |
+| ”                  | 201D                    | RIGHT DOUBLE QUOTATION MARK    |                              | ✓                                                                        |
+| ‘                  | 2018                    | LEFT SINGLE QUOTATION MARK     |                              | ✓                                                                        |
+| ’                  | 2019                    | RIGHT SINGLE QUOTATION MARK    |                              | ✓                                                                        |
+| (                  | FF08                    | FULLWIDTH LEFT PARENTHESIS     |                              | ✓                                                                        |
+| )                  | FF09                    | FULLWIDTH RIGHT PARENTHESIS    |                              | ✓                                                                        |
+| 《                 | 300A                    | LEFT DOUBLE ANGLE BRACKET      |                              | ✓                                                                        |
+| 》                 | 300B                    | RIGHT DOUBLE ANGLE BRACKET     |                              | ✓                                                                        |
+| 〈                 | 3008                    | LEFT ANGLE BRACKET             |                              | ✓                                                                        |
+| 〉                 | 3009                    | RIGHT ANGLE BRACKET            |                              | ✓                                                                        |
+| [                  | 3010                    | LEFT BLACK LENTICULAR BRACKET  |                              | ✓                                                                        |
+| ]                  | 3011                    | RIGHT BLACK LENTICULAR BRACKET |                              | ✓                                                                        |
+| 〖                 | 3016                    | LEFT WHITE LENTICULAR BRACKET  |                              | ✓                                                                        |
+| 〗                 | 3017                    | RIGHT WHITE LENTICULAR BRACKET |                              | ✓                                                                        |
+| 〔                 | 3014                    | LEFT TORTOISE SHELL BRACKET    |                              | ✓                                                                        |
+| 〕                 | 3015                    | RIGHT TORTOISE SHELL BRACKET   |                              | ✓                                                                        |
+| ［                 | FF3B                    | FULLWIDTH LEFT SQUARE BRACKET  |                              | ✓                                                                        |
+| ］                 | FF3D                    | FULLWIDTH RIGHT SQUARE BRACKET |                              | ✓                                                                        |
+| ｛                 | FF5B                    | FULLWIDTH LEFT CURLY BRACKET   |                              | ✓                                                                        |
+| ｝                 | FF5D                    | FULLWIDTH RIGHT CURLY BRACKET  |                              | ✓                                                                        |
+| ＿                 | FF3F                    | LOW LINE                       |                              | ✓                                                                        |
+| ﹏                 | FE4F                    | WAVY LOW LINE                  |                              | ✓                                                                        |
+| ●                  | 25CF                    | BLACK CIRCLE                   |                              |                                                                          |
+| •                  | 2022                    | BULLET                         |                              |                                                                          |
 
-## Glossary 词汇表 詞彙表
+## Glossary词汇表 詞彙表
 
 Search glossary terms
 
 ×
 
-| Term (TC) 詞彙（繁） 词汇（繁） | Term (SC) 詞彙（簡） 词汇（简） | Pinyin 漢語拼音 汉语拼音 | English 英語 英语 | Definition 定義 定义 |
-| --- | --- | --- | --- | --- |
-| 阿拉伯數字 | 阿拉伯数字 | Ālābó shùzì | European numerals/Arabic numerals/Hindu–Arabic numerals/European digits (in Unicode) | A general name of Hindu–Arabic numeral system. Hindu–Arabic numerals, also called Arabic numerals or European digits (in Unicode) are the ten digits: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, based on the Hindu–Arabic numeral system, the most common system for the symbolic representation of numbers in the world today. [[Definition from Wikipedia]](https://en.wikipedia.org/wiki/Arabic_numerals )  印度-阿拉伯数字的统称。阿拉伯数字是西方语言或欧洲形式的印度-阿拉伯数字，以十进制为基础，采用0、1、2、3、4、5、6、7、8、9共10个计数符号。采取位值法，高位在左，低位在右，从左往右书写。  印度-阿拉伯數字的統稱。阿拉伯數字是西方語言或歐洲形式的印度-阿拉伯數字，以十進位為基礎，採用0、1、2、3、4、5、6、7、8、9共10個計數符號。採取比特值法，高位在左，低位在右，從左往右書寫。 |
-| 版心 | 版心 | bǎnxīn | type area | The area, usually in the center of a printed page but without bleed and images, works as the main area for content printing.  印刷成品版面中的图文印刷区域（不含出血图像）(GB 9851.2-2008, 3.3)。  印刷成品版面中的圖文印刷區域（不含出血圖像）(GB 9851.2-2008, 3.3)。 |
-| 半形 | 半角 | bànxíng/bànjiǎo | halfwidth | 1. A relative index for the length which is equal to 1/2 of a given character size.- A square character frame that has a character advance of 1/2 character size.   排字的度量单位，宽度等于同样字号全角的一半。  排字的度量單位，寬度等於同樣字號全形的一半。 |
-| 標點符號 | 标点符号 | biāodiǎn fúhào | punctuation marks | The marks that aid texts to record language, and are an organic part of the written language. They are used to indicate pause, mood and special nature and functions of some parts (mainly words) in a sentence. (GB/T 15834—2011)  辅助文字记录语言的符号，是书面语的有机组成部分，用来表示语句的停顿、语气以及表示某成分（主要是词语）的特定性质和作用。(GB/T 15834—2011)  輔助文字記錄語言的符號，是書面語的有機組成部分，用來表示語句的停頓、語氣以及表示某成分（主要是詞語）的特定性質和作用。(GB/T 15834—2011) |
-| 標點符號擠壓 | 标点符号挤压 | biāodiǎn fúhào jǐyā | compression rules for consecutive punctuation marks | The rules for type setting by compressing the space for the punctuation marks in the beginning or ending of a line or the space between consecutive punctuation marks.  对位于行首、行尾或连续存在标点符号的富余空间进行调整的排版方式。  對位於行首、行尾或連續存在標點符號的富餘空間進行調整的排版方式。 |
-| 標號 | 标号 | biāohào | indication punctuation marks | Puctuation marks for indication, mainly for marking the special nature and function of a part (mainly words) of a sentence. (GB/T 15834—2011)  标号的作用是标明，主要标示某些成分（主要是词语）的特定性质和作用。(GB/T 15834—2011)  標號的作用是標明，主要標示某些成分（主要是詞語）的特定性質和作用。(GB/T 15834—2011) |
-| 標音 | 标音 | biāoyīn | phonetic annotation | The way to indicate the pronunciation of the Han characters, e.g. ruby.  为汉字标注发音的方式，主要有行间注等。  為漢字標注發音的方式，主要有行間注等。 |
-| 比例字體 | 比例字体 | bǐlì zìtǐ | proportional font | A proportional font (also called a variable-width font) is a font in which each character occupies only as much horizontal space as it needs. For example, in a proportional font the letter "i" is narrower than the letter "m". This contrasts with a monospaced font, where every character has the same fixed width regardless of shape.  比例字体（或可变宽度字体）是字体的一种分类，其中每个字符的宽度根据其笔画和外形量身定制。例如，在比例字体中，"i" 比 "m" 窄。与之相对的是等宽字体，等宽字体的每个字符占用相同的水平空间。  比例字體（或可變寬度字體）是字體的一種分類，其中每個字元的寬度根據其筆畫和外形量身定製。例如，在比例字體中，「i」 比 「m」 窄。與之相對的是等寬字體，等寬字體的每個字元占用相同的水平空間。 |
-| 出血 | 出血 | chūxiě | bleed | The part of graphics that goes beyond the edge of final page that will be trimmed off.  超出成品幅面范围而被裁切掉的图像。(GB 9851.2-2008, 3.8)  超出成品幅面範圍而被裁切掉的圖像。(GB 9851.2-2008, 3.8) |
-| 大五碼 | 大五码 | Dàwǔmǎ | Big5 | Big-5 or Big5 is a Chinese character encoding method used in Taiwan, Hong Kong, and Macau for Traditional Chinese characters. A total of 13060 Traditional Chinese characters are encoded with Big5. [[Definition from Wikipedia]](https://en.wikipedia.org/wiki/Big5)  繁体中文常用的汉字编码字符集标准之一，共收录13,060个汉字。  繁體中文常用的漢字編碼字符集標準之一，共收錄13,060個漢字。 |
-| 地／地腳 | 地/地脚 | dì/dìjiǎo | footer/foot/bottom margin | The bottom margin between the edge of a trimmed page and the type area.  版心下沿至成品幅面下沿之间的空白区域。(GB 9851.2-2008, 3.5)。  版心下沿至成品幅面下沿之間的空白區域。(GB 9851.2-2008, 3.5)。 |
-| 點 | 点 | diǎn | point (pt) | In typography, the point is the smallest unit of measure, used for measuring font size, leading, and other items on a printed page. The DTP point (desktop publishing point) as the de facto standard point is defined as 1⁄72 of an international inch (about 0.35146 mm) and, as with earlier American point sizes, is considered to be 1⁄12 of a pica. [[Definition from Wikipedia]](https://en.wikipedia.org/wiki/Point_(typography))  字号的一种计量单位，常用的英美点制下1点约为0.35146 mm，也被音译作"磅（因）"。  字號的一種計量單位，常用的英美點制下1點約為0.35146 mm，也被音譯作「磅（因）」。 |
-| 點號 | 点号 | diǎnhào | pause or stop punctuation marks | Punctuation marks for breaking, mainly for pause and mood, including marks at end-sentence and in-sentence.  点号的作用是点断，主要表示停顿和语气。分为句末点号和句内点号。(GB/T 15834—2011)  點號的作用是點斷，主要表示停頓和語氣。分為句末點號和句內點號。(GB/T 15834—2011) |
-| 底端 | 底端 | dǐduān | line foot | The closing side of the content in a type area. Usually, for vertical writing, it is on the left side while for horizontal writing, it is at the bottom.  文本或文字靠近版面结尾的一端。通常，文字直排时底端在左，横排在下。  文本或文字靠近版面結尾的一端。通常，文字直排時底端在左，橫排在下。 |
-| 頂端 | 顶端 | dǐngduān | line head | The beginning side of the content in a type area. Usually, for vertical writing, it is on the right side while for horizontal writing, it is at the top.  文本或文字靠近版面近起始的一端。通常，文字直排时顶端在右，横排在上。  文本或文字靠近版面近起始的一端。通常，文字直排時頂端在右，橫排在上。 |
-| 段落 | 段落 | duànlùo | paragraph | A paragraph is a self-contained unit of a discourse in writing dealing with a particular point or idea. A paragraph consists of more than one sentence. [[Definition from Wikipedia]](https://en.wikipedia.org/wiki/Paragraph)  由语句组成的句群，一个段落由一至多个语句组成。  由語句組成的句群，一個段落由一至多個語句組成。 |
-| 對齊方式 | 对齐方式 | duìqí fāngshì | alignment | In typesetting and page layout, alignment or range is the setting of text flow or image placement relative to a page, column (measure), table cell, or tab. The type alignment setting is sometimes referred to as text alignment, text justification, or type justification. [[Definition from Wikipedia]](https://en.wikipedia.org/wiki/Typographic_alignment)  对字、行等各种元素的分布进行整理的方法。  對字、行等各種元素的分布進行整理的方法。 |
-| 兒化 | 儿化 | érhuà | erhua | In standard Chinese and certain dialects, some words have rhotacized endings that result in phonetic changes to how the word sounds.  在现代汉语以及一些方音里，一些词汇字音的韵母因卷舌动作而发生的音变现象。  在現代漢語以及一些方音裡，一些詞彙字音的韻母因捲舌動作而發生的音變現象。 |
-| 繁體中文 | 繁体中文 | fántǐ Zhōngwén | Traditional Chinese | The writing system of Chinese using characters that are relatively more complex in structure and stroke count. Known as Traditional Chinese because of its long history of use. Cf. Simplified Chinese.  字形及笔画相对较复杂的汉字体系。因使用时间较长，又名传统汉字或正体汉字，与之对应者为简体中文。  字形及筆畫相對較複雜的漢字體系。因使用時間較長，又名傳統漢字或正體漢字，與之對應者為簡體中文。 |
-| 分詞連寫 | 分词连写 | fēncí liánxiě | words as the base units | The usage of words as the segmentation unit for the romanisation of Chinese.  以汉语词为单位拼写罗马拼音的方式。  以漢語詞為單位拼寫羅馬拼音的方式。 |
-| 分字連寫 | 分字连写 | fēnzì liánxiě | characters as the base units | The usage of characters as the segmentation unit for the romanisation of Chinese.  以字为单位拼写罗马拼音的方式。  以字為單位拼寫羅馬拼音的方式。 |
-| 符號分離禁則 | 符号分离禁则 | fúhào fēnlí jìnzé | prohibition rules for unbreakable punctuation | The rules for certain punctuation marks that do not allow any spaces between them.  特定的符号里不得加入空隙的原则。  特定的符號里不得加入空隙的原則。 |
-| 孤行 | 孤行 | gūháng | widow | Literally "orphan line", the paragraph-ending line that falls at the beginning of a new page or column, or the paragraph-opening line that appears by itself at the end of a page or column; both separated from the rest of the text.  页面中首行为前页最后一个段落的末行者为孤行。  頁面中首行為前頁最後一個段落的末行者為孤行。 |
-| 孤字 | 孤字 | gūzì | orphan | Literally "orphan character", the paragraph-ending single character, with or without punctuation, became the last line of a paragraph.  段落末行仅有一个汉字，或一个汉字加上标点符号，该字即为孤字。  段落末行僅有一個漢字，或一個漢字加上標點符號，該字即為孤字。 |
-| 行高 | 行高 | hánggāo | line height | The height of a single line. Western text refer to this as the vertical distance between lines of text measured from base line to base line.  一行的高度，西文里通常指基线到基线的距离。  一行的高度，西文裡通常指基線到基線的距離。 |
-| 行間批語 | 行间批语 | hángjiān pīyǔ | interlinear comments | Comments included between lines, generally free-form with no restrictions on line length. These can exceed the length of a single line.  位于行间的批注，形态自由、长度不拘，时可超过一行。  位於行間的批注，形態自由、長度不拘，時可超過一行。 |
-| 行間注 | 行间注 | hángjiānzhù | ruby | Annotations between lines used to indicate the pronounciation of a word or an explanation of a word.  标注于行间的说明或文字读音。  標注於行間的說明或文字讀音。 |
-| 行內調整 | 行内调整 | hángnèitiáozhěng | line adjustment | A method of aligning both edges of all lines (except the last line) in paragraph to be the same given length by removing or adding pre-defined adjustable spacing.  通过挤压或拉伸预先定义的可调整空间，将段落中每行（最后一行除外）首尾对齐的方法。  通過擠壓或拉伸預先定義的可調整空間，將段落中每行（最後一行除外）首尾對齊的方法。 |
-| 行首行尾禁則 | 行首行尾禁则 | hángshǒu hángwěi jìnzé | prohibition rules for line start/end | Due to the varied nature of the different punctuation marks, punctuation rules for the start of a line differ from that for the end of a line.  不同的标点依其性质，不得出现于行首或行尾的排版规则。  不同的標點依其性質，不得出現於行首或行尾的排版規則。 |
-| 行尾點號懸掛 | 行尾点号悬挂 | hángwěi diǎnhào xuánguà | hanging punctuation marks for line end | Typesetting punctuation for line endings outside the margin of alignment, also known as hanging punctuation or exdentation.  将行尾的点号悬挂于版心之外的排版方式。  將行尾的點號懸掛於版心之外的排版方式。 |
-| 漢語拼音 | 汉语拼音 | Hànyǔ pīnyīn | Hanyu Pinyin | Hanyu Pinyin provides a method of using Latin characters with diacritics to indicate tone. It is often used to teach Standard Chinese and encourage its use as a common language for communication.  《汉语拼音方案》给汉字注音和拼写普通话的一种方案，采用拉丁字母，并用附加符号表示声调，是帮助学习汉字和推广普通话的工具。  《漢語拼音方案》給漢字注音和拼寫普通話的一種方案，採用拉丁字母，並用附加符號表示聲調，是幫助學習漢字和推廣普通話的工具。 |
-| 漢字 | 汉字 | Hànzì | Chinese characters/Han characters | Characters that form the basis of the Chinese language.  中文的基本文字。  中文的基本文字。 |
-| 橫排 | 横排 | héngpái | horizontal writing mode | The process or the result of arranging characters on a line from left to right, of lines on a page from top to bottom, and/or of columns on a page from left to right.  行内每字按水平方向由左至右，页内每行从上至下、每栏由左至右的排列方法，或者按此方法的排列状态。  行內每字按水平方向由左至右，頁內每行從上至下、每欄由左至右的排列方法，或者按此方法的排列狀態。 |
-| 活字排版 | 活字排版 | huózì páibǎn | letterpress printing | The traditional printing method using movable type.  使用可以移动的字块进行文字排版及印刷的方式。  使用可以移動的字塊進行文字排版及印刷的方式。 |
-| 簡體中文 | 简体中文 | jiǎntǐ Zhōngwén | Simplified Chinese | The writing system of Chinese using characters that are relatively simpler in structure and stroke count, mainly refer to Jianhuazi (Simplified Character) published and revised in 1960s in Mainland China. Cf. Traditional Chinese.  字形及笔画相对较简单的汉字体系，主要指中国大陆于20世纪60年代左右公布修订的简化汉字，与之对应者为繁体中文。  字形及筆畫相對較簡單的漢字體系，主要指中國大陸於20世紀60年代左右公布修訂的簡化漢字，與之對應者為繁體中文。 |
-| 夾注符號 | 夹注符号 | jiázhù fúhào | Parenthetical punctuation | General term for a pair of punctuation marks that isolate a segment of text from its surroundings and include additional information for clarification or for emphasis.  为提示或突显将文本夾注起来的一类成对符号的总称。  為提示或突顯將文本夾注起來的一類成對符號的總稱。 |
-| 結束夾注符號 | 结束夹注符号 | jiéshù jiázhù fúhào | closing bracket(s) | The ending character of the paired brackets, which includes quotation marks, parentheses, book title marks etc.  成对的夹注符号（引号、括号、书名号）中，标注结束的字符。  成對的夾注符號（引號、括號、書名號）中，標注結束的字元。 |
-| 介音 | 介音 | jièyīn | medial | The semivowel between initial and main vowel in Chinese syllable.  汉语音节的构成中，位于辅音和主要元音之间的过渡音。  漢語音節的構成中，位於輔音和主要元音之間的過渡音。 |
-| 緊排 | 紧排 | jǐnpái | reduced inter-character spacing | Adjustment of inter-character spacing by making the distance between the character face of adjacent characters shorter than that produced by solid setting.  减少字距，使文字外框一部分重叠的排版方式。  減少字距，使文字外框一部分重疊的排版方式。 |
-| 基文 | 基文 | jīwén | base text | Text to be annotated by ruby, ornament characters, or emphasis marks.  行间注排版中，受标注的原文字词或语句。  行間注排版中，受標注的原文字詞或語句。 |
-| 開始夾注符號 | 开始夹注符号 | kāishǐ jiázhù fúhào | opening bracket(s) | The opening character of the paired brackets, which includes quotation marks, parentheses, book title marks etc.  成对的夹注符号（引号、括号、书名号）中，标注起始的字符。  成對的夾注符號（引號、括號、書名號）中，標注起始的字元。 |
-| 拉丁字母 | 拉丁字母 | lādīng zìmǔ | Latin letters | Letters used in the Latin alphabet. For example, A, B, and C. They can appear in uppercase or lowercase. These letters are used in English and many other languages.  拉丁字母是指拉丁字母表中的字母，比如A、B、C，有大写和小写形式。这些字母被用于英语以及许多其他语言中。  拉丁字母是指拉丁字母表中的字母，比如A、B、C，有大寫和小寫形式。這些字母被用於英語以及許多其他語言中。 |
-| 欄 | 栏 | lán | column | A partition on a page in multi-column format.  将连续一系列的文章放在一页里，按照文字阅读方向分割成两个以上的每一个独立部分。  將連續一系列的文章放在一頁里，按照文字閱讀方向分割成兩個以上的每一個獨立部分。 |
-| 欄間距 | 栏间距 | lán jiānjù | column gap | Amount of space between columns on a page.  栏与栏之间的间距。  欄與欄之間的間距。 |
-| 羅馬拼音 | 罗马拼音 | luómǎ pīnyīn | Romanization | The conversion system of writing from Chinese pronunciation into Roman/Latin script.  将汉字依语言将其发音转写为拉丁字母的方式。  將漢字依語言將其發音轉寫為拉丁字母的方式。 |
-| 密排 | 密排 | mìpái | solid setting | To arrange characters with no inter-character space between adjacent character frames.  将文字依其外框紧密排列的排版方式。  將文字依其外框緊密排列的排版方式。 |
-| 末端 | 末端 | mòduān | end point | The ending point of a line, meaning the bottom side in vertical writing mode, or the right side in horizontal writing mode.  文本或文字靠近其所在行行尾的一端。通常，文字直排时末端在下，横排在右。  文本或文字靠近其所在行行尾的一端。通常，文字直排時末端在下，橫排在右。 |
-| 排版樣式 | 排版样式 | páibǎn yàngshì | page format | The layout and presentation of a page with text, graphics and other elements for a publication such as a book.  书籍等出版物上图、文及其他元素的版式布局及表现形式。  書籍等出版物上圖、文及其他元素的版式布局及表現形式。 |
-| 輕聲 | 轻声 | qīngshēng | neutral tone | A kind of special tone phenomenon in modern standard Chinese, with no fixed tone.  现代标准汉语的特殊变调现象，无固定调值。  現代標準漢語的特殊變調現象，無固定調值。 |
-| 兩端對齊 | 两端对齐 | liǎngduān duìqí | justified alignment | The alignment method to align on both the left and right ends of each line of one paragraph text.  一种段落每行的行首行尾分别对齐的排版方式。  一種段落每行的行首行尾分別對齊的排版方式。 |
-| 全形 | 全角 | quánxíng/quánjiǎo | fullwidth | 1. A relative index for the length which is equal to a given character size.- A square character frame that has a character advance of character size.   排字的一种相对度量单位，宽度等于所使用的字号，用做排版宽度水平方向的度量。  排字的一種相對度量單位，寬度等於所使用的字號，用做排版寬度水平方向的度量。 |
-| 入聲 | 入声 | rùshēng | checked tone | One of four tones in Historical Chinese phonology, which has short and brief pitch.  汉语及汉语方言的音节结构，属四声之一，其调值之调型短而急促。  漢語及漢語方言的音節結構，屬四聲之一，其調值之調型短而急促。 |
-| 聲調 | 声调 | shēngdiào | tone | The pitch contours in language to distinguish lexical or grammatical meaning in one syllable. There are 4 tones, e.g. Ping (level), Shang (rising), Qu (departing), Ru (entering) in Historical Chinese phonology.  音节的高低升降变化。汉语传统音韵学里分为平、上、去、入等四声。  音節的高低升降變化。漢語傳統音韻學裡分為平、上、去、入等四聲。 |
-| 聲母 | 声母 | shēngmǔ | initial | The initial consonant of a Chinese syllable.  汉语字音音节开头的辅音。  漢語字音音節開頭的輔音。 |
-| 始端 | 始端 | shǐduān | starting point | The text or character that is near the beginning of the line. Normally, when the text is in vertical writing mode, the starting point is on the top; in horizontal writing mode, the starting point is on the left.  文本或文字靠近该行行首的一端。通常，文字直排时始端在上，横排在左。  文本或文字靠近該行行首的一端。通常，文字直排時始端在上，橫排在左。 |
-| 疏排 | 疏排 | shūpái | Loose setting | Text setting with extra even inter-character spacing in addition to the default spacing between characters, achieved by applying positive tracking to the text.  于各字之间加入均匀空白的排版方式。  於各字之間加入均勻空白的排版方式。 |
-| 天／天頭 | 天/天头 | tiān/tiāntóu | head/top margin | The top margin between the top edge of a trimmed page and the type area.  版心上沿至成品幅面上沿之间的空白区域 (GB/T 9851.2-2008, 3.4)  版心上沿至成品幅面上沿之間的空白區域 (GB/T 9851.2-2008, 3.4) |
-| 文字設計／字體排印 | 文字设计/字体排印 | wénzìshèjì/zìtǐpáiyìn | typography | The art and technique of arranging type to make written language legible, readable, and appealing when displayed. [[Definition from Wikipedia]](https://en.wikipedia.org/wiki/Typography)  对文字进行合适地排版让书面语言易认、易读、有吸引力地展现出来的一种工艺。  對文字進行合適地排版讓書面語言易認、易讀、有吸引力地展現出來的一種工藝。 |
-| 文字外框 | 文字外框 | wénzìwàikuāng | character frame | Rectangular area occupied by a character when it is set solid.  文字密排时所占矩形区域。  文字密排時所占矩形區域。 |
-| 西文 | 西文 | Xīwén | Western text | Writing systems derived from Greek and Latin.  欧洲、美洲和大洋洲通行的文字。  歐洲、美洲和大洋洲通行的文字。 |
-| 以連字符斷行 | 以连字符断行 | yǐ liánzìfú duànháng | hyphenation | Use of the hyphen to join words and to separate syllables of a single word.  在西文词组音节间插入连字符来断行的方式。  在西文詞組音節間插入連字符來斷行的方式。 |
-| 韻母 | 韵母 | yùnmŭ | final | The part in a Chinese syllable without initial and tone.  汉语字音中一个音节中除声母、声调外的部分。  漢語字音中一個音節中除聲母、聲調外的部分。 |
-| 製表定位字元 | 制表定位字元 | zhìbiǎodìngwèizìyuán | tab | Characters with the feature of tabulation.  提供按列对齐文本功能的字元。  提供按列對齊文本功能的字元。 |
-| 直排／豎排 | 直排/竖排 | zhípái (shùpái) | vertical writing mode | The process or the result of arranging characters on a line from top to bottom, of lines on a page from right to left, and/or of columns on a page from top to bottom.  行内每字按垂直方向由上至下，页内每行从右至左、每栏由上至下的排列方法，或者按此方法的排列状态。  行內每字按垂直方向由上至下，頁內每行從右至左、每欄由上至下的排列方法，或者按此方法的排列狀態。 |
-| 中外文對照 | 中外文对照 | Zhōng-wàiwén duìzhào | bilingual annotations | To prompt a Chinese term with its original or translation in the form of annotation text or base text, an instance of ruby.  以注文或基文的形式为汉语词组提示原文或译文，系行间注排版的一种实现方式。  以注文或基文的形式為漢語詞組提示原文或譯文，係行間注排版的一種實作方式。 |
-| 中、西文混排處理 | 中、西文混排处理 | Zhōng-Xīwén hùnpái chǔlǐ | Chinese and Western mixed text composition | The process of interleaving Chinese text with Western text.  在中文文本中，包含部分西文時的處理方式。  在中文文本中，包含部分西文時的處理方式。 |
-| 注文 | 注文 | zhùwén | annotation text | Interlinear text run indicating pronunciation or definitions.  行间注排版中，标注于行间（原文字词或语句旁侧）以标注发音或释义的文字。  行間注排版中，標注於行間（原文字詞或語句旁側）以標注發音或釋義的文字。 |
-| 注音符號 | 注音符号 | zhùyīn fúhào | Bopomofo (Zhuyin) | The general name of Mandarin Phonetic Symbols and Taiwanese Phonetic Symbols.  "国语注音符号"及"台湾方音符号"的统称。  「國語注音符號」及「台灣方音符號」的統稱。 |
-| 字幅 | 字幅 | zìfú | character advance | Size of a character frame in the inline direction.  字符在行方向上的大小。  字符在行方向上的大小。 |
-| 字號 | 字号 | zìhào | type size | Dimensions of a character.  区别单个字符大小的表示方法。(GB 9851.2-2008, 3.3)  區別單個字符大小的表示方法。(GB 9851.2-2008, 3.3) |
-| 字距 | 字距 | zìjù | tracking | The space between characters.  字符之间的空隙。  字符之間的空隙。 |
-| 字面 | 字面 | zìmiàn | character face | Area in which glyph is drawn.  文字的字身框中，字图实际分布的空间。  文字的字身框中，字圖實際分布的空間。 |
-| 字體 | 字体 | zìtǐ | typeface | A set of letters, characters or symbols, which are designed to have coherent patterns to be used for printing or rendering to a computer screen.  字母、文字或符号的一组集合，一个字体通常有一贯的笔画与字形风格，用于印刷或屏幕渲染中。  字母、文字或符號的一組集合，一個字體通常有一貫的筆畫與字形風格，用於印刷或螢幕渲染中。 |
-| 字型 | 字型 | zìxíng | font | A set of glyphs with the same design, often referred to as typeface nowadays.  具有相同基本设计的字形图像集合(GB/T 16964.1-1997, 3.6)，现多与字体混用。  具有相同基本設計的字形圖像集合(GB/T 16964.1-1997, 3.6)，現多與字體混用。 |
-| 字形 | 字形 | zìxíng | glyph | A symbol of identifiable abstraction, depending on no specific design.  字母、文字或符号在书写、印刷上的形体。  字母、文字或符號在書寫、印刷上的形體。 |
-| 縱橫對齊 | 纵横对齐 | zònghéng duìqí | grid alignment | The process, under the premise of justification, of arranging characters within grids to make sure that they are aligned in both horizontal and vertical axes.  头尾对齐的前提下，保证各行文字在横、纵轴二方向皆相互对齐排列于网格中的排版方式。  頭尾對齊的前提下，保證各行文字在橫、縱軸二方向皆相互對齊排列於網格中的排版方式。 |
-| 縱中橫排 | 纵中横排 | zòngzhōnghéngpái | horizontal-in-vertical setting | To typeset a (small) group of characters horizontally within a vertical line of main text.  在直排文本中，将成（小）组的字符横排插入排版方式。  在直排文本中，將成（小）組的字符橫排插入排版方式。 |
+| Term (TC)詞彙（繁）词汇（繁） | Term (SC)詞彙（簡）词汇（简） | Pinyin漢語拼音 汉语拼音  | English英語 英语                                                                     | Definition定義 定义                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| ----------------------------- | ----------------------------- | ------------------------ | ------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 阿拉伯數字                    | 阿拉伯数字                    | Ālābó shùzì              | European numerals/Arabic numerals/Hindu–Arabic numerals/European digits (in Unicode) | A general name of Hindu–Arabic numeral system. Hindu–Arabic numerals, also called Arabic numerals or European digits (in Unicode) are the ten digits: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, based on the Hindu–Arabic numeral system, the most common system for the symbolic representation of numbers in the world today. [[Definition from Wikipedia]](https://en.wikipedia.org/wiki/Arabic_numerals )  印度-阿拉伯数字的统称。阿拉伯数字是西方语言或欧洲形式的印度-阿拉伯数字，以十进制为基础，采用0、1、2、3、4、5、6、7、8、9共10个计数符号。采取位值法，高位在左，低位在右，从左往右书写。印度-阿拉伯數字的統稱。阿拉伯數字是西方語言或歐洲形式的印度-阿拉伯數字，以十進位為基礎，採用0、1、2、3、4、5、6、7、8、9共10個計數符號。採取比特值法，高位在左，低位在右，從左往右書寫。 |
+| 版心                          | 版心                          | bǎnxīn                   | type area                                                                            | The area, usually in the center of a printed page but without bleed and images, works as the main area for content printing.  印刷成品版面中的图文印刷区域（不含出血图像）(GB 9851.2-2008, 3.3)。印刷成品版面中的圖文印刷區域（不含出血圖像）(GB 9851.2-2008, 3.3)。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| 半形                          | 半角                          | bànxíng/bànjiǎo          | halfwidth                                                                            | 1. A relative index for the length which is equal to 1/2 of a given character size.- A square character frame that has a character advance of 1/2 character size.   排字的度量单位，宽度等于同样字号全角的一半。排字的度量單位，寬度等於同樣字號全形的一半。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| 標點符號                      | 标点符号                      | biāodiǎn fúhào           | punctuation marks                                                                    | The marks that aid texts to record language, and are an organic part of the written language. They are used to indicate pause, mood and special nature and functions of some parts (mainly words) in a sentence. (GB/T 15834—2011)  辅助文字记录语言的符号，是书面语的有机组成部分，用来表示语句的停顿、语气以及表示某成分（主要是词语）的特定性质和作用。(GB/T 15834—2011)  輔助文字記錄語言的符號，是書面語的有機組成部分，用來表示語句的停頓、語氣以及表示某成分（主要是詞語）的特定性質和作用。(GB/T 15834—2011)                                                                                                                                                                                                                                                              |
+| 標點符號擠壓                  | 标点符号挤压                  | biāodiǎn fúhào jǐyā      | compression rules for consecutive punctuation marks                                  | The rules for type setting by compressing the space for the punctuation marks in the beginning or ending of a line or the space between consecutive punctuation marks.  对位于行首、行尾或连续存在标点符号的富余空间进行调整的排版方式。對位於行首、行尾或連續存在標點符號的富餘空間進行調整的排版方式。                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| 標號                          | 标号                          | biāohào                  | indication punctuation marks                                                         | Puctuation marks for indication, mainly for marking the special nature and function of a part (mainly words) of a sentence. (GB/T 15834—2011)  标号的作用是标明，主要标示某些成分（主要是词语）的特定性质和作用。(GB/T 15834—2011)  標號的作用是標明，主要標示某些成分（主要是詞語）的特定性質和作用。(GB/T 15834—2011)                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| 標音                          | 标音                          | biāoyīn                  | phonetic annotation                                                                  | The way to indicate the pronunciation of the Han characters, e.g. ruby.  为汉字标注发音的方式，主要有行间注等。為漢字標注發音的方式，主要有行間注等。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| 比例字體                      | 比例字体                      | bǐlì zìtǐ                | proportional font                                                                    | A proportional font (also called a variable-width font) is a font in which each character occupies only as much horizontal space as it needs. For example, in a proportional font the letter "i" is narrower than the letter "m". This contrasts with a monospaced font, where every character has the same fixed width regardless of shape.  比例字体（或可变宽度字体）是字体的一种分类，其中每个字符的宽度根据其笔画和外形量身定制。例如，在比例字体中，"i" 比 "m" 窄。与之相对的是等宽字体，等宽字体的每个字符占用相同的水平空间。比例字體（或可變寬度字體）是字體的一種分類，其中每個字元的寬度根據其筆畫和外形量身定製。例如，在比例字體中，「i」 比 「m」 窄。與之相對的是等寬字體，等寬字體的每個字元占用相同的水平空間。                                                  |
+| 出血                          | 出血                          | chūxiě                   | bleed                                                                                | The part of graphics that goes beyond the edge of final page that will be trimmed off.  超出成品幅面范围而被裁切掉的图像。(GB 9851.2-2008, 3.8)  超出成品幅面範圍而被裁切掉的圖像。(GB 9851.2-2008, 3.8)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| 大五碼                        | 大五码                        | Dàwǔmǎ                   | Big5                                                                                 | Big-5 or Big5 is a Chinese character encoding method used in Taiwan, Hong Kong, and Macau for Traditional Chinese characters. A total of 13060 Traditional Chinese characters are encoded with Big5. [[Definition from Wikipedia]](https://en.wikipedia.org/wiki/Big5)  繁体中文常用的汉字编码字符集标准之一，共收录13,060个汉字。繁體中文常用的漢字編碼字符集標準之一，共收錄13,060個漢字。                                                                                                                                                                                                                                                                                                                                                                                      |
+| 地／地腳                      | 地/地脚                       | dì/dìjiǎo                | footer/foot/bottom margin                                                            | The bottom margin between the edge of a trimmed page and the type area.  版心下沿至成品幅面下沿之间的空白区域。(GB 9851.2-2008, 3.5)。版心下沿至成品幅面下沿之間的空白區域。(GB 9851.2-2008, 3.5)。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| 點                            | 点                            | diǎn                     | point (pt)                                                                           | In typography, the point is the smallest unit of measure, used for measuring font size, leading, and other items on a printed page. The DTP point (desktop publishing point) as the de facto standard point is defined as 1⁄72 of an international inch (about 0.35146 mm) and, as with earlier American point sizes, is considered to be 1⁄12 of a pica. [[Definition from Wikipedia]](https://en.wikipedia.org/wiki/Point_(typography))  字号的一种计量单位，常用的英美点制下1点约为0.35146 mm，也被音译作"磅（因）"。字號的一種計量單位，常用的英美點制下1點約為0.35146 mm，也被音譯作「磅（因）」。                                                                                                                                                                           |
+| 點號                          | 点号                          | diǎnhào                  | pause or stop punctuation marks                                                      | Punctuation marks for breaking, mainly for pause and mood, including marks at end-sentence and in-sentence.  点号的作用是点断，主要表示停顿和语气。分为句末点号和句内点号。(GB/T 15834—2011)  點號的作用是點斷，主要表示停頓和語氣。分為句末點號和句內點號。(GB/T 15834—2011)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| 底端                          | 底端                          | dǐduān                   | line foot                                                                            | The closing side of the content in a type area. Usually, for vertical writing, it is on the left side while for horizontal writing, it is at the bottom.  文本或文字靠近版面结尾的一端。通常，文字直排时底端在左，横排在下。文本或文字靠近版面結尾的一端。通常，文字直排時底端在左，橫排在下。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| 頂端                          | 顶端                          | dǐngduān                 | line head                                                                            | The beginning side of the content in a type area. Usually, for vertical writing, it is on the right side while for horizontal writing, it is at the top.  文本或文字靠近版面近起始的一端。通常，文字直排时顶端在右，横排在上。文本或文字靠近版面近起始的一端。通常，文字直排時頂端在右，橫排在上。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| 段落                          | 段落                          | duànlùo                  | paragraph                                                                            | A paragraph is a self-contained unit of a discourse in writing dealing with a particular point or idea. A paragraph consists of more than one sentence. [[Definition from Wikipedia]](https://en.wikipedia.org/wiki/Paragraph)  由语句组成的句群，一个段落由一至多个语句组成。由語句組成的句群，一個段落由一至多個語句組成。                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| 對齊方式                      | 对齐方式                      | duìqí fāngshì            | alignment                                                                            | In typesetting and page layout, alignment or range is the setting of text flow or image placement relative to a page, column (measure), table cell, or tab. The type alignment setting is sometimes referred to as text alignment, text justification, or type justification. [[Definition from Wikipedia]](https://en.wikipedia.org/wiki/Typographic_alignment)  对字、行等各种元素的分布进行整理的方法。對字、行等各種元素的分布進行整理的方法。                                                                                                                                                                                                                                                                                                                                |
+| 兒化                          | 儿化                          | érhuà                    | erhua                                                                                | In standard Chinese and certain dialects, some words have rhotacized endings that result in phonetic changes to how the word sounds.  在现代汉语以及一些方音里，一些词汇字音的韵母因卷舌动作而发生的音变现象。在現代漢語以及一些方音裡，一些詞彙字音的韻母因捲舌動作而發生的音變現象。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| 繁體中文                      | 繁体中文                      | fántǐ Zhōngwén           | Traditional Chinese                                                                  | The writing system of Chinese using characters that are relatively more complex in structure and stroke count. Known as Traditional Chinese because of its long history of use. Cf. Simplified Chinese.  字形及笔画相对较复杂的汉字体系。因使用时间较长，又名传统汉字或正体汉字，与之对应者为简体中文。字形及筆畫相對較複雜的漢字體系。因使用時間較長，又名傳統漢字或正體漢字，與之對應者為簡體中文。                                                                                                                                                                                                                                                                                                                                                                             |
+| 分詞連寫                      | 分词连写                      | fēncí liánxiě            | words as the base units                                                              | The usage of words as the segmentation unit for the romanisation of Chinese.  以汉语词为单位拼写罗马拼音的方式。以漢語詞為單位拼寫羅馬拼音的方式。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| 分字連寫                      | 分字连写                      | fēnzì liánxiě            | characters as the base units                                                         | The usage of characters as the segmentation unit for the romanisation of Chinese.  以字为单位拼写罗马拼音的方式。以字為單位拼寫羅馬拼音的方式。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| 符號分離禁則                  | 符号分离禁则                  | fúhào fēnlí jìnzé        | prohibition rules for unbreakable punctuation                                        | The rules for certain punctuation marks that do not allow any spaces between them.  特定的符号里不得加入空隙的原则。特定的符號里不得加入空隙的原則。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| 孤行                          | 孤行                          | gūháng                   | widow                                                                                | Literally "orphan line", the paragraph-ending line that falls at the beginning of a new page or column, or the paragraph-opening line that appears by itself at the end of a page or column; both separated from the rest of the text.  页面中首行为前页最后一个段落的末行者为孤行。頁面中首行為前頁最後一個段落的末行者為孤行。                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| 孤字                          | 孤字                          | gūzì                     | orphan                                                                               | Literally "orphan character", the paragraph-ending single character, with or without punctuation, became the last line of a paragraph.  段落末行仅有一个汉字，或一个汉字加上标点符号，该字即为孤字。段落末行僅有一個漢字，或一個漢字加上標點符號，該字即為孤字。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| 行高                          | 行高                          | hánggāo                  | line height                                                                          | The height of a single line. Western text refer to this as the vertical distance between lines of text measured from base line to base line.  一行的高度，西文里通常指基线到基线的距离。一行的高度，西文裡通常指基線到基線的距離。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| 行間批語                      | 行间批语                      | hángjiān pīyǔ            | interlinear comments                                                                 | Comments included between lines, generally free-form with no restrictions on line length. These can exceed the length of a single line.  位于行间的批注，形态自由、长度不拘，时可超过一行。位於行間的批注，形態自由、長度不拘，時可超過一行。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| 行間注                        | 行间注                        | hángjiānzhù              | ruby                                                                                 | Annotations between lines used to indicate the pronounciation of a word or an explanation of a word.  标注于行间的说明或文字读音。標注於行間的說明或文字讀音。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| 行內調整                      | 行内调整                      | hángnèitiáozhěng         | line adjustment                                                                      | A method of aligning both edges of all lines (except the last line) in paragraph to be the same given length by removing or adding pre-defined adjustable spacing.  通过挤压或拉伸预先定义的可调整空间，将段落中每行（最后一行除外）首尾对齐的方法。通過擠壓或拉伸預先定義的可調整空間，將段落中每行（最後一行除外）首尾對齊的方法。                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| 行首行尾禁則                  | 行首行尾禁则                  | hángshǒu hángwěi jìnzé   | prohibition rules for line start/end                                                 | Due to the varied nature of the different punctuation marks, punctuation rules for the start of a line differ from that for the end of a line.  不同的标点依其性质，不得出现于行首或行尾的排版规则。不同的標點依其性質，不得出現於行首或行尾的排版規則。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| 行尾點號懸掛                  | 行尾点号悬挂                  | hángwěi diǎnhào xuánguà  | hanging punctuation marks for line end                                               | Typesetting punctuation for line endings outside the margin of alignment, also known as hanging punctuation or exdentation.  将行尾的点号悬挂于版心之外的排版方式。將行尾的點號懸掛於版心之外的排版方式。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| 漢語拼音                      | 汉语拼音                      | Hànyǔ pīnyīn             | Hanyu Pinyin                                                                         | Hanyu Pinyin provides a method of using Latin characters with diacritics to indicate tone. It is often used to teach Standard Chinese and encourage its use as a common language for communication.  《汉语拼音方案》给汉字注音和拼写普通话的一种方案，采用拉丁字母，并用附加符号表示声调，是帮助学习汉字和推广普通话的工具。  《漢語拼音方案》給漢字注音和拼寫普通話的一種方案，採用拉丁字母，並用附加符號表示聲調，是幫助學習漢字和推廣普通話的工具。                                                                                                                                                                                                                                                                                                                           |
+| 漢字                          | 汉字                          | Hànzì                    | Chinese characters/Han characters                                                    | Characters that form the basis of the Chinese language.  中文的基本文字。中文的基本文字。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| 橫排                          | 横排                          | héngpái                  | horizontal writing mode                                                              | The process or the result of arranging characters on a line from left to right, of lines on a page from top to bottom, and/or of columns on a page from left to right.  行内每字按水平方向由左至右，页内每行从上至下、每栏由左至右的排列方法，或者按此方法的排列状态。行內每字按水平方向由左至右，頁內每行從上至下、每欄由左至右的排列方法，或者按此方法的排列狀態。                                                                                                                                                                                                                                                                                                                                                                                                              |
+| 活字排版                      | 活字排版                      | huózì páibǎn             | letterpress printing                                                                 | The traditional printing method using movable type.  使用可以移动的字块进行文字排版及印刷的方式。使用可以移動的字塊進行文字排版及印刷的方式。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| 簡體中文                      | 简体中文                      | jiǎntǐ Zhōngwén          | Simplified Chinese                                                                   | The writing system of Chinese using characters that are relatively simpler in structure and stroke count, mainly refer to Jianhuazi (Simplified Character) published and revised in 1960s in Mainland China. Cf. Traditional Chinese.  字形及笔画相对较简单的汉字体系，主要指中国大陆于20世纪60年代左右公布修订的简化汉字，与之对应者为繁体中文。字形及筆畫相對較簡單的漢字體系，主要指中國大陸於20世紀60年代左右公布修訂的簡化漢字，與之對應者為繁體中文。                                                                                                                                                                                                                                                                                                                       |
+| 夾注符號                      | 夹注符号                      | jiázhù fúhào             | Parenthetical punctuation                                                            | General term for a pair of punctuation marks that isolate a segment of text from its surroundings and include additional information for clarification or for emphasis.  为提示或突显将文本夾注起来的一类成对符号的总称。為提示或突顯將文本夾注起來的一類成對符號的總稱。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| 結束夾注符號                  | 结束夹注符号                  | jiéshù jiázhù fúhào      | closing bracket(s)                                                                   | The ending character of the paired brackets, which includes quotation marks, parentheses, book title marks etc.  成对的夹注符号（引号、括号、书名号）中，标注结束的字符。成對的夾注符號（引號、括號、書名號）中，標注結束的字元。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| 介音                          | 介音                          | jièyīn                   | medial                                                                               | The semivowel between initial and main vowel in Chinese syllable.  汉语音节的构成中，位于辅音和主要元音之间的过渡音。漢語音節的構成中，位於輔音和主要元音之間的過渡音。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| 緊排                          | 紧排                          | jǐnpái                   | reduced inter-character spacing                                                      | Adjustment of inter-character spacing by making the distance between the character face of adjacent characters shorter than that produced by solid setting.  减少字距，使文字外框一部分重叠的排版方式。減少字距，使文字外框一部分重疊的排版方式。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| 基文                          | 基文                          | jīwén                    | base text                                                                            | Text to be annotated by ruby, ornament characters, or emphasis marks.  行间注排版中，受标注的原文字词或语句。行間注排版中，受標注的原文字詞或語句。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| 開始夾注符號                  | 开始夹注符号                  | kāishǐ jiázhù fúhào      | opening bracket(s)                                                                   | The opening character of the paired brackets, which includes quotation marks, parentheses, book title marks etc.  成对的夹注符号（引号、括号、书名号）中，标注起始的字符。成對的夾注符號（引號、括號、書名號）中，標注起始的字元。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| 拉丁字母                      | 拉丁字母                      | lādīng zìmǔ              | Latin letters                                                                        | Letters used in the Latin alphabet. For example, A, B, and C. They can appear in uppercase or lowercase. These letters are used in English and many other languages.  拉丁字母是指拉丁字母表中的字母，比如A、B、C，有大写和小写形式。这些字母被用于英语以及许多其他语言中。拉丁字母是指拉丁字母表中的字母，比如A、B、C，有大寫和小寫形式。這些字母被用於英語以及許多其他語言中。                                                                                                                                                                                                                                                                                                                                                                                                  |
+| 欄                            | 栏                            | lán                      | column                                                                               | A partition on a page in multi-column format.  将连续一系列的文章放在一页里，按照文字阅读方向分割成两个以上的每一个独立部分。將連續一系列的文章放在一頁里，按照文字閱讀方向分割成兩個以上的每一個獨立部分。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| 欄間距                        | 栏间距                        | lán jiānjù               | column gap                                                                           | Amount of space between columns on a page.  栏与栏之间的间距。欄與欄之間的間距。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| 羅馬拼音                      | 罗马拼音                      | luómǎ pīnyīn             | Romanization                                                                         | The conversion system of writing from Chinese pronunciation into Roman/Latin script.  将汉字依语言将其发音转写为拉丁字母的方式。將漢字依語言將其發音轉寫為拉丁字母的方式。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| 密排                          | 密排                          | mìpái                    | solid setting                                                                        | To arrange characters with no inter-character space between adjacent character frames.  将文字依其外框紧密排列的排版方式。將文字依其外框緊密排列的排版方式。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| 末端                          | 末端                          | mòduān                   | end point                                                                            | The ending point of a line, meaning the bottom side in vertical writing mode, or the right side in horizontal writing mode.  文本或文字靠近其所在行行尾的一端。通常，文字直排时末端在下，横排在右。文本或文字靠近其所在行行尾的一端。通常，文字直排時末端在下，橫排在右。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| 排版樣式                      | 排版样式                      | páibǎn yàngshì           | page format                                                                          | The layout and presentation of a page with text, graphics and other elements for a publication such as a book.  书籍等出版物上图、文及其他元素的版式布局及表现形式。書籍等出版物上圖、文及其他元素的版式布局及表現形式。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| 輕聲                          | 轻声                          | qīngshēng                | neutral tone                                                                         | A kind of special tone phenomenon in modern standard Chinese, with no fixed tone.  现代标准汉语的特殊变调现象，无固定调值。現代標準漢語的特殊變調現象，無固定調值。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| 兩端對齊                      | 两端对齐                      | liǎngduān duìqí          | justified alignment                                                                  | The alignment method to align on both the left and right ends of each line of one paragraph text.  一种段落每行的行首行尾分别对齐的排版方式。一種段落每行的行首行尾分別對齊的排版方式。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| 全形                          | 全角                          | quánxíng/quánjiǎo        | fullwidth                                                                            | 1. A relative index for the length which is equal to a given character size.- A square character frame that has a character advance of character size.   排字的一种相对度量单位，宽度等于所使用的字号，用做排版宽度水平方向的度量。排字的一種相對度量單位，寬度等於所使用的字號，用做排版寬度水平方向的度量。                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| 入聲                          | 入声                          | rùshēng                  | checked tone                                                                         | One of four tones in Historical Chinese phonology, which has short and brief pitch.  汉语及汉语方言的音节结构，属四声之一，其调值之调型短而急促。漢語及漢語方言的音節結構，屬四聲之一，其調值之調型短而急促。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| 聲調                          | 声调                          | shēngdiào                | tone                                                                                 | The pitch contours in language to distinguish lexical or grammatical meaning in one syllable. There are 4 tones, e.g. Ping (level), Shang (rising), Qu (departing), Ru (entering) in Historical Chinese phonology.  音节的高低升降变化。汉语传统音韵学里分为平、上、去、入等四声。音節的高低升降變化。漢語傳統音韻學裡分為平、上、去、入等四聲。                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| 聲母                          | 声母                          | shēngmǔ                  | initial                                                                              | The initial consonant of a Chinese syllable.  汉语字音音节开头的辅音。漢語字音音節開頭的輔音。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| 始端                          | 始端                          | shǐduān                  | starting point                                                                       | The text or character that is near the beginning of the line. Normally, when the text is in vertical writing mode, the starting point is on the top; in horizontal writing mode, the starting point is on the left.  文本或文字靠近该行行首的一端。通常，文字直排时始端在上，横排在左。文本或文字靠近該行行首的一端。通常，文字直排時始端在上，橫排在左。                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| 疏排                          | 疏排                          | shūpái                   | Loose setting                                                                        | Text setting with extra even inter-character spacing in addition to the default spacing between characters, achieved by applying positive tracking to the text.  于各字之间加入均匀空白的排版方式。於各字之間加入均勻空白的排版方式。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| 天／天頭                      | 天/天头                       | tiān/tiāntóu             | head/top margin                                                                      | The top margin between the top edge of a trimmed page and the type area.  版心上沿至成品幅面上沿之间的空白区域(GB/T 9851.2-2008, 3.4)  版心上沿至成品幅面上沿之間的空白區域(GB/T 9851.2-2008, 3.4)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| 文字設計／字體排印            | 文字设计/字体排印             | wénzìshèjì/zìtǐpáiyìn    | typography                                                                           | The art and technique of arranging type to make written language legible, readable, and appealing when displayed. [[Definition from Wikipedia]](https://en.wikipedia.org/wiki/Typography)  对文字进行合适地排版让书面语言易认、易读、有吸引力地展现出来的一种工艺。對文字進行合適地排版讓書面語言易認、易讀、有吸引力地展現出來的一種工藝。                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| 文字外框                      | 文字外框                      | wénzìwàikuāng            | character frame                                                                      | Rectangular area occupied by a character when it is set solid.  文字密排时所占矩形区域。文字密排時所占矩形區域。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| 西文                          | 西文                          | Xīwén                    | Western text                                                                         | Writing systems derived from Greek and Latin.  欧洲、美洲和大洋洲通行的文字。歐洲、美洲和大洋洲通行的文字。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| 以連字符斷行                  | 以连字符断行                  | yǐ liánzìfú duànháng     | hyphenation                                                                          | Use of the hyphen to join words and to separate syllables of a single word.  在西文词组音节间插入连字符来断行的方式。在西文詞組音節間插入連字符來斷行的方式。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| 韻母                          | 韵母                          | yùnmŭ                    | final                                                                                | The part in a Chinese syllable without initial and tone.  汉语字音中一个音节中除声母、声调外的部分。漢語字音中一個音節中除聲母、聲調外的部分。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| 製表定位字元                  | 制表定位字元                  | zhìbiǎodìngwèizìyuán     | tab                                                                                  | Characters with the feature of tabulation.  提供按列对齐文本功能的字元。提供按列對齊文本功能的字元。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| 直排／豎排                    | 直排/竖排                     | zhípái (shùpái)          | vertical writing mode                                                                | The process or the result of arranging characters on a line from top to bottom, of lines on a page from right to left, and/or of columns on a page from top to bottom.  行内每字按垂直方向由上至下，页内每行从右至左、每栏由上至下的排列方法，或者按此方法的排列状态。行內每字按垂直方向由上至下，頁內每行從右至左、每欄由上至下的排列方法，或者按此方法的排列狀態。                                                                                                                                                                                                                                                                                                                                                                                                              |
+| 中外文對照                    | 中外文对照                    | Zhōng-wàiwén duìzhào     | bilingual annotations                                                                | To prompt a Chinese term with its original or translation in the form of annotation text or base text, an instance of ruby.  以注文或基文的形式为汉语词组提示原文或译文，系行间注排版的一种实现方式。以注文或基文的形式為漢語詞組提示原文或譯文，係行間注排版的一種實作方式。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| 中、西文混排處理              | 中、西文混排处理              | Zhōng-Xīwén hùnpái chǔlǐ | Chinese and Western mixed text composition                                           | The process of interleaving Chinese text with Western text.  在中文文本中，包含部分西文時的處理方式。在中文文本中，包含部分西文時的處理方式。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| 注文                          | 注文                          | zhùwén                   | annotation text                                                                      | Interlinear text run indicating pronunciation or definitions.  行间注排版中，标注于行间（原文字词或语句旁侧）以标注发音或释义的文字。行間注排版中，標注於行間（原文字詞或語句旁側）以標注發音或釋義的文字。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| 注音符號                      | 注音符号                      | zhùyīn fúhào             | Bopomofo (Zhuyin)                                                                    | The general name of Mandarin Phonetic Symbols and Taiwanese Phonetic Symbols.  "国语注音符号"及"台湾方音符号"的统称。  「國語注音符號」及「台灣方音符號」的統稱。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| 字幅                          | 字幅                          | zìfú                     | character advance                                                                    | Size of a character frame in the inline direction.  字符在行方向上的大小。字符在行方向上的大小。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| 字號                          | 字号                          | zìhào                    | type size                                                                            | Dimensions of a character.  区别单个字符大小的表示方法。(GB 9851.2-2008, 3.3)  區別單個字符大小的表示方法。(GB 9851.2-2008, 3.3)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| 字距                          | 字距                          | zìjù                     | tracking                                                                             | The space between characters.  字符之间的空隙。字符之間的空隙。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| 字面                          | 字面                          | zìmiàn                   | character face                                                                       | Area in which glyph is drawn.  文字的字身框中，字图实际分布的空间。文字的字身框中，字圖實際分布的空間。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| 字體                          | 字体                          | zìtǐ                     | typeface                                                                             | A set of letters, characters or symbols, which are designed to have coherent patterns to be used for printing or rendering to a computer screen.  字母、文字或符号的一组集合，一个字体通常有一贯的笔画与字形风格，用于印刷或屏幕渲染中。字母、文字或符號的一組集合，一個字體通常有一貫的筆畫與字形風格，用於印刷或螢幕渲染中。                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| 字型                          | 字型                          | zìxíng                   | font                                                                                 | A set of glyphs with the same design, often referred to as typeface nowadays.  具有相同基本设计的字形图像集合(GB/T 16964.1-1997, 3.6)，现多与字体混用。具有相同基本設計的字形圖像集合(GB/T 16964.1-1997, 3.6)，現多與字體混用。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| 字形                          | 字形                          | zìxíng                   | glyph                                                                                | A symbol of identifiable abstraction, depending on no specific design.  字母、文字或符号在书写、印刷上的形体。字母、文字或符號在書寫、印刷上的形體。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| 縱橫對齊                      | 纵横对齐                      | zònghéng duìqí           | grid alignment                                                                       | The process, under the premise of justification, of arranging characters within grids to make sure that they are aligned in both horizontal and vertical axes.  头尾对齐的前提下，保证各行文字在横、纵轴二方向皆相互对齐排列于网格中的排版方式。頭尾對齊的前提下，保證各行文字在橫、縱軸二方向皆相互對齊排列於網格中的排版方式。                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| 縱中橫排                      | 纵中横排                      | zòngzhōnghéngpái         | horizontal-in-vertical setting                                                       | To typeset a (small) group of characters horizontally within a vertical line of main text.  在直排文本中，将成（小）组的字符横排插入排版方式。在直排文本中，將成（小）組的字符橫排插入排版方式。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 
-## References 参考文献 參考文獻
+## References参考文献 參考文獻
 
 - 《重訂標點符號手冊》（2008年修訂版）— The Revised Handbook of Punctuation (2008 edition)
 - 《标点符号用法》— General Rules for Punctuation (GB/T 15834—2011)
@@ -3323,7 +3323,7 @@ Search glossary terms
 - 《政府公文寫作手冊》— Guidebooks on Official Chinese Writing
 - [The Unicode Standard](https://www.unicode.org/versions/latest/)
 
-## Revision Log 修订记录 修訂記錄
+## Revision Log修订记录 修訂記錄
 
 The following changes were made since the previous publication.
 

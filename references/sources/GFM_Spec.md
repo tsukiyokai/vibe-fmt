@@ -1131,9 +1131,9 @@ of the closing sequence:
 ```
 
 ```
-<h3>foo ###</h3>
-<h2>foo ###</h2>
-<h1>foo #</h1>
+<h3>foo    ###</h3>
+<h2>foo    ###</h2>
+<h1>foo    #</h1>
 ```
 
 ATX headings need not be separated from surrounding content by blank
@@ -4413,7 +4413,7 @@ continuation line](#lazy-continuation-line):
 
 ```
 > foo
-    - bar
+- bar
 ```
 
 ```
@@ -4817,7 +4817,7 @@ put under the list item:
 [Example 235](#example-235)
 
 ```
- -    one
+-    one
 
      two
 ```
@@ -4833,7 +4833,7 @@ put under the list item:
 [Example 236](#example-236)
 
 ```
- -    one
+-    one
 
       two
 ```
@@ -5098,7 +5098,7 @@ And in this case it is 11 spaces:
 [Example 249](#example-249)
 
 ```
-  10.  foo
+10.  foo
 
            bar
 ```
@@ -5414,7 +5414,7 @@ Indented one space:
 [Example 264](#example-264)
 
 ```
- 1.  A paragraph
+1.  A paragraph
      with two lines.
 
          indented code
@@ -5441,7 +5441,7 @@ Indented two spaces:
 [Example 265](#example-265)
 
 ```
-  1.  A paragraph
+1.  A paragraph
       with two lines.
 
           indented code
@@ -5468,7 +5468,7 @@ Indented three spaces:
 [Example 266](#example-266)
 
 ```
-   1.  A paragraph
+1.  A paragraph
        with two lines.
 
            indented code
@@ -5495,7 +5495,7 @@ Four spaces indent gives a code block:
 [Example 267](#example-267)
 
 ```
-    1.  A paragraph
+1.  A paragraph
         with two lines.
 
             indented code
@@ -5527,7 +5527,7 @@ Here is an example with [lazy continuation lines](#lazy-continuation-line):
 [Example 268](#example-268)
 
 ```
-  1.  A paragraph
+1.  A paragraph
 with two lines.
 
           indented code
@@ -5554,7 +5554,7 @@ Indentation can be partially deleted:
 [Example 269](#example-269)
 
 ```
-  1.  A paragraph
+1.  A paragraph
     with two lines.
 ```
 
@@ -5650,9 +5650,9 @@ One is not enough:
 
 ```
 - foo
- - bar
-  - baz
-   - boo
+  - bar
+    - baz
+      - boo
 ```
 
 ```
@@ -5670,7 +5670,7 @@ Here we need four, because the list marker is wider:
 
 ```
 10) foo
-    - bar
+- bar
 ```
 
 ```
@@ -5689,7 +5689,7 @@ Three is not enough:
 
 ```
 10) foo
-   - bar
+- bar
 ```
 
 ```
@@ -5828,7 +5828,7 @@ unnatural. It is quite unintuitive that
 
   bar
 
-  - baz
+- baz
 ```
 
 should be parsed as two lists with an intervening paragraph,
@@ -5867,7 +5867,7 @@ original list marker to be included in the list item. For example,
 `Markdown.pl` parses
 
 ```
-   - one
+- one
 
   two
 ```
@@ -5914,7 +5914,7 @@ as a list item with a subparagraph, even though the paragraph `bar`
 is not indented as far as the first paragraph `foo`:
 
 ```
- 10. foo
+10. foo
 
    bar
 ```
@@ -6309,11 +6309,11 @@ item:
 
 ```
 - a
- - b
-  - c
-   - d
-  - e
- - f
+  - b
+    - c
+      - d
+    - e
+  - f
 - g
 ```
 
@@ -6336,7 +6336,7 @@ item:
 
   2. b
 
-   3. c
+    3. c
 ```
 
 ```
@@ -6361,10 +6361,10 @@ line, because it is indented more than three spaces:
 
 ```
 - a
- - b
-  - c
-   - d
-    - e
+  - b
+    - c
+      - d
+        - e
 ```
 
 ```
@@ -6789,7 +6789,9 @@ not have their usual Markdown meanings:
 `not code`
 1. not a list
 * not a list
+
 # not a heading
+
 [foo]: /url &quot;not a reference&quot;
 &amp;ouml; not a character entity</p>
 ```
@@ -12267,16 +12269,16 @@ through the stack for an opening `[` or `![` delimiter.
   we have an inline link/image, reference link/image, compact reference
   link/image, or shortcut reference link/image.
 
-  + If we don’t, then we remove the opening delimiter from the
++ If we don’t, then we remove the opening delimiter from the
     delimiter stack and return a literal text node `]`.
-  + If we do, then
++ If we do, then
 
-    - We return a link or image node whose children are the inlines
+  - We return a link or image node whose children are the inlines
       after the text node pointed to by the opening delimiter.
-    - We run *process emphasis* on these inlines, with the `[` opener
+- We run *process emphasis* on these inlines, with the `[` opener
       as `stack_bottom`.
-    - We remove the opening delimiter.
-    - If we have a link (and not an image), we also set all
+- We remove the opening delimiter.
+- If we have a link (and not an image), we also set all
       `[` delimiters before the opening delimiter to *inactive*. (This
       will prevent us from getting links within links.)
 
@@ -12310,11 +12312,11 @@ closers:
   + Figure out whether we have emphasis or strong emphasis:
     if both closer and opener spans have length >= 2, we have
     strong, otherwise regular.
-  + Insert an emph or strong emph node accordingly, after
++ Insert an emph or strong emph node accordingly, after
     the text node corresponding to the opener.
-  + Remove any delimiters between the opener and closer from
++ Remove any delimiters between the opener and closer from
     the delimiter stack.
-  + Remove 1 (for regular emph) or 2 (for strong emph) delimiters
++ Remove 1 (for regular emph) or 2 (for strong emph) delimiters
     from the opening and closing text nodes. If they become empty
     as a result, remove them and remove the corresponding element
     of the delimiter stack. If the closing node is removed, reset
@@ -12324,10 +12326,10 @@ closers:
   + Set `openers_bottom` to the element before `current_position`.
     (We know that there are no openers for this kind of closer up to and
     including this point, so this puts a lower bound on future searches.)
-  + If the closer at `current_position` is not a potential opener,
++ If the closer at `current_position` is not a potential opener,
     remove it from the delimiter stack (since we know it can’t
     be a closer either).
-  + Advance `current_position` to the next element in the stack.
++ Advance `current_position` to the next element in the stack.
 
 After we’re done, we remove all delimiters above `stack_bottom` from the
 delimiter stack.
