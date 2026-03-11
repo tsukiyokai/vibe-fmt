@@ -237,7 +237,7 @@ def rule_r1a_compact_cjk_spacing(text: str, spans: list[Span]) -> tuple[str, int
 
     # Non-CJK content chars that should be tight against CJK.
     # Excludes markdown line-syntax chars: # - * + | >
-    tight = r'A-Za-z0-9%()°~_\[\]'
+    tight = r'A-Za-z0-9%()°~_@&\[\]→←'
 
     # Label pattern: uppercase letter + optional (hyphen/lowercase) + digits
     # e.g. C1, C2, B-2, R2b, Tier1 — spaces after these should be preserved.
@@ -330,6 +330,12 @@ def rule_r1a_compact_cjk_spacing(text: str, spans: list[Span]) -> tuple[str, int
             count += 1
             return ''  # remove space
         seg = re.sub(r'(?<=[' + tight + r']) (?=[' + CJK + r'])', _repl, seg)
+        # Arrow symmetry: if → or ← has space on one side but not the other,
+        # remove the remaining space too (avoid asymmetric results like "K →中").
+        seg, n = re.subn(r'(?<=\S) ([→←])(?=\S)', r'\1', seg)
+        count += n
+        seg, n = re.subn(r'(?<=\S)([→←]) (?=\S)', r'\1', seg)
+        count += n
         return seg
 
     result = _apply_to_unprotected(text, process, spans)
@@ -357,7 +363,7 @@ def rule_r1c_fw_punct_spacing(text: str, spans: list[Span]) -> tuple[str, int]:
     # Content characters: CJK, Latin, digits, full-width punctuation,
     # quotes, and common prose symbols.
     # Excludes markdown syntax chars (#, -, *, +, |, >) to avoid breaking formatting.
-    adj = CJK + r'A-Za-z0-9"\'`' + escaped
+    adj = CJK + r'A-Za-z0-9"\'`%()°~_@&\[\]→←' + escaped
 
     def process(seg: str, _offset: int = 0) -> str:
         nonlocal count
@@ -991,23 +997,27 @@ def _format_pass(text: str) -> tuple[str, dict[str, int]]:
     """Single pass of all formatting rules. Returns (text, per-rule change counts)."""
     changes: dict[str, int] = {}
 
-    # R2b: Normalize bracket pairs by content (before R2 for stable context)
+    # R2b/R2/R3 do single-char substitutions (no length change), so they
+    # can share the same protected spans — avoids 2 redundant re-parses.
     spans = _find_protected_spans(text)
+
+    # R2b: Normalize bracket pairs by content (before R2 for stable context)
     text, n = rule_r2b_bracket_pairing(text, spans)
     changes["R2b_bracket_pairing"] = n
 
     # R2: Punctuation context fix (brackets excluded — handled by R2b)
-    spans = _find_protected_spans(text)
     text, n = rule_r2_punctuation(text, spans)
     changes["R2_punctuation"] = n
 
     # R3: Full-width digits
-    spans = _find_protected_spans(text)
     text, n = rule_r3_fullwidth_digits(text, spans)
     changes["R3_digits"] = n
 
-    # R1a: Remove CJK↔non-CJK spaces (compact mode)
+    # R1a/R1c/R4 may change text length (removing spaces/chars), so each
+    # needs fresh protected spans.
     spans = _find_protected_spans(text)
+
+    # R1a: Remove CJK↔non-CJK spaces (compact mode)
     text, n = rule_r1a_compact_cjk_spacing(text, spans)
     changes["R1a_compact_spacing"] = n
 
