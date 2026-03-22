@@ -485,8 +485,10 @@ def rule_r1c_fw_punct_spacing(text: str, spans: list[Span]) -> tuple[str, int]:
 
     # Content characters: CJK, Latin, digits, full-width punctuation,
     # quotes, and common prose symbols.
-    # Excludes markdown syntax chars (#, -, *, +, |, >) to avoid breaking formatting.
-    adj = CJK + r'A-Za-z0-9"\'`%()°~_@&\[\]→←' + escaped
+    # Excludes markdown syntax chars (#, +, |, >) to avoid breaking formatting.
+    # `-` and `*` are included: as list markers they only appear at line-start,
+    # never adjacent to full-width punctuation; mid-line `*` is emphasis.
+    adj = CJK + r'A-Za-z0-9"\'`%()°~_@&\[\]→←\-\*' + escaped
 
     def process(seg: str, _offset: int = 0) -> str:
         nonlocal count
@@ -587,9 +589,10 @@ def rule_r2_punctuation(text: str, spans: list[Span]) -> tuple[str, int]:
                         chars[i] = HW_PAIRS[ch]
                         count += 1
                     else:
-                        # Fallback: right side CJK + left side is line boundary
+                        # Fallback: right side has CJK nearby → Chinese context.
+                        # Covers "Heidegger: 代码" and line-start cases.
                         right_cjk = _has_cjk_nearby(seg, i, 1)
-                        if right_cjk and _is_line_boundary(seg, i, -1):
+                        if right_cjk:
                             chars[i] = HW_PAIRS[ch]
                             count += 1
                 # Note: ( ) are NOT handled here — R2b decides bracket
