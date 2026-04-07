@@ -20,8 +20,9 @@ Rules (execution order optimized for idempotency):
   R9: Wrap bare URLs in <> when followed by full-width chars
   R10: Unify list markers to -
 
-R2/R3 run before R1a/R1c so that character substitutions are finalized
-before spacing cleanup, ensuring single-pass idempotency.
+ASCII art regions (box-drawing chars, +---+ patterns) are auto-detected
+and excluded from all rules.  R2/R3 run before R1a/R1c so that character
+substitutions are finalized before spacing cleanup, ensuring idempotency.
 """
 
 import json
@@ -165,6 +166,15 @@ def _find_protected_spans(text: str, *, protect_plain_code_blocks: bool = True) 
     for m in re.finditer(r"^(\s*[-*+] \[[x ]\] )", text, re.MULTILINE):
         spans.append(Span(m.start(), m.end()))
 
+    # ASCII art regions (outside code fences)
+    art_lines = _find_ascii_art_lines(text)
+    if art_lines:
+        line_offsets = _line_offsets(text)
+        for idx in sorted(art_lines):
+            start = line_offsets[idx]
+            end = line_offsets[idx + 1] - 1 if idx + 1 < len(line_offsets) else len(text)
+            spans.append(Span(start, end))
+
     # Sort and merge overlapping spans
     spans.sort()
     merged: list[Span] = []
@@ -207,6 +217,83 @@ def _apply_to_unprotected(text: str, fn, spans: list[Span]) -> str:
     if cursor < len(text):
         parts.append(fn(text[cursor:], cursor))
     return "".join(parts)
+
+
+# ---------------------------------------------------------------------------
+# ASCII art detection
+# ---------------------------------------------------------------------------
+
+_BOX_DRAW_RE = re.compile(r'[\u2500-\u257F\u2580-\u259F]')
+_ASCII_BOX_HLINE_RE = re.compile(r'\+[-=]{2,}\+')
+_PIPE_BOUNDED_RE = re.compile(r'^\s*\|.*\|\s*$')
+
+
+def _is_art_signal(line: str) -> bool:
+    """True if line contains box-drawing chars or ASCII box edge pattern (+---+)."""
+    return bool(_BOX_DRAW_RE.search(line) or _ASCII_BOX_HLINE_RE.search(line))
+
+
+def _find_ascii_art_lines(text: str) -> set[int]:
+    """Return 0-based line indices belonging to ASCII art blocks.
+
+    Detection: lines with Unicode box-drawing (U+2500-U+259F) or ASCII box
+    edges (+---+).  Expansion: pipe-bounded lines (|...|) between two signal
+    lines are included; adjacent art groups within 1-line gap are merged.
+    """
+    lines = text.split("\n")
+    n = len(lines)
+    signals = [_is_art_signal(line) for line in lines]
+
+    # Skip lines inside fenced code blocks (already protected separately)
+    in_fence = False
+    for i in range(n):
+        stripped = lines[i].strip()
+        if re.match(r'^(`{3,}|~{3,})', stripped):
+            in_fence = not in_fence
+            signals[i] = False
+            continue
+        if in_fence:
+            signals[i] = False
+
+    art: set[int] = {i for i in range(n) if signals[i]}
+    if not art:
+        return art
+
+    # Fill between signal lines: if all intermediate lines are pipe-bounded
+    # or blank, include them (handles ASCII box interiors like | text |)
+    sorted_sigs = sorted(art)
+    for a, b in zip(sorted_sigs, sorted_sigs[1:]):
+        if b - a <= 1:
+            continue
+        if all(_PIPE_BOUNDED_RE.match(lines[k]) or not lines[k].strip()
+               for k in range(a + 1, b)):
+            art.update(range(a + 1, b))
+
+    # Merge groups separated by at most 1 non-art line
+    sorted_art = sorted(art)
+    merged: list[list[int]] = [[sorted_art[0]]]
+    for idx in sorted_art[1:]:
+        if idx - merged[-1][-1] <= 2:
+            for g in range(merged[-1][-1] + 1, idx):
+                merged[-1].append(g)
+            merged[-1].append(idx)
+        else:
+            merged.append([idx])
+
+    result: set[int] = set()
+    for group in merged:
+        result.update(group)
+    return result
+
+
+def _line_offsets(text: str) -> list[int]:
+    """Return byte offset of each line start (plus sentinel at end)."""
+    offsets = [0]
+    for i, ch in enumerate(text):
+        if ch == '\n':
+            offsets.append(i + 1)
+    offsets.append(len(text) + 1)  # sentinel
+    return offsets
 
 
 # ---------------------------------------------------------------------------
@@ -281,15 +368,16 @@ def rule_r0_join_wrapped_lines(text: str) -> tuple[str, int]:
     joins = 0
     i = 0
     in_code_block = False
+    art_lines = _find_ascii_art_lines(text)
     while i < len(lines):
         line = lines[i]
-        # Don't touch content inside code blocks
+        # Don't touch content inside code blocks or ASCII art
         if re.match(r"^\s*```", line):
             in_code_block = not in_code_block
             result.append(line)
             i += 1
             continue
-        if in_code_block or _r0_is_special_line(line):
+        if in_code_block or i in art_lines or _r0_is_special_line(line):
             result.append(line)
             i += 1
             continue
@@ -317,10 +405,11 @@ def rule_r10_unify_list_markers(text: str) -> tuple[str, int]:
     result: list[str] = []
     changes = 0
     in_code_block = False
-    for line in lines:
+    art_lines = _find_ascii_art_lines(text)
+    for i, line in enumerate(lines):
         if re.match(r"^\s*```", line):
             in_code_block = not in_code_block
-        if not in_code_block:
+        if not in_code_block and i not in art_lines:
             m = re.match(r"^(\s*)[*+](\s)", line)
             if m:
                 line = m.group(1) + "-" + m.group(2) + line[m.end():]
@@ -582,6 +671,13 @@ def rule_r2_punctuation(text: str, spans: list[Span]) -> tuple[str, int]:
                         chars[i] = HW_PAIRS[ch]
                         count += 1
                 elif ch in (",", "?", "!", ";", ":"):
+                    # Digit-punct-digit: times (14:30), ratios (114:12),
+                    # thousands separators (1,000) — always half-width.
+                    if ch in (":", ",", ";"):
+                        prev_digit = (i > 0 and seg[i - 1].isdigit())
+                        next_digit = (i + 1 < len(seg) and seg[i + 1].isdigit())
+                        if prev_digit and next_digit:
+                            continue
                     # Punctuation belongs to the clause it terminates.
                     # Immediate left char is CJK or full-width punct → Chinese context → full-width.
                     left_imm_cjk = (i > 0 and (_is_cjk(seg[i - 1]) or _is_cjk_punct(seg[i - 1])))
@@ -717,6 +813,9 @@ def rule_r4_duplicate_punctuation(text: str, spans: list[Span]) -> tuple[str, in
             # Preserve '...' and '……'
             if ch == "." or ch == "\u2026":
                 return m.group(0)
+            # Preserve '::' — scope resolution operator (C++, Rust, Perl, etc.)
+            if ch == ":" and len(m.group(0)) == 2:
+                return m.group(0)
             count += 1
             return ch
 
@@ -743,13 +842,14 @@ def rule_r4_duplicate_punctuation(text: str, spans: list[Span]) -> tuple[str, in
 def rule_r5_heading_spacing(text: str) -> tuple[str, int]:
     """R5: Ensure blank line before and after headings.
 
-    Operates on whole lines, respects code blocks by tracking fenced state.
+    Operates on whole lines, respects code blocks and ASCII art.
     """
     lines = text.split("\n")
     result: list[str] = []
     count = 0
     in_code_block = False
     in_frontmatter = False
+    art_lines = _find_ascii_art_lines(text)
 
     # Detect frontmatter
     if lines and lines[0].strip() == "---":
@@ -771,7 +871,7 @@ def rule_r5_heading_spacing(text: str) -> tuple[str, int]:
             result.append(line)
             continue
 
-        if in_code_block:
+        if in_code_block or i in art_lines:
             result.append(line)
             continue
 
@@ -803,12 +903,13 @@ def rule_r6_list_indentation(text: str) -> tuple[str, int]:
 
     Uses an indent stack to detect nesting levels from the original
     indentation, then re-indents each level to exactly 2 spaces.
-    Operates line-by-line, respects code blocks.
+    Operates line-by-line, respects code blocks and ASCII art.
     """
     lines = text.split("\n")
     result: list[str] = []
     count = 0
     in_code_block = False
+    art_lines = _find_ascii_art_lines(text)
 
     # Pattern for list items: optional whitespace + marker (- * + or 1. 2. etc.) + space
     list_pattern = re.compile(r"^(\s*)([-*+]|\d+\.)\s")
@@ -817,7 +918,7 @@ def rule_r6_list_indentation(text: str) -> tuple[str, int]:
     # E.g., [0, 4, 8] means level 0 = 0 spaces, level 1 = 4 spaces, level 2 = 8 spaces.
     indent_stack: list[int] = []
 
-    for line in lines:
+    for i, line in enumerate(lines):
         stripped = line.strip()
 
         if re.match(r"^(`{3,}|~{3,})", stripped):
@@ -825,7 +926,7 @@ def rule_r6_list_indentation(text: str) -> tuple[str, int]:
             result.append(line)
             continue
 
-        if in_code_block:
+        if in_code_block or i in art_lines:
             result.append(line)
             continue
 
@@ -883,12 +984,13 @@ def rule_r6_list_indentation(text: str) -> tuple[str, int]:
 def rule_r7_table_alignment(text: str) -> tuple[str, int]:
     """R7: Align markdown table columns by padding cells with spaces.
 
-    Operates on consecutive table lines, respects code blocks.
+    Operates on consecutive table lines, respects code blocks and ASCII art.
     """
     lines = text.split("\n")
     result: list[str] = []
     count = 0
     in_code_block = False
+    art_lines = _find_ascii_art_lines(text)
 
     table_line_pattern = re.compile(r"^\s*\|.*\|\s*$")
     separator_pattern = re.compile(r"^\s*\|[\s:-]+(\|[\s:-]+)*\|\s*$")
@@ -903,7 +1005,7 @@ def rule_r7_table_alignment(text: str) -> tuple[str, int]:
             i += 1
             continue
 
-        if in_code_block:
+        if in_code_block or i in art_lines:
             result.append(lines[i])
             i += 1
             continue
@@ -1167,6 +1269,7 @@ def rule_r9_bare_url_boundary(text: str) -> tuple[str, int]:
     result = list(lines)
     count = 0
     in_code_block = False
+    art_lines = _find_ascii_art_lines(text)
 
     # Full-width character ranges (CJK + full-width punctuation)
     fw = CJK + CJK_PUNCT
@@ -1186,7 +1289,7 @@ def rule_r9_bare_url_boundary(text: str) -> tuple[str, int]:
             in_code_block = not in_code_block
             continue
 
-        if in_code_block:
+        if in_code_block or i in art_lines:
             continue
 
         # Protect inline code spans from modification
