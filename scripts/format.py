@@ -7,10 +7,12 @@ back, and prints a JSON summary of changes to stdout.
 
 Rules (execution order optimized for idempotency):
   R0:  Join PDF-wrapped lines (--join-lines flag, pre-processing)
+  R11: Join paragraph-internal hard line breaks (always-on, pre-processing)
   R2b: Normalize bracket pairs by content (before R2 for stable context)
   R2: Fix full-width/half-width punctuation by context (brackets excluded)
   R3: Convert full-width digits to half-width
   R1a: Remove spaces between CJK and non-CJK content chars (compact mode)
+  R1b: Insert space after \\d+) list markers at line start
   R1c: Remove spaces adjacent to full-width punctuation
   R4: Remove consecutive duplicate punctuation (preserve ……)
   R5: Ensure blank line before and after headings
@@ -311,7 +313,9 @@ def _r0_is_special_line(line: str) -> bool:
         return True
     if re.match(r"^\d{4}-\d{2}-\d{2}\s*\|", s):   # date metadata
         return True
-    if re.match(r"^\d+\.\s", s):                   # ordered list
+    if re.match(r"^\d+\.\s", s):                   # ordered list (dot)
+        return True
+    if re.match(r"^\d+\)", s):                     # ordered list (paren)
         return True
     if re.match(r"^[-*+]\s", s):                   # unordered list
         return True
@@ -393,6 +397,96 @@ def rule_r0_join_wrapped_lines(text: str) -> tuple[str, int]:
         result.append(line)
         i += 1
     return "\n".join(result), joins
+
+
+# ---------------------------------------------------------------------------
+# R11: Join paragraph-internal hard line breaks (always-on)
+# ---------------------------------------------------------------------------
+
+_TABLE_LINE_RE = re.compile(r'^\s*\|')
+_KV_LINE_RE = re.compile(r'^[a-zA-Z_][\w-]*:\s+\S+\s*$')
+
+
+def _r11_should_join(line: str) -> bool:
+    """Extends _r0_should_join: also handles inline-code endings (backtick)."""
+    if _r0_should_join(line):
+        return True
+    s = line.rstrip()
+    return bool(s) and s[-1] == '`'
+
+
+def rule_r11_join_prose_lines(text: str) -> tuple[str, int, list[int]]:
+    """R11: Join paragraph-internal hard line breaks in prose.
+
+    Deterministic joins (adjacent non-blank prose lines):
+      - Line ends with CJK ideograph (non-punctuation)
+      - Line ends with mid-sentence punctuation
+      - Line ends with ASCII letter + next starts lowercase/CJK
+      - Line ends with backtick (inline code)
+    Suspect breaks (reported, not joined):
+      - Adjacent prose lines where first ends with terminal punctuation
+        and line length >= 40 (suggests wrap, not intentional short line)
+
+    Unlike R0, never skips blank lines -- blank line = paragraph boundary.
+    """
+    lines = text.split("\n")
+    result: list[str] = []
+    joins = 0
+    suspects: list[int] = []
+    i = 0
+    in_code = False
+    art = _find_ascii_art_lines(text)
+
+    while i < len(lines):
+        line = lines[i]
+        stripped = line.strip()
+
+        if re.match(r'^\s*(`{3,}|~{3,})', stripped):
+            in_code = not in_code
+            result.append(line)
+            i += 1
+            continue
+
+        if (in_code or i in art or _r0_is_special_line(line)
+                or _TABLE_LINE_RE.match(line) or _KV_LINE_RE.match(stripped)):
+            result.append(line)
+            i += 1
+            continue
+
+        while i + 1 < len(lines):
+            nxt = lines[i + 1]
+            ns = nxt.strip()
+            if (not ns or _r0_is_special_line(nxt) or _TABLE_LINE_RE.match(nxt)
+                    or (i + 1) in art):
+                break
+
+            s = line.rstrip()
+            if not s:
+                break
+
+            if _r11_should_join(line):
+                last = s[-1]
+                # English letter ending: only join if next starts lowercase or CJK
+                if last.isascii() and last.isalpha() and ns:
+                    fc = ord(ns[0])
+                    if not (ns[0].islower() or 0x4E00 <= fc <= 0x9FFF or 0x3400 <= fc <= 0x4DBF):
+                        if len(s) >= 40:
+                            suspects.append(i + 2)
+                        break
+                # Separator: space between ASCII-ASCII, nothing otherwise
+                sep = " " if last.isascii() and ns[0].isascii() else ""
+                line = s + sep + ns
+                joins += 1
+                i += 1
+            else:
+                if ns and len(s) >= 40:
+                    suspects.append(i + 2)
+                break
+
+        result.append(line)
+        i += 1
+
+    return "\n".join(result), joins, suspects
 
 
 # ---------------------------------------------------------------------------
@@ -501,6 +595,20 @@ def rule_r1a_compact_cjk_spacing(text: str, spans: list[Span]) -> tuple[str, int
             return True
         return False
 
+    def _is_paren_list_marker(seg: str, space_start: int) -> bool:
+        """Check if chars before space form a \\d+) list marker at line start."""
+        j = space_start - 1
+        if j < 0 or seg[j] != ')':
+            return False
+        j -= 1
+        if j < 0 or not seg[j].isdigit():
+            return False
+        while j >= 0 and seg[j].isdigit():
+            j -= 1
+        while j >= 0 and seg[j] in ' \t':
+            j -= 1
+        return j < 0 or seg[j] == '\n'
+
     def process(seg: str, _offset: int = 0) -> str:
         nonlocal count
         # Only remove exactly ONE space at CJK↔non-CJK boundaries.
@@ -519,6 +627,8 @@ def rule_r1a_compact_cjk_spacing(text: str, spans: list[Span]) -> tuple[str, int
             nonlocal count
             if _is_section_number(seg, m.start()):
                 return m.group()  # section number at line start — keep space
+            if _is_paren_list_marker(seg, m.start()):
+                return m.group()  # paren list marker — keep space
             if _is_label(seg, m.start()):
                 # Label detected — but if next char is a particle, stay compact
                 next_ch = seg[m.end()] if m.end() < len(seg) else ''
@@ -550,6 +660,18 @@ def rule_r1a_compact_cjk_spacing(text: str, spans: list[Span]) -> tuple[str, int
         count += n
         return seg
 
+    result = _apply_to_unprotected(text, process, spans)
+    return result, count
+
+
+def rule_r1b_paren_list_spacing(text: str, spans: list[Span]) -> tuple[str, int]:
+    """R1b: Insert space after \\d+) list markers at line start when missing."""
+    count = 0
+    def process(seg: str, _offset: int = 0) -> str:
+        nonlocal count
+        seg, n = re.subn(r'(?m)^(\s*\d+\))(?=\S)', r'\1 ', seg)
+        count += n
+        return seg
     result = _apply_to_unprotected(text, process, spans)
     return result, count
 
@@ -911,8 +1033,8 @@ def rule_r6_list_indentation(text: str) -> tuple[str, int]:
     in_code_block = False
     art_lines = _find_ascii_art_lines(text)
 
-    # Pattern for list items: optional whitespace + marker (- * + or 1. 2. etc.) + space
-    list_pattern = re.compile(r"^(\s*)([-*+]|\d+\.)\s")
+    # Pattern for list items: optional whitespace + marker (- * + or 1. 1) etc.) + space
+    list_pattern = re.compile(r"^(\s*)([-*+]|\d+[.)])\s")
 
     # indent_stack tracks the raw indentation widths we've seen for each nesting level.
     # E.g., [0, 4, 8] means level 0 = 0 spaces, level 1 = 4 spaces, level 2 = 8 spaces.
@@ -1336,6 +1458,10 @@ def _format_pass(text: str) -> tuple[str, dict[str, int]]:
     text, n = rule_r1a_compact_cjk_spacing(text, spans)
     changes["R1a_compact_spacing"] = n
 
+    # R1b: Insert space after \d+) list markers at line start
+    text, n = rule_r1b_paren_list_spacing(text, spans)
+    changes["R1b_paren_list_spacing"] = n
+
     # R1c: Remove spaces around full-width punctuation
     spans = _find_protected_spans(text)
     text, n = rule_r1c_fw_punct_spacing(text, spans)
@@ -1425,6 +1551,10 @@ def main():
         text, n = rule_r0_join_wrapped_lines(text)
         changes["R0_join_lines"] = n
 
+    # R11: Always-on prose line joining (before formatting passes)
+    text, n11, suspects = rule_r11_join_prose_lines(text)
+    changes["R11_join_prose"] = n11
+
     formatted, fmt_changes = format_document(text)
     changes.update(fmt_changes)
 
@@ -1438,6 +1568,8 @@ def main():
         "by_rule": changes,
         "file": filepath,
     }
+    if suspects:
+        summary["R11_suspect_breaks"] = suspects
     print(json.dumps(summary, ensure_ascii=False, indent=2))
 
 
